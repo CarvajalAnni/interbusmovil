@@ -28,4 +28,6 @@
     <string name="longitud">Longitud</string>
     <string name="cargar_foto">Cargar foto</string>
     <string name="colision">Colisión</string>
+    <string name="title_activity_despachador">Despachador</string>
+    <string name="title_activity_despachador_notificacion">DespachadorNotificacion</string>
 </resources>

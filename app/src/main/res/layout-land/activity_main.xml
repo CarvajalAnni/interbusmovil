@@ -15,14 +15,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/autobusmovimiento"
         android:layout_width="84dp"
         android:layout_height="118dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="16dp"
         android:src="@drawable/autobus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
