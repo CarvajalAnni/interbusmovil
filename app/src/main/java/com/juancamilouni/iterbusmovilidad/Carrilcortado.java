@@ -201,7 +201,7 @@ public class Carrilcortado extends AppCompatActivity implements View.OnClickList
                 id = String.valueOf(indice);
 
                 long timestamp = System.currentTimeMillis();
-                String filePathAndName = "images/" + timestamp;
+                String filePathAndName = "Carril Cortado/" + timestamp;
 
                 StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
                 storageReference.putFile(imageUri)

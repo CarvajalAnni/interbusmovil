@@ -179,7 +179,7 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
                 id = String.valueOf(indice);
 
                 long timestamp = System.currentTimeMillis();
-                String filePathAndName = "images/" + timestamp;
+                String filePathAndName = "Retencion/" + timestamp;
 
                 StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
                 storageReference.putFile(imageUri)

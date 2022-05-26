@@ -186,7 +186,7 @@ public class Obras extends AppCompatActivity implements View.OnClickListener{
                 id = String.valueOf(indice);
 
                 long timestamp = System.currentTimeMillis();
-                String filePathAndName = "images/" + timestamp;
+                String filePathAndName = "Obras/" + timestamp;
 
                 StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
                 storageReference.putFile(imageUri)
