@@ -56,6 +56,9 @@ public class Carrilcortado extends AppCompatActivity implements View.OnClickList
 
 
     private static final int VALUE_UBI = 200;
+    private static final int VALUE_CAM = 300;
+    private static final int VALUE_ALM = 400;
+
     private Uri imageUri = null;
 
     @Override
@@ -80,6 +83,25 @@ public class Carrilcortado extends AppCompatActivity implements View.OnClickList
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, VALUE_UBI);
             }
         }
+
+        int PermisoCam = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+        if(PermisoCam == PackageManager.PERMISSION_DENIED){
+            if (ActivityCompat.shouldShowRequestPermissionRationale(Carrilcortado.this, Manifest.permission.CAMERA)){
+
+            }else{
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, VALUE_CAM);
+            }
+        }
+
+        int PermisoAlm = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if(PermisoAlm == PackageManager.PERMISSION_DENIED){
+            if (ActivityCompat.shouldShowRequestPermissionRationale(Carrilcortado.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+
+            }else{
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, VALUE_ALM);
+            }
+        }
+
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
