@@ -26,7 +26,6 @@
         <entry key="..\:/Users/Aprendiz/Downloads/Iterbusmovilidad/app/src/main/res/layout/activity_inicio.xml" value="0.371875" />
         <entry key="..\:/Users/Aprendiz/Downloads/Iterbusmovilidad/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Aprendiz/Downloads/Iterbusmovilidad/app/src/main/res/layout/activity_notificacion.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/Aprendiz/Downloads/Iterbusmovilidad/clon/interbusmovil/app/src/main/res/layout/activity_carril_cortado.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/Aprendiz/Downloads/Iterbusmovilidad/clon/interbusmovil/app/src/main/res/layout/activity_main.xml" value="0.32608695652173914" />
         <entry key="..\:/Users/camil/AndroidStudioProjects/Iterbusmovilidad/app/src/main/res/layout-land/activity_ayuda.xml" value="0.33" />
         <entry key="..\:/Users/camil/AndroidStudioProjects/Iterbusmovilidad/app/src/main/res/layout-land/activity_dashboard.xml" value="0.33" />
@@ -67,10 +66,8 @@
         <entry key="..\:/Users/camil/Downloads/si/Iterbusmovilidad/app/src/main/res/layout/activity_obras.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/camil/Downloads/si/Iterbusmovilidad/app/src/main/res/layout/activity_otros.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/camil/Downloads/si/Iterbusmovilidad/app/src/main/res/layout/activity_retencion.xml" value="0.20416666666666666" />
-<<<<<<< HEAD
-=======
         <entry key="..\:/Users/camil/clone/interbusmovil/app/src/main/res/layout/activity_carril_cortado.xml" value="0.1" />
->>>>>>> c4dd52c40a919e6a641a95da848315c880322c0f
+        <entry key="..\:/Users/camil/clone/interbusmovil/app/src/main/res/layout/activity_notificacion.xml" value="0.1" />
       </map>
     </option>
   </component>

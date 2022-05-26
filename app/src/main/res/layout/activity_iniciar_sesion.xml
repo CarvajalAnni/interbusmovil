@@ -78,9 +78,9 @@
 
     <ImageButton
         android:id="@+id/bntGoogle"
-        android:layout_width="84dp"
-        android:layout_height="58dp"
-        android:background="@drawable/google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/goo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
