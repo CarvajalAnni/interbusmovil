@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "197114834442",
+    "firebase_url": "https://iterbus-movilidad-default-rtdb.firebaseio.com",
     "project_id": "iterbus-movilidad",
     "storage_bucket": "iterbus-movilidad.appspot.com"
   },

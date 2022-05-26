@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Iterbus movilidad</string>
+    <string name="app_name">Interbus movilidad</string>
     <string name="carril_cortado">Carril cortado</string>
     <string name="obras">Obras</string>
     <string name="objeto_en_la_via">Objeto en la via</string>
@@ -14,18 +14,12 @@
     <string name="escriba_su_informacion_exacta_para_poder_ayudarlo">Escriba su informacion exacta para poder ayudarlo</string>
     <string name="escriba_mas_informacion_sobre_lo_ocurrido">Escriba mas informacion sobre lo ocurrido</string>
     <string name="title_activity_carrilcortado">Carrilcortado</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="mi_perfil">Mi perfil</string>
     <string name="observaciones">Observaciones</string>
     <string name="latitud">Latitud</string>
     <string name="longitud">Longitud</string>
     <string name="cargar_foto">Cargar foto</string>
     <string name="colision">Colisión</string>
+    <string name="ob">Observación</string>
+
 </resources>
