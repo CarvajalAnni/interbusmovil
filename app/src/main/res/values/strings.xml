@@ -1,4 +1,28 @@
 <resources>
+<<<<<<< HEAD
 
+=======
+    <string name="app_name">Interbus movilidad</string>
+    <string name="carril_cortado">Carril cortado</string>
+    <string name="obras">Obras</string>
+    <string name="objeto_en_la_via">Objeto en la via</string>
+    <string name="rentencion">Rentención</string>
+    <string name="colicion">Colicion</string>
+    <string name="fallas_mecanicas">Fallas Mecanicas</string>
+    <string name="otro">Otro</string>
+    <string name="tomar_foto">Tomar Foto</string>
+    <string name="ubicacion">Ubicacion</string>
+    <string name="observaci_n">Observación</string>
+    <string name="reportar_incidente">reportar incidente</string>
+    <string name="escriba_su_informacion_exacta_para_poder_ayudarlo">Escriba su informacion exacta para poder ayudarlo</string>
+    <string name="escriba_mas_informacion_sobre_lo_ocurrido">Escriba mas informacion sobre lo ocurrido</string>
+    <string name="title_activity_carrilcortado">Carrilcortado</string>
+    <string name="mi_perfil">Mi perfil</string>
+    <string name="observaciones">Observaciones</string>
+    <string name="latitud">Latitud</string>
+    <string name="longitud">Longitud</string>
+    <string name="cargar_foto">Cargar foto</string>
+    <string name="colision">Colisión</string>
+>>>>>>> c4dd52c40a919e6a641a95da848315c880322c0f
 
 </resources>
