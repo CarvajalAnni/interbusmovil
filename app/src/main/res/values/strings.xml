@@ -14,5 +14,11 @@
     <string name="escriba_su_informacion_exacta_para_poder_ayudarlo">Escriba su informacion exacta para poder ayudarlo</string>
     <string name="escriba_mas_informacion_sobre_lo_ocurrido">Escriba mas informacion sobre lo ocurrido</string>
     <string name="title_activity_carrilcortado">Carrilcortado</string>
+    <string name="mi_perfil">Mi perfil</string>
+    <string name="observaciones">Observaciones</string>
+    <string name="latitud">Latitud</string>
+    <string name="longitud">Longitud</string>
+    <string name="cargar_foto">Cargar foto</string>
+    <string name="colision">Colisión</string>
 
 </resources>
