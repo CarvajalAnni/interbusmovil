@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Objetoenvia">
+
+    <Button
+        android:id="@+id/btnUbicacionVia"
+        android:layout_width="176dp"
+        android:layout_height="46dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/ubicacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.345" />
+
+    <Button
+        android:id="@+id/btnReportarIncidenteVia"
+        android:layout_width="218dp"
+        android:layout_height="58dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/reportar_incidente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textObservacionVia"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textObservacionVia"
+        app:layout_constraintTop_toBottomOf="@+id/textObservacionVia"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <EditText
+        android:id="@+id/textObservacionVia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="@string/observaciones"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnUbicacionVia"
+        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintStart_toStartOf="@+id/btnUbicacionVia"
+        app:layout_constraintTop_toBottomOf="@+id/btnUbicacionVia"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <Button
+        android:id="@+id/btnTomarFotoVia"
+        android:layout_width="134dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="36dp"
+        android:backgroundTint="@color/azul"
+        android:text="Tomar foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgObjeto"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <Button
+        android:id="@+id/btnCargarVia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/cargar_foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintStart_toEndOf="@+id/btnTomarFotoVia"
+        app:layout_constraintTop_toBottomOf="@+id/imgObjeto"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imgObjeto"
+        android:layout_width="139dp"
+        android:layout_height="134dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054"
+        app:srcCompat="@drawable/interbus" />
+
+    <TextView
+        android:id="@+id/textlongitudvia"
+        android:layout_width="177dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="88dp"
+        android:hint="@string/longitud"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnTomarFotoVia"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="@+id/btnTomarFotoVia"
+        app:layout_constraintTop_toTopOf="@+id/btnTomarFotoVia"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textlatitudvia"
+        android:layout_width="166dp"
+        android:layout_height="26dp"
+        android:hint="@string/latitud"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnCargarVia"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/btnCargarVia"
+        app:layout_constraintTop_toBottomOf="@+id/btnCargarVia"
+        app:layout_constraintVertical_bias="0.099" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

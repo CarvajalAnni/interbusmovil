@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fallasmecanicas">
+
+
+
+    <Button
+        android:id="@+id/btnUbicacionF"
+        android:layout_width="176dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="192dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/ubicacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textlatitudfallas"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/textlongitudfallas"
+        app:layout_constraintTop_toBottomOf="@+id/imgFalla"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnReportarIncidenteF"
+        android:layout_width="218dp"
+        android:layout_height="58dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/reportar_incidente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textObservacionF"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textObservacionF"
+        app:layout_constraintTop_toBottomOf="@+id/textObservacionF"
+        app:layout_constraintVertical_bias="0.492" />
+
+    <EditText
+        android:id="@+id/textObservacionF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/observaciones"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnNivelGravedadF"
+        app:layout_constraintStart_toStartOf="@+id/btnNivelGravedadF"
+        app:layout_constraintTop_toBottomOf="@+id/btnNivelGravedadF"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <Button
+        android:id="@+id/btnTomarFotoF"
+        android:layout_width="134dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/azul"
+        android:text="Tomar foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgFalla"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgFalla"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnCargarF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/cargar_foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toEndOf="@+id/btnTomarFotoF"
+        app:layout_constraintTop_toBottomOf="@+id/imgFalla"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imgFalla"
+        android:layout_width="187dp"
+        android:layout_height="186dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045"
+        app:srcCompat="@drawable/interbus" />
+
+    <TextView
+        android:id="@+id/textlongitudfallas"
+        android:layout_width="177dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="88dp"
+        android:gravity="center"
+        android:hint="@string/longitud"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnTomarFotoF"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="@+id/btnTomarFotoF"
+        app:layout_constraintTop_toTopOf="@+id/btnTomarFotoF"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textlatitudfallas"
+        android:layout_width="166dp"
+        android:layout_height="26dp"
+        android:gravity="center"
+        android:hint="@string/latitud"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnCargarF"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/btnCargarF"
+        app:layout_constraintTop_toBottomOf="@+id/btnCargarF"
+        app:layout_constraintVertical_bias="0.099" />
+
+
+    <Spinner
+        android:id="@+id/btnNivelGravedadF"
+        android:layout_width="226dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnUbicacionF"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="@+id/btnUbicacionF"
+        app:layout_constraintTop_toBottomOf="@+id/btnUbicacionF"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

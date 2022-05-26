@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "197114834442",
+    "project_id": "iterbus-movilidad",
+    "storage_bucket": "iterbus-movilidad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197114834442:android:e0861632d9ac8a942d39f3",
+        "android_client_info": {
+          "package_name": "com.juancamilouni.iterbusmovilidad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197114834442-77obgqeprtdispikl8kfmi1gp1k7r5ai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.juancamilouni.iterbusmovilidad",
+            "certificate_hash": "f6cdb0e7cd6f0dcc0d4a71b2a9d176e8bf0279d4"
+          }
+        },
+        {
+          "client_id": "197114834442-a1e43244s5i66neac3q8a4rlgbq4tf6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnTq9m7GNMTKvRpSic3xZN88xx9c96qAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197114834442-a1e43244s5i66neac3q8a4rlgbq4tf6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

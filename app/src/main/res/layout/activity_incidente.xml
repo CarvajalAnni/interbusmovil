@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Incidente">
+
+    <TextView
+        android:id="@+id/textCarril"
+        android:layout_width="140dp"
+        android:layout_height="36dp"
+        android:text="@string/carril_cortado"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.138" />
+
+    <TextView
+        android:id="@+id/textObras"
+        android:layout_width="134dp"
+        android:layout_height="34dp"
+        android:text="@string/obras"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textCarril"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textCarril"
+        app:layout_constraintTop_toBottomOf="@+id/textCarril"
+        app:layout_constraintVertical_bias="0.086" />
+
+    <TextView
+        android:id="@+id/textObjetovia"
+        android:layout_width="160dp"
+        android:layout_height="31dp"
+        android:text="@string/objeto_en_la_via"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textObras"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textObras"
+        app:layout_constraintTop_toBottomOf="@+id/textObras"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <TextView
+        android:id="@+id/textRetencion"
+        android:layout_width="160dp"
+        android:layout_height="31dp"
+        android:text="@string/rentencion"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textObjetovia"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textObjetovia"
+        app:layout_constraintTop_toBottomOf="@+id/textObjetovia"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <TextView
+        android:id="@+id/textColicion"
+        android:layout_width="160dp"
+        android:layout_height="31dp"
+        android:text="@string/colicion"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textRetencion"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textRetencion"
+        app:layout_constraintTop_toBottomOf="@+id/textRetencion"
+        app:layout_constraintVertical_bias="0.152" />
+
+    <TextView
+        android:id="@+id/textFallas"
+        android:layout_width="160dp"
+        android:layout_height="31dp"
+        android:text="@string/fallas_mecanicas"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textColicion"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textColicion"
+        app:layout_constraintTop_toBottomOf="@+id/textColicion"
+        app:layout_constraintVertical_bias="0.213" />
+
+    <TextView
+        android:id="@+id/textOtro"
+        android:layout_width="160dp"
+        android:layout_height="31dp"
+        android:text="@string/otro"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textFallas"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textFallas"
+        app:layout_constraintTop_toBottomOf="@+id/textFallas"
+        app:layout_constraintVertical_bias="0.355" />
+
+    <ImageButton
+        android:id="@+id/btnCarrilCortadoE"
+        android:layout_width="73dp"
+        android:layout_height="50dp"
+        android:background="@drawable/carril"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.809"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <ImageButton
+        android:id="@+id/btnObrasE"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ingeniero"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnCarrilCortadoE"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="@+id/btnCarrilCortadoE"
+        app:layout_constraintTop_toBottomOf="@+id/btnCarrilCortadoE"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <ImageButton
+        android:id="@+id/btnObjetoViaE"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:background="@drawable/objetoenvia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnObrasE"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnObrasE"
+        app:layout_constraintTop_toBottomOf="@+id/btnObrasE"
+        app:layout_constraintVertical_bias="0.068" />
+
+
+    <ImageButton
+        android:id="@+id/btnRetencionE"
+        android:layout_width="77dp"
+        android:layout_height="56dp"
+        android:background="@drawable/carros"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnObjetoViaE"
+        app:layout_constraintStart_toStartOf="@+id/btnObjetoViaE"
+        app:layout_constraintTop_toBottomOf="@+id/btnObjetoViaE"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <ImageButton
+        android:id="@+id/btnColisionE"
+        android:layout_width="84dp"
+        android:layout_height="61dp"
+        android:background="@drawable/colision"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnRetencionE"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnRetencionE"
+        app:layout_constraintTop_toBottomOf="@+id/btnRetencionE"
+        app:layout_constraintVertical_bias="0.095" />
+
+    <ImageButton
+        android:id="@+id/btnFallasMecanicasE"
+        android:layout_width="85dp"
+        android:layout_height="52dp"
+        android:background="@drawable/mecanico"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnColisionE"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btnColisionE"
+        app:layout_constraintTop_toBottomOf="@+id/btnColisionE"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <ImageButton
+        android:id="@+id/btnOtroE"
+        android:layout_width="97dp"
+        android:layout_height="49dp"
+        android:background="@drawable/otro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnFallasMecanicasE"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btnFallasMecanicasE"
+        app:layout_constraintTop_toBottomOf="@+id/btnFallasMecanicasE"
+        app:layout_constraintVertical_bias="0.293" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

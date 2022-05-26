@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Carrilcortado">
+
+    <Button
+        android:id="@+id/btnUbicacionCer"
+        android:layout_width="176dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="192dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/ubicacion"
+        app:layout_constraintEnd_toEndOf="@+id/textlatitud"
+        app:layout_constraintStart_toStartOf="@+id/textlongitud"
+        app:layout_constraintTop_toBottomOf="@+id/imagencarril" />
+
+    <Button
+        android:id="@+id/btnReportarIncidenteCer"
+        android:layout_width="218dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="@color/azul"
+        android:text="@string/reportar_incidente"
+        app:layout_constraintEnd_toEndOf="@+id/textObservacionCarr"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textObservacionCarr"
+        app:layout_constraintTop_toBottomOf="@+id/textObservacionCarr" />
+
+    <EditText
+        android:id="@+id/textObservacionCarr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="@string/observaciones"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/btnUbicacionCer"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="@+id/btnUbicacionCer"
+        app:layout_constraintTop_toBottomOf="@+id/btnUbicacionCer" />
+
+    <Button
+        android:id="@+id/btnTomarFotoCarr"
+        android:layout_width="134dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/azul"
+        android:text="Tomar foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imagencarril"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagencarril"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnCargarCarr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
+        android:backgroundTint="@color/azul"
+        android:text="Cargar foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.647"
+        app:layout_constraintStart_toEndOf="@+id/btnTomarFotoCarr"
+        app:layout_constraintTop_toTopOf="@+id/imagencarril"
+        app:layout_constraintVertical_bias="0.004" />
+
+    <ImageView
+        android:id="@+id/imagencarril"
+        android:layout_width="187dp"
+        android:layout_height="186dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053"
+        app:srcCompat="@drawable/interbus" />
+
+    <TextView
+        android:id="@+id/textlongitud"
+        android:layout_width="177dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="36dp"
+        android:hint="@string/longitud"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/btnTomarFotoCarr"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="@+id/btnTomarFotoCarr"
+        app:layout_constraintTop_toBottomOf="@+id/btnTomarFotoCarr" />
+
+    <TextView
+        android:id="@+id/textlatitud"
+        android:layout_width="177dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="36dp"
+        android:hint="@string/latitud"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/btnCargarCarr"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="@+id/btnCargarCarr"
+        app:layout_constraintTop_toBottomOf="@+id/btnCargarCarr" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

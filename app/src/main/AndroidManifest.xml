@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.juancamilouni.iterbusmovilidad">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.hardware.location.gps" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/iconoprincipal"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/interbus"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IterbusMovilidad">
+        <activity
+            android:name=".EstadisticaNoti"
+            android:exported="false" />
+        <activity
+            android:name=".InfoNotificacion"
+            android:exported="false" />
+        <activity
+            android:name=".Notificacion"
+            android:exported="false" />
+        <activity
+            android:name=".Emergencia"
+            android:exported="false" />
+        <activity
+            android:name=".Carrilcortado"
+            android:exported="false" />
+        <activity
+            android:name=".Objetoenvia"
+            android:exported="false" />
+        <activity
+            android:name=".Incidente"
+            android:exported="false" />
+        <activity
+            android:name=".Retencion"
+            android:exported="false" />
+        <activity
+            android:name=".Otros"
+            android:exported="false" />
+        <activity
+            android:name=".Obras"
+            android:exported="false" />
+        <activity
+            android:name=".Fallasmecanicas"
+            android:exported="false" />
+        <activity
+            android:name=".Colision"
+            android:exported="false" />
+        <activity
+            android:name=".Ayuda"
+            android:exported="false" />
+        <activity
+            android:name=".Perfil"
+            android:exported="false" />
+        <activity
+            android:name=".Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".IniciarSesion"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.juancamilouni.iterbusmovilidad"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
