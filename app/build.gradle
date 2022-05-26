@@ -38,9 +38,13 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'com.google.firebase:firebase-auth:21.0.3'
     implementation 'com.google.firebase:firebase-storage:20.0.1'
+<<<<<<< HEAD
     implementation 'com.google.firebase:firebase-firestore:24.1.1'
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
     implementation 'androidx.navigation:navigation-ui:2.3.5'
+=======
+    implementation 'com.google.firebase:firebase-firestore:24.1.2'
+>>>>>>> e95f83d7f945709f89a66133dcbcedd6f880976b
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     implementation 'com.google.android.gms:play-services-auth:20.2.0'

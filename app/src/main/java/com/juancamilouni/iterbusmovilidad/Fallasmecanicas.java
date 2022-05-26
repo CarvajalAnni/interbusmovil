@@ -205,7 +205,7 @@ public class Fallasmecanicas extends AppCompatActivity implements View.OnClickLi
                 id = String.valueOf(indice);
 
                 long timestamp = System.currentTimeMillis();
-                String filePathAndName = "images/" + timestamp;
+                String filePathAndName = "Fallas Mecanicas/" + timestamp;
 
                 StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
                 storageReference.putFile(imageUri)
