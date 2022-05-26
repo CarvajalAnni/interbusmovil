@@ -20,5 +20,6 @@
     <string name="longitud">Longitud</string>
     <string name="cargar_foto">Cargar foto</string>
     <string name="colision">Colisión</string>
+    <string name="ob">Observación</string>
 
 </resources>
