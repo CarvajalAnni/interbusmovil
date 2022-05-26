@@ -203,7 +203,7 @@ public class Colision extends AppCompatActivity implements View.OnClickListener 
                 id = String.valueOf(indice);
 
                 long timestamp = System.currentTimeMillis();
-                String filePathAndName = "images/" + timestamp;
+                String filePathAndName = "Colision/" + timestamp;
 
                 StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
                 storageReference.putFile(imageUri)
