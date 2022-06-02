@@ -38,6 +38,7 @@ public class Emergencia extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:123"));
                 startActivity(intent);
+
             }
         });
 
