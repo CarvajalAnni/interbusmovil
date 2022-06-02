@@ -41,28 +41,10 @@
             android:name=".Emergencia"
             android:exported="false" />
         <activity
-            android:name=".Carrilcortado"
-            android:exported="false" />
-        <activity
-            android:name=".Objetoenvia"
-            android:exported="false" />
-        <activity
             android:name=".Incidente"
             android:exported="false" />
         <activity
-            android:name=".Retencion"
-            android:exported="false" />
-        <activity
             android:name=".Otros"
-            android:exported="false" />
-        <activity
-            android:name=".Obras"
-            android:exported="false" />
-        <activity
-            android:name=".Fallasmecanicas"
-            android:exported="false" />
-        <activity
-            android:name=".Colision"
             android:exported="false" />
         <activity
             android:name=".Ayuda"
