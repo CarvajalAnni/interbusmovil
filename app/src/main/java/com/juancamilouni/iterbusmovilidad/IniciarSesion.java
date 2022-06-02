@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
@@ -29,13 +33,16 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.regex.Pattern;
+
 public class IniciarSesion extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
-    ImageButton  bntGoogle;
-    int RC_SIGN_IN =1;
+    ImageButton bntGoogle;
+    TextView TxtOlvide;
+    int RC_SIGN_IN = 1;
     Button btningresar;
-    String TAG = "GoogleSignIn";
-
+    String TAG = "GoogleSignIn", correoString, contraaseniaString;
+    EditText correo, contrasenia;
 
 
     private FirebaseAuth mAuth;
@@ -45,37 +52,73 @@ public class IniciarSesion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
+
+        referenciar();
+
         bntGoogle = findViewById(R.id.bntGoogle);
         bntGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                    signIn();
-                }
-            });
+                //signIn();
 
+
+            }
+        });
+/*
+        btningresar = findViewById(R.id.button);
+        btningresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(IniciarSesion.this, Inicio.class);
+                startActivity(intent);
+
+            }
+        });
+        */
+        TxtOlvide = findViewById(R.id.txtOlvideCon);
+        TxtOlvide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(IniciarSesion.this, Ayuda.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+/*
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        mGoogleSignInCliebt = GoogleSignIn.getClient(this,gso);
+        mGoogleSignInCliebt = GoogleSignIn.getClient(this, gso);
 
         mAuth = FirebaseAuth.getInstance();
-
-        referenciar();
+*/
     }
 
     private void referenciar() {
-        btningresar= findViewById(R.id.button);
+        correo = findViewById(R.id.idTxtCorreo);
+        contrasenia = findViewById(R.id.idTxtContrasenia);
+
+        btningresar = findViewById(R.id.button);
         btningresar.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(IniciarSesion.this,Inicio.class);
-                startActivity(intent);
+                correoString = correo.getText().toString();
+                contraaseniaString = contrasenia.getText().toString();
+                if (!(validarEmail(correoString)) || !(validarcontrasenas(contraaseniaString))) {
+                    //
+                } else {
+                    Intent intent = new Intent(IniciarSesion.this, Inicio.class);
+                    startActivity(intent);
+                }
             }
         });
-    }
 
+    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -84,7 +127,7 @@ public class IniciarSesion extends AppCompatActivity {
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
                 try {
                     // Google Sign In was successful, authenticate with Firebase
                     GoogleSignInAccount account = task.getResult(ApiException.class);
@@ -94,24 +137,26 @@ public class IniciarSesion extends AppCompatActivity {
                     // Google Sign In fallido, actualizar GUI
                     Log.w(TAG, "Google sign in failed", e);
                 }
-            }else{
+            } else {
                 Log.d(TAG, "Error, login no exitoso:" + task.getException().toString());
-                Toast.makeText(this, "Ocurrio un error. "+task.getException().toString(),
+                Toast.makeText(this, "Ocurrio un error. " + task.getException().toString(),
                         Toast.LENGTH_LONG).show();
             }
         }
     }
-    @Override
-    protected void onStart() {
-        FirebaseUser user = mAuth.getCurrentUser();
-        if(user!=null){ //si no es null el usuario ya esta logueado
-            //mover al usuario al dashboard
-            Intent dashboardActivity = new Intent(IniciarSesion.this, Dashboard.class);
-            startActivity(dashboardActivity);
-        }
-        super.onStart();
-    }
 
+    /*
+        @Override
+        protected void onStart() {
+            FirebaseUser user = mAuth.getCurrentUser();
+            if (user != null) { //si no es null el usuario ya esta logueado
+                //mover al usuario al dashboard
+                Intent dashboardActivity = new Intent(IniciarSesion.this, Dashboard.class);
+                startActivity(dashboardActivity);
+            }
+            super.onStart();
+        }
+    */
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
@@ -135,12 +180,67 @@ public class IniciarSesion extends AppCompatActivity {
                     }
                 });
     }
-    private void signIn(){
-        Intent signInIntent =mGoogleSignInCliebt.getSignInIntent();
+
+    private void signIn() {
+        Intent signInIntent = mGoogleSignInCliebt.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
+    private boolean validarEmail(String email) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(email).matches();
+    }
 
+    public boolean validarcontrasenas(String contrasenas) {
+        Boolean esValido = true;
+        Pattern mayusculas = Pattern.compile("[A-Z]");
+        Pattern minusculas = Pattern.compile("[a-z]");
+        Pattern numeros = Pattern.compile("[0-9]");
 
+        if (!minusculas.matcher(contrasenas).find()) {
+            contrasenia.setError("contraseña invalida");
+            esValido = false;
+        } else {
+            esValido = true;
+        }
+
+        if (!mayusculas.matcher(contrasenas).find()) {
+            contrasenia.setError("contraseña invalida");
+
+            esValido = false;
+        } else {
+            esValido = true;
+
+        }
+        if (!numeros.matcher(contrasenas).find()) {
+            contrasenia.setError("contraseña invalida");
+
+            esValido = false;
+
+        } else {
+
+            esValido = true;
+
+        }
+        if (contrasenas.length() < 8) {
+            contrasenia.setError("contraseña invalida");
+            esValido = false;
+            //charcount.setTextColor(Color.RED);
+        } else {
+            esValido = true;
+            // charcount.setTextColor(Color.GREEN);
+        }
+        return esValido;
+    }
 
 }
+
+
+
+
+
+
+
+
+
+

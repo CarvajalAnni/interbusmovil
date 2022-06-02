@@ -31,6 +31,7 @@
         app:srcCompat="@drawable/interbus" />
 
     <EditText
+        android:maxLength="20"
         android:id="@+id/texContraseñaAntigua"
         android:layout_width="250dp"
         android:layout_height="58dp"
@@ -58,6 +59,7 @@
 
     <EditText
         android:id="@+id/TextNuevaContraseña"
+        android:maxLength="20"
         android:layout_width="250dp"
         android:layout_height="58dp"
         android:gravity="center"
@@ -83,11 +85,12 @@
 
     <EditText
         android:id="@+id/textRepetirContraseña"
+        android:maxLength="20"
         android:layout_width="245dp"
         android:layout_height="51dp"
         android:layout_marginStart="44dp"
         android:gravity="center"
-        android:hint=" Repetir Contraseña "
+        android:hint=" Confirmar Contraseña "
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
