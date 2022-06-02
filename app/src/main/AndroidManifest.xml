@@ -13,6 +13,7 @@
     <uses-permission android:name="android.hardware.location.gps" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +22,9 @@
         android:roundIcon="@drawable/interbus"
         android:supportsRtl="true"
         android:theme="@style/Theme.IterbusMovilidad">
+        <activity
+            android:name=".Formulario"
+            android:exported="false" />
         <activity
             android:name=".Despachador"
             android:exported="false" />

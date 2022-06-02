@@ -15,11 +15,19 @@
     <string name="escriba_mas_informacion_sobre_lo_ocurrido">Escriba mas informacion sobre lo ocurrido</string>
     <string name="title_activity_carrilcortado">Carrilcortado</string>
     <string name="mi_perfil">Mi perfil</string>
-    <string name="observaciones">Observaciones</string>
+    <string name="observaciones">Agregar observaciones</string>
     <string name="latitud">Latitud</string>
     <string name="longitud">Longitud</string>
     <string name="cargar_foto">Cargar foto</string>
     <string name="colision">Colisión</string>
     <string name="ob">Observación</string>
+    <string-array name="gravedad">
+        <item>Menor</item>
+        <item>Moderada</item>
+        <item>Seria</item>
+        <item>Grave</item>
+        <item>Critica</item>
+        <item>Máxima</item>
+    </string-array>
 
 </resources>
