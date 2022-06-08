@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
         <LinearLayout
-            android:id="@+id/lnAmbulancia"
+            android:id="@+id/lnTomarfoto"
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:background="@drawable/color_btn6"
