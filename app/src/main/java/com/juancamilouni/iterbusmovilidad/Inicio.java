@@ -5,30 +5,41 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.widget.ImageView;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.widget.Toast;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class Inicio extends AppCompatActivity {
 
-    ImageView btnPerfil, btnNotificacion, btnIncidentes, btnEmergencia, btnAyuda;
+    Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //quita el titulo de la pantalla
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-        referencia();
+        referenciar();
     }
+
+    private void referenciar() {
+        button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Inicio.this, Incidente.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.inicio_tolba, menu);
+        inflater.inflate(R.menu.interbus,menu);
         return true;
     }
 
@@ -36,23 +47,18 @@ public class Inicio extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.verPerfil:
-                Toast.makeText(this, "Ir a la  vista de ver perfil", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.CambiarContra:
-                Intent intent = new Intent(Inicio.this, Ayuda.class);
+                Intent intent = new Intent(Inicio.this, Perfil.class);
                 startActivity(intent);
                 return true;
-            case R.id.CerrarSesion:
-                Intent intent1 = new Intent(Inicio.this, IniciarSesion.class);
+            case R.id.CambiarContra:
+                Intent intent1 = new Intent(Inicio.this, Ayuda.class);
                 startActivity(intent1);
                 return true;
-
+            case R.id.CerrarSesion:
+                Intent intent3 = new Intent(Inicio.this, IniciarSesion.class);
+                startActivity(intent3);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
-    private void referencia() {
-
-
-           }
 }

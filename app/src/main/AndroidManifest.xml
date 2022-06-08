@@ -23,6 +23,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IterbusMovilidad">
         <activity
+            android:name=".Inicio"
+            android:exported="false" />
+        <activity
             android:name=".Formulario"
             android:exported="false" />
         <activity
@@ -41,7 +44,7 @@
             android:name=".Emergencia"
             android:exported="false" />
         <activity
-            android:name=".IniciarSesion"
+            android:name=".Incidente"
             android:exported="false" />
         <activity
             android:name=".Otros"
@@ -53,13 +56,10 @@
             android:name=".Perfil"
             android:exported="false" />
         <activity
-            android:name=".Inicio"
-            android:exported="false" />
-        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity
-            android:name=".Incidente"
+            android:name=".IniciarSesion"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,9 +69,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
