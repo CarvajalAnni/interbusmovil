@@ -137,18 +137,16 @@ public class IniciarSesion extends AppCompatActivity {
             }
         }
     }
-
-
-    @Override
-    protected void onStart() {
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) { //si no es null el usuario ya esta logueado
-            //mover al usuario al dashboard
-            Intent dashboardActivity = new Intent(IniciarSesion.this, Dashboard.class);
-            startActivity(dashboardActivity);
+        @Override
+        protected void onStart() {
+            FirebaseUser user = mAuth.getCurrentUser();
+            if (user != null) { //si no es null el usuario ya esta logueado
+                //mover al usuario al dashboard
+                Intent dashboardActivity = new Intent(IniciarSesion.this, Dashboard.class);
+                startActivity(dashboardActivity);
+            }
+            super.onStart();
         }
-        super.onStart();
-    }
 
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
