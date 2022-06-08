@@ -68,17 +68,7 @@ public class IniciarSesion extends AppCompatActivity {
 
             }
         });
-/*
-        btningresar = findViewById(R.id.button);
-        btningresar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(IniciarSesion.this, Inicio.class);
-                startActivity(intent);
 
-            }
-        });
-        */
         TxtOlvide = findViewById(R.id.txtOlvideCon);
         TxtOlvide.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,7 +105,7 @@ public class IniciarSesion extends AppCompatActivity {
                 if (!(validarEmail(correoString)) || !(validarcontrasenas(contraaseniaString))) {
                     //
                 } else {
-                    Intent intent = new Intent(IniciarSesion.this, Dashboard.class);
+                    Intent intent = new Intent(IniciarSesion.this, Inicio.class);
                     startActivity(intent);
                 }
             }
@@ -148,16 +138,17 @@ public class IniciarSesion extends AppCompatActivity {
         }
     }
 
-        @Override
-        protected void onStart() {
-            FirebaseUser user = mAuth.getCurrentUser();
-            if (user != null) { //si no es null el usuario ya esta logueado
-                //mover al usuario al dashboard
-                Intent dashboardActivity = new Intent(IniciarSesion.this, Dashboard.class);
-                startActivity(dashboardActivity);
-            }
-            super.onStart();
+
+    @Override
+    protected void onStart() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) { //si no es null el usuario ya esta logueado
+            //mover al usuario al dashboard
+            Intent dashboardActivity = new Intent(IniciarSesion.this, Dashboard.class);
+            startActivity(dashboardActivity);
         }
+        super.onStart();
+    }
 
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
