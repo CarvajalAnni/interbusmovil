@@ -60,7 +60,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     private Uri imageUri = null;
     LocationManager locationManager;
     Location location;
-    private static final int VALUE_UBI = 200;
+    private static final int VALUE_TOTAL = 200;
 
 
     @Override
@@ -68,17 +68,21 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
+
         autoCompleteTextView = findViewById(R.id.autoCompleteTextView5);
+
         adapterItems = new ArrayAdapter<String>(this,R.layout.lista_nivel_gravedad, items);
+
         autoCompleteTextView.setAdapter(adapterItems);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(getApplicationContext(),"Item"+item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Nivel gravedad: "+item, Toast.LENGTH_SHORT).show();
             }
         });
         referenciar();
+
         if(Incidente.bandera == 1){
             TxtGravedad.setVisibility(View.GONE);
             formulario();
@@ -88,7 +92,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     }
 
     private void referenciar() {
-        LnTomarFoto=findViewById(R.id.lnAmbulancia);
+        LnTomarFoto=findViewById(R.id.lnTomarfoto);
         LnSubirFoto=findViewById(R.id.lnOtro);
         LnUbicacion=findViewById(R.id.lnUbicacion);
         LnReportar=findViewById(R.id.btnReporte);
@@ -100,10 +104,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     }
 
     private void formulario() {
+
         Permiso();
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
             return;
         }
         location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
@@ -127,20 +131,23 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
     private void Permiso() {
 
-        int PermisoUbi = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
-        if(PermisoUbi == PackageManager.PERMISSION_DENIED){
-            if (ActivityCompat.shouldShowRequestPermissionRationale(Formulario.this, Manifest.permission.ACCESS_FINE_LOCATION)){
+        int estadoPermisol = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+        int estadoPermisoal = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int estadoPermisoc = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+        int estadoPermisophone = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
 
-            }else{
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, VALUE_UBI);
+            if (estadoPermisol == PackageManager.PERMISSION_GRANTED && estadoPermisoal == PackageManager.PERMISSION_GRANTED && estadoPermisoc == PackageManager.PERMISSION_GRANTED && estadoPermisophone == PackageManager.PERMISSION_GRANTED) {
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE}, VALUE_TOTAL);
+
             }
         }
-    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case VALUE_UBI: {
+            case VALUE_TOTAL: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     referenciar();
                 } else {
@@ -156,7 +163,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.lnAmbulancia:
+            case R.id.lnTomarfoto:
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 // if (intent.resolveActivity(getPackageManager()) != null) {
                 File imagenArchivo = null;
@@ -180,10 +187,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 Intent intent2 = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 intent2.setType("image/*");
                 startActivityForResult(intent2.createChooser(intent2, "Seleccione la aplicacion"), 10);
-
-                break;
-
-            case R.id.lnUbicacion:
 
                 break;
 
