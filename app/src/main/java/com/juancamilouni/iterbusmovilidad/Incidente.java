@@ -15,10 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Incidente extends AppCompatActivity{
-    ImageView imgColision, imgViaCerrada, imgFalla,imgObras ,imgRetencion ,imgCarrilCortado ,imgAmbulancia , imgOtro,imgPolicia;
-    TextView txtColision, txtViaCerrada, txtFalla,txtObras ,txtRetencion ,txtCarrilCortado ,txtAmbulancia , txtOtro,txtPolicia;
     LinearLayout lnColision, lnViaCerrada, lnFalla, lnObras, lnRetencion, lnCarrilCortado, lnAmbulancia, lnOtro, lnPolicia;
-    Button but;
+    public static int bandera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +25,7 @@ public class Incidente extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_incidente);
         referenciar();
+
 
     }
 
@@ -44,7 +43,8 @@ public class Incidente extends AppCompatActivity{
         lnCarrilCortado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Incidente.this, Carrilcortado.class);
+                bandera=1;
+                Intent intent = new Intent(Incidente.this, Formulario.class);
                 startActivity(intent);
             }
         });
@@ -52,7 +52,8 @@ public class Incidente extends AppCompatActivity{
         lnColision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Incidente.this, Colision.class);
+                bandera=2;
+                Intent intent = new Intent(Incidente.this, Formulario.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +61,8 @@ public class Incidente extends AppCompatActivity{
         lnViaCerrada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Incidente.this,  Objetoenvia.class);
+                bandera=1;
+                Intent intent = new Intent(Incidente.this,  Formulario.class);
                 startActivity(intent);
             }
         });
@@ -68,7 +70,8 @@ public class Incidente extends AppCompatActivity{
         lnFalla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Incidente.this, Fallasmecanicas.class);
+                bandera=2;
+                Intent intent = new Intent(Incidente.this, Formulario.class);
                 startActivity(intent);
             }
         });
@@ -76,7 +79,8 @@ public class Incidente extends AppCompatActivity{
         lnObras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Incidente.this,  Objetoenvia.class);
+                bandera=1;
+                Intent intent = new Intent(Incidente.this,  Formulario.class);
                 startActivity(intent);
             }
         });
@@ -84,7 +88,8 @@ public class Incidente extends AppCompatActivity{
         lnRetencion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Incidente.this,  Retencion.class);
+                bandera=1;
+                Intent intent = new Intent(Incidente.this,  Formulario.class);
                 startActivity(intent);
             }
         });

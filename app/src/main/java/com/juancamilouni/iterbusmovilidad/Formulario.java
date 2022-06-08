@@ -20,15 +20,20 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -41,52 +46,108 @@ import Model.Datos;
 import Model.Observaciones;
 import Model.Ubicacion;
 
-public class Retencion extends AppCompatActivity implements View.OnClickListener {
-
-    Button btntomarfotoretencion,btncargarretencion, btnubicacionretencion,btnincidenteretencion;
-    EditText textRet;
-
-    ImageView imgretencion;
+public class Formulario extends AppCompatActivity implements View.OnClickListener {
+    String[] items = {"Menor", "Moderada", "Seria", "Grave", "Crítica", "Máxima"};
+    AutoCompleteTextView autoCompleteTextView;
+    ArrayAdapter<String> adapterItems;
+    LinearLayout LnTomarFoto, LnSubirFoto, LnUbicacion, LnReportar;
+    ImageView ImgFotoReporte;
+    TextInputLayout TxtGravedad;
+    TextView TxtLatitud, TxtLongitud;
+    EditText EtxtObservaciones;
     int indice = 0;
-    String id, urlObtenida, stringlati,stringlongi;
+    String id, urlObtenida,stringlati,stringlongi;
     private Uri imageUri = null;
-
-    //UBICACION
-    TextView latitud, longitud;
     LocationManager locationManager;
     Location location;
-    private static final int VALUE_UBI = 200;
+    private static final int VALUE_TOTAL = 200;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retencion);
+        setContentView(R.layout.activity_formulario);
 
-        imgretencion= findViewById(R.id.imgRetencion);
+        autoCompleteTextView = findViewById(R.id.autoCompleteTextView5);
 
-        referenciar();
-        permiso();
-    }
+        adapterItems = new ArrayAdapter<String>(this,R.layout.lista_nivel_gravedad, items);
 
-
-
-    private void permiso() {
-
-        int PermisoUbi = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
-        if(PermisoUbi == PackageManager.PERMISSION_DENIED){
-            if (ActivityCompat.shouldShowRequestPermissionRationale(Retencion.this, Manifest.permission.ACCESS_FINE_LOCATION)){
-
-            }else{
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, VALUE_UBI);
+        autoCompleteTextView.setAdapter(adapterItems);
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String item = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(getApplicationContext(),"Nivel gravedad: "+item, Toast.LENGTH_SHORT).show();
             }
+        });
+        referenciar();
+
+        if(Incidente.bandera == 1){
+            TxtGravedad.setVisibility(View.GONE);
+            formulario();
+        } else {
+            formulario();
         }
     }
+
+    private void referenciar() {
+        LnTomarFoto=findViewById(R.id.lnTomarfoto);
+        LnSubirFoto=findViewById(R.id.lnOtro);
+        LnUbicacion=findViewById(R.id.lnUbicacion);
+        LnReportar=findViewById(R.id.btnReporte);
+        ImgFotoReporte=findViewById(R.id.imgColicion);
+        TxtGravedad=findViewById(R.id.textInputLayout3);
+        TxtLatitud=findViewById(R.id.textlatitudcolision);
+        TxtLongitud=findViewById(R.id.textlongitudcolision);
+        EtxtObservaciones=findViewById(R.id.textObservacionC);
+    }
+
+    private void formulario() {
+
+        Permiso();
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        LnUbicacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TxtLatitud.setText(""+ String.valueOf(location.getLatitude()));
+                TxtLongitud.setText(""+String.valueOf(location.getLongitude()));
+
+                //convertir a string
+                stringlati = TxtLatitud.getText().toString();
+                stringlongi = TxtLongitud.getText().toString();
+            }
+        });
+        LnSubirFoto.setOnClickListener(this);
+        LnReportar.setOnClickListener(this);
+
+
+
+    }
+
+    private void Permiso() {
+
+        int estadoPermisol = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+        int estadoPermisoal = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int estadoPermisoc = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+        int estadoPermisophone = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
+
+            if (estadoPermisol == PackageManager.PERMISSION_GRANTED && estadoPermisoal == PackageManager.PERMISSION_GRANTED && estadoPermisoc == PackageManager.PERMISSION_GRANTED && estadoPermisophone == PackageManager.PERMISSION_GRANTED) {
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE}, VALUE_TOTAL);
+
+            }
+        }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case VALUE_UBI: {
+            case VALUE_TOTAL: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     referenciar();
                 } else {
@@ -98,53 +159,12 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
         }
 
     }
-    private void referenciar() {
-        btntomarfotoretencion = findViewById(R.id.btnTomarFotoRet);
-        btntomarfotoretencion.setOnClickListener(this);
-
-
-
-        //UBICACION
-        latitud = findViewById(R.id.textlatitudretencion);
-        longitud = findViewById(R.id.textlongitudretencion);
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            return;
-        }
-        location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-        btnubicacionretencion = findViewById(R.id.btnUbicacionRet);
-        btnubicacionretencion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                latitud.setText(""+ String.valueOf(location.getLatitude()));
-                longitud.setText(""+String.valueOf(location.getLongitude()));
-
-                //convertir a string
-                stringlati = latitud.getText().toString();
-                stringlongi = longitud.getText().toString();
-
-            }
-        });
-
-        btncargarretencion = findViewById(R.id.btnCargarRet);
-        btncargarretencion.setOnClickListener(this);
-
-        textRet = findViewById(R.id.textObservacionRet);
-
-        btnincidenteretencion = findViewById(R.id.btnReportarIncidenteRet);
-        btnincidenteretencion.setOnClickListener(this);
-    }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-
-            case R.id.btnTomarFotoRet:
-
+        switch (v.getId()){
+            case R.id.lnTomarfoto:
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-
                 // if (intent.resolveActivity(getPackageManager()) != null) {
                 File imagenArchivo = null;
                 try {
@@ -153,15 +173,16 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
                     x.printStackTrace();
                 }
 
-                if (imagenArchivo != null) {
-                    Uri fotoUri = FileProvider.getUriForFile(Retencion.this, "com.juancamilouni.iterbusmovilidad", imagenArchivo);
+                //if (imagenArchivo != null) {
+                    Uri fotoUri = FileProvider.getUriForFile(Formulario.this, "com.juancamilouni.iterbusmovilidad", imagenArchivo);
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, fotoUri);
                     startActivityForResult(intent, 1);
                     imageUri = fotoUri;
-                }
+                //}
 
                 break;
-            case R.id.btnCargarRet:
+
+            case R.id.lnOtro:
 
                 Intent intent2 = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 intent2.setType("image/*");
@@ -169,17 +190,13 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
 
                 break;
 
-            case R.id.btnUbicacionRet:
-
-                break;
-
-            case R.id.btnReportarIncidenteRet:
+            case R.id.btnReporte:
 
                 indice = indice + 1;
                 id = String.valueOf(indice);
 
                 long timestamp = System.currentTimeMillis();
-                String filePathAndName = "Retencion/" + timestamp;
+                String filePathAndName = "Colision/" + timestamp;
 
                 StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
                 storageReference.putFile(imageUri)
@@ -188,7 +205,7 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
                             while (!uriTask.isSuccessful()) ;
                             String uploadedImageUri = "" + uriTask.getResult();
                             //sendList(uploadedImageUri, timestamp);
-                            Toast.makeText(Retencion.this, "Reporte enviado correctamente ", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Formulario.this, "Reporte enviado correctamente ", Toast.LENGTH_LONG).show();
                             //urlimagen.setText(uploadedImageUri);
 
                             //String Url = urlimagen.getText().toString();
@@ -196,13 +213,13 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
                             Datos datos = new Datos(uploadedImageUri);
 
                             FirebaseFirestore db = FirebaseFirestore.getInstance();
-                            db.collection("RetencionUrl")
+                            db.collection("ColicionUrl")
                                     .add(datos)
                                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                         @Override
                                         public void onSuccess(DocumentReference documentReference) {
                                             Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-                                            Toast.makeText(Retencion.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
                                         }
                                     })
 
@@ -210,13 +227,13 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
                                             Log.w(TAG, "Error adding document", e);
-                                            Toast.makeText(Retencion.this, "Datos f", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
                                         }
                                     });
 
                         }).addOnFailureListener(e -> {
 
-                        });
+                });
 
                 // guardar ubicacion
 
@@ -225,13 +242,13 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
                 Ubicacion ubicacion = new Ubicacion(stringlati, stringlongi);
 
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
-                db.collection("UbicacionRetencion")
+                db.collection("UbicacionColi")
                         .add(ubicacion)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-                                Toast.makeText(Retencion.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
                             }
                         })
 
@@ -239,22 +256,23 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Log.w(TAG, "Error adding document", e);
-                                Toast.makeText(Retencion.this, "Datos f", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
                             }
                         });
 
+
                 //guardar observaciones
-                String Observaciones = textRet.getText().toString();
+                String Observaciones = EtxtObservaciones.getText().toString();
 
-                Observaciones observaciones = new Observaciones(Observaciones);
+                Model.Observaciones observaciones = new Observaciones(Observaciones);
 
-                db.collection("ObservacionesRetencion")
+                db.collection("ObservacionesColicion")
                         .add(observaciones)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-                                Toast.makeText(Retencion.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
                             }
                         })
 
@@ -262,14 +280,13 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Log.w(TAG, "Error adding document", e);
-                                Toast.makeText(Retencion.this, "Datos f", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
                             }
                         });
 
                 break;
 
         }
-
     }
 
     private File crearImagen() throws IOException {
@@ -283,20 +300,21 @@ public class Retencion extends AppCompatActivity implements View.OnClickListener
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Retencion.super.onActivityResult(requestCode, resultCode, data);
+        Formulario.super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 10) {
             //Uri path= data.getData();
             //img.setImageURI(path);
 
             assert data != null;
             imageUri = data.getData();
-            imgretencion.setImageURI(data.getData());
+            ImgFotoReporte.setImageURI(data.getData());
 
         }else if(requestCode == 1 && resultCode == RESULT_OK) {
             Uri uri = Uri.parse(urlObtenida);
-            imgretencion.setImageURI(uri);
+            ImgFotoReporte.setImageURI(uri);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 
 }

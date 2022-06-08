@@ -13,6 +13,7 @@
     <uses-permission android:name="android.hardware.location.gps" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +22,12 @@
         android:roundIcon="@drawable/interbus"
         android:supportsRtl="true"
         android:theme="@style/Theme.IterbusMovilidad">
+        <activity
+            android:name=".Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".Formulario"
+            android:exported="false" />
         <activity
             android:name=".Despachador"
             android:exported="false" />
@@ -37,28 +44,10 @@
             android:name=".Emergencia"
             android:exported="false" />
         <activity
-            android:name=".Carrilcortado"
-            android:exported="false" />
-        <activity
-            android:name=".Objetoenvia"
-            android:exported="false" />
-        <activity
             android:name=".Incidente"
             android:exported="false" />
         <activity
-            android:name=".Retencion"
-            android:exported="false" />
-        <activity
             android:name=".Otros"
-            android:exported="false" />
-        <activity
-            android:name=".Obras"
-            android:exported="false" />
-        <activity
-            android:name=".Fallasmecanicas"
-            android:exported="false" />
-        <activity
-            android:name=".Colision"
             android:exported="false" />
         <activity
             android:name=".Ayuda"
@@ -67,23 +56,20 @@
             android:name=".Perfil"
             android:exported="false" />
         <activity
-            android:name=".Inicio"
-            android:exported="false" />
-        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity
             android:name=".IniciarSesion"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
