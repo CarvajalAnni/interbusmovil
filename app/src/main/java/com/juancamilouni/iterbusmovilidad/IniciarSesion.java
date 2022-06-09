@@ -90,6 +90,8 @@ public class IniciarSesion extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
     }
+    @Override
+    public void onBackPressed() { moveTaskToBack(true); }
 
     private void referenciar() {
         correo = findViewById(R.id.idTxtCorreo);
