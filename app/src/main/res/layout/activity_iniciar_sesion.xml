@@ -7,7 +7,7 @@
 
 
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".IniciarSesion">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -76,18 +76,28 @@
         app:layout_constraintVertical_bias="0.03"
         app:srcCompat="@drawable/logoazul" />
 
+
         <ImageButton
             android:id="@+id/bntGoogle"
-            android:layout_width="39dp"
-            android:layout_height="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:background="@drawable/goo"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/button"
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="@+id/button"
-            app:layout_constraintTop_toBottomOf="@+id/button"
-            app:layout_constraintVertical_bias="0.714" />
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresa con gmail"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/bntGoogle"
+            app:layout_constraintStart_toStartOf="@+id/bntGoogle"
+            app:layout_constraintTop_toBottomOf="@+id/bntGoogle" />
 
         <Button
             android:id="@+id/button"
