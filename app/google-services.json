@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "197114834442-qr9et77odbb7g3ndd45fdg68ng5v7hcn.apps.googleusercontent.com",
+          "client_id": "197114834442-ua4mmgtj8qb000eokbmk1hhjcf1v2e7n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.juancamilouni.iterbusmovilidad",
-            "certificate_hash": "f6cdb0e7cd6f0dcc0d4a71b2a9d176e8bf0279d4"
+            "certificate_hash": "d95091e91870e78c612deff31440bfaedf883b55"
           }
         },
         {

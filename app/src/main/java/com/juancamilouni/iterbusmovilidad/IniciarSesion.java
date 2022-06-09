@@ -73,7 +73,7 @@ public class IniciarSesion extends AppCompatActivity {
         TxtOlvide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(IniciarSesion.this, Ayuda.class);
+                Intent intent = new Intent(IniciarSesion.this, olvidarcon.class);
                 startActivity(intent);
 
             }
@@ -90,6 +90,8 @@ public class IniciarSesion extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
     }
+    @Override
+    public void onBackPressed() { moveTaskToBack(true); }
 
     private void referenciar() {
         correo = findViewById(R.id.idTxtCorreo);
@@ -107,6 +109,7 @@ public class IniciarSesion extends AppCompatActivity {
                 } else {
                     Intent intent = new Intent(IniciarSesion.this, Inicio.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });
@@ -142,7 +145,7 @@ public class IniciarSesion extends AppCompatActivity {
             FirebaseUser user = mAuth.getCurrentUser();
             if (user != null) { //si no es null el usuario ya esta logueado
                 //mover al usuario al dashboard
-                Intent dashboardActivity = new Intent(IniciarSesion.this, Dashboard.class);
+                Intent dashboardActivity = new Intent(IniciarSesion.this, Inicio.class);
                 startActivity(dashboardActivity);
             }
             super.onStart();
@@ -159,7 +162,7 @@ public class IniciarSesion extends AppCompatActivity {
                             Log.d(TAG, "signInWithCredential:success");
                             //FirebaseUser user = mAuth.getCurrentUser();
 //Iniciar DASHBOARD u otra actividad luego del SigIn Exitoso
-                            Intent dashboardActivity = new Intent(IniciarSesion.this, Dashboard.class);
+                            Intent dashboardActivity = new Intent(IniciarSesion.this, Inicio.class);
                             startActivity(dashboardActivity);
                             IniciarSesion.this.finish();
 

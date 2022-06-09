@@ -24,6 +24,12 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.IterbusMovilidad">
         <activity
+            android:name=".verificarsi"
+            android:exported="false" />
+        <activity
+            android:name=".olvidarcon"
+            android:exported="false" />
+        <activity
             android:name=".Inicio"
             android:exported="false" />
         <activity
@@ -61,6 +67,9 @@
             android:exported="false" />
         <activity
             android:name=".IniciarSesion"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,9 +77,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"></activity>
 
 
         <service android:name=".Fcm" android:exported="false">

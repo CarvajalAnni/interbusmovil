@@ -72,7 +72,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     private Uri imageUri = null;
     LocationManager locationManager;
     Location location;
-    private static final int VALUE_TOTAL = 200;
+
 
 
     @Override
@@ -125,7 +125,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
     private void formulario() {
 
-        Permiso();
+
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -142,6 +142,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 stringlongi = TxtLongitud.getText().toString();
             }
         });
+        LnTomarFoto.setOnClickListener(this);
         LnSubirFoto.setOnClickListener(this);
         LnReportar.setOnClickListener(this);
 
@@ -149,36 +150,9 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
     }
 
-    private void Permiso() {
 
-        int estadoPermisol = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
-        int estadoPermisoal = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        int estadoPermisoc = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
-        int estadoPermisophone = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
 
-            if (estadoPermisol == PackageManager.PERMISSION_GRANTED && estadoPermisoal == PackageManager.PERMISSION_GRANTED && estadoPermisoc == PackageManager.PERMISSION_GRANTED && estadoPermisophone == PackageManager.PERMISSION_GRANTED) {
-            } else {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE}, VALUE_TOTAL);
 
-            }
-        }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case VALUE_TOTAL: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    referenciar();
-                } else {
-                    Toast.makeText(this, "Para acceder debes aceptar los permisos", Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
-
-        }
-
-    }
 
     @Override
     public void onClick(View v) {
@@ -193,12 +167,12 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                     x.printStackTrace();
                 }
 
-                //if (imagenArchivo != null) {
+                if (imagenArchivo != null) {
                     Uri fotoUri = FileProvider.getUriForFile(Formulario.this, "com.juancamilouni.iterbusmovilidad", imagenArchivo);
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, fotoUri);
                     startActivityForResult(intent, 1);
                     imageUri = fotoUri;
-                //}
+                }
 
                 break;
 
@@ -303,7 +277,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                             break;
 
             case R.id.btnReporteDespachador:
-                llamarespecifico();
+//                llamarespecifico();
                 break;
 
         }
@@ -370,37 +344,37 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    private void llamarespecifico() {
-        RequestQueue myrequest = Volley.newRequestQueue(getApplicationContext());
-        JSONObject json = new JSONObject();
-
-        try {
-            // tomar el valor de token
-            String token = "d5qwpYVGTjmbVtyJqoLnSe:APA91bHZYhLjNt8IbHrh-LhrisdiHMS5akfxA8gVAPFIHnFfgpLYV4B-7fpz8hc9PqtXi4NCB5tAcoAw-l61q4EZN5dAIPSrPiYlJ-IsqLEcZdn8rUIY70Cz66_-atSyh4fNU9F3Y7SK";
-            json.put("to", token);
-            JSONObject notificacion = new JSONObject();
-
-            // notificacion que se recibe
-            notificacion.put("titulo", "Interbus");
-            notificacion.put("detalle", "Un conductor te ha notificado");
-
-            json.put("data",notificacion);
-
-            String URL = "https://fcm.googleapis.com/fcm/send";
-            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
-                @Override
-                public Map<String, String> getHeaders(){
-                    Map<String,String> header = new HashMap<>();
-                    header.put("content-type", "application/json");
-                    header.put("authorization", "key=AAAALeT1rgo:APA91bH4bT4E70reoTjsbCPH63nnoZN2ioq_LvuU3KZgHngw48wJWqkrBxLmvL3OSDIwu0zsLBM54J2ovzPKh08tVEHhUjs-YYUkukMAKVzQHcPgvL6Itw6lz3d43NcgBm3KkydbZOiS");// key configuraciones del cloud menssagin
-
-                    return header;
-                }
-            };
-            myrequest.add(request);
-
-        }catch (JSONException e){
-            e.printStackTrace();
-        }
-    }
+//    private void llamarespecifico() {
+//        RequestQueue myrequest = Volley.newRequestQueue(getApplicationContext());
+//        JSONObject json = new JSONObject();
+//
+//        try {
+//            // tomar el valor de token
+//            String token = "d5qwpYVGTjmbVtyJqoLnSe:APA91bHZYhLjNt8IbHrh-LhrisdiHMS5akfxA8gVAPFIHnFfgpLYV4B-7fpz8hc9PqtXi4NCB5tAcoAw-l61q4EZN5dAIPSrPiYlJ-IsqLEcZdn8rUIY70Cz66_-atSyh4fNU9F3Y7SK";
+//            json.put("to", token);
+//            JSONObject notificacion = new JSONObject();
+//
+//            // notificacion que se recibe
+//            notificacion.put("titulo", "Interbus");
+//            notificacion.put("detalle", "Un conductor te ha notificado");
+//
+//            json.put("data",notificacion);
+//
+//            String URL = "https://fcm.googleapis.com/fcm/send";
+//            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
+//                @Override
+//                public Map<String, String> getHeaders(){
+//                    Map<String,String> header = new HashMap<>();
+//                    header.put("content-type", "application/json");
+//                    header.put("authorization", "key=AAAALeT1rgo:APA91bH4bT4E70reoTjsbCPH63nnoZN2ioq_LvuU3KZgHngw48wJWqkrBxLmvL3OSDIwu0zsLBM54J2ovzPKh08tVEHhUjs-YYUkukMAKVzQHcPgvL6Itw6lz3d43NcgBm3KkydbZOiS");// key configuraciones del cloud menssagin
+//
+//                    return header;
+//                }
+//            };
+//            myrequest.add(request);
+//
+//        }catch (JSONException e){
+//            e.printStackTrace();
+//        }
+//    }
 }
