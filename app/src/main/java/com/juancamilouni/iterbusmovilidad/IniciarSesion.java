@@ -63,22 +63,12 @@ public class IniciarSesion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //signIn();
+                signIn();
 
 
             }
         });
-/*
-        btningresar = findViewById(R.id.button);
-        btningresar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(IniciarSesion.this, Inicio.class);
-                startActivity(intent);
 
-            }
-        });
-        */
         TxtOlvide = findViewById(R.id.txtOlvideCon);
         TxtOlvide.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +80,7 @@ public class IniciarSesion extends AppCompatActivity {
         });
 
 
-/*
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -98,7 +88,7 @@ public class IniciarSesion extends AppCompatActivity {
         mGoogleSignInCliebt = GoogleSignIn.getClient(this, gso);
 
         mAuth = FirebaseAuth.getInstance();
-*/
+
     }
 
     private void referenciar() {
@@ -147,8 +137,6 @@ public class IniciarSesion extends AppCompatActivity {
             }
         }
     }
-
-    /*
         @Override
         protected void onStart() {
             FirebaseUser user = mAuth.getCurrentUser();
@@ -159,7 +147,7 @@ public class IniciarSesion extends AppCompatActivity {
             }
             super.onStart();
         }
-    */
+
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)

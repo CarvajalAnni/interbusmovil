@@ -4,15 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class Inicio extends AppCompatActivity {
 
+    ImageView imgemergencia;
     Button button2;
 
     @Override
@@ -23,6 +26,16 @@ public class Inicio extends AppCompatActivity {
     }
 
     private void referenciar() {
+
+        imgemergencia = findViewById(R.id.imgEmergencia);
+        imgemergencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(Intent.ACTION_CALL,
+                        Uri.parse("tel:123"));
+                startActivity(intent1);
+            }
+        });
         button2 = findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
