@@ -3,10 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
+        <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_ayuda.xml" value="0.24583333333333332" />
+        <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.165625" />
+        <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.24583333333333332" />
+        <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_olvidar_con.xml" value="0.24583333333333332" />
+=======
         <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_emergencia.xml" value="0.3078125" />
         <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.3078125" />
         <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_incidente.xml" value="0.3078125" />
         <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.1" />
+<<<<<<< HEAD
+        <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_inicio.xml" value="0.22" />
+        <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_otros.xml" value="0.17447916666666666" />
+        <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_perfil.xml" value="0.17447916666666666" />
+        <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/lista_nivel_gravedad.xml" value="0.17447916666666666" />
+=======
+>>>>>>> 759a18276229f84a229d48107f9df592bd23bb2b
+>>>>>>> 7153656f4623d4639dda932d63c3d6413c1fb3cf
         <entry key="..\:/Users/ADMIN/Desktop/Iterbusmovilidad/app/src/main/res/layout-land/activity_fallasmecanicas.xml" value="0.3148148148148148" />
         <entry key="..\:/Users/ADMIN/Desktop/Iterbusmovilidad/app/src/main/res/layout/activity_carril_cortado.xml" value="0.22" />
         <entry key="..\:/Users/ADMIN/Desktop/Iterbusmovilidad/app/src/main/res/layout/activity_colision.xml" value="0.371875" />
@@ -14,6 +28,8 @@
         <entry key="..\:/Users/ADMIN/Desktop/Iterbusmovilidad/app/src/main/res/layout/activity_objetoenvia.xml" value="0.371875" />
         <entry key="..\:/Users/ADMIN/Desktop/Iterbusmovilidad/app/src/main/res/layout/activity_obras.xml" value="0.2821557971014493" />
         <entry key="..\:/Users/ADMIN/Desktop/Iterbusmovilidad/app/src/main/res/layout/activity_retencion.xml" value="0.371875" />
+        <entry key="..\:/Users/ADMIN/Desktop/interbus/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.3098958333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/interbus/interbusmovil/app/src/main/res/layout/activity_inicio.xml" value="0.3494791666666667" />
         <entry key="..\:/Users/Administrador/Desktop/Iterbusmovilidad/app/src/main/res/layout/activity_carril_cortado.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Administrador/Desktop/Iterbusmovilidad/app/src/main/res/layout/activity_colision.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Administrador/Desktop/Iterbusmovilidad/app/src/main/res/layout/activity_fallasmecanicas.xml" value="0.3333333333333333" />

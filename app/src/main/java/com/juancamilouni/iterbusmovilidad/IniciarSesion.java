@@ -107,6 +107,7 @@ public class IniciarSesion extends AppCompatActivity {
                 } else {
                     Intent intent = new Intent(IniciarSesion.this, Inicio.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });
