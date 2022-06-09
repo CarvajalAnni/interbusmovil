@@ -73,7 +73,7 @@ public class IniciarSesion extends AppCompatActivity {
         TxtOlvide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(IniciarSesion.this, Ayuda.class);
+                Intent intent = new Intent(IniciarSesion.this, olvidarcon.class);
                 startActivity(intent);
 
             }

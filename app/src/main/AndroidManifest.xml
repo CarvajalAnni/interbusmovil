@@ -23,6 +23,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IterbusMovilidad">
         <activity
+            android:name=".verificarsi"
+            android:exported="false" />
+        <activity
+            android:name=".olvidarcon"
+            android:exported="false" />
+        <activity
             android:name=".Inicio"
             android:exported="false" />
         <activity
@@ -70,7 +76,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
 
         <provider
             android:name="androidx.core.content.FileProvider"
