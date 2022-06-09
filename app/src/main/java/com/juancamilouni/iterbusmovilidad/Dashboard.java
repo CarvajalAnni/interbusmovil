@@ -37,16 +37,6 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        TimerTask espera = new TimerTask() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(Dashboard.this,Inicio.class);
-                startActivity(intent);
-                finish();
-            }
-        };
-        Timer timer = new Timer();
-        timer.schedule(espera, 2500);
 
 
 
@@ -85,7 +75,7 @@ public class Dashboard extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         //Abrir MainActivity con SigIn button
                         if(task.isSuccessful()){
-                            Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
+                            Intent mainActivity = new Intent(getApplicationContext(), Inicio.class);
                             startActivity(mainActivity);
                             Dashboard.this.finish();
                         }else{

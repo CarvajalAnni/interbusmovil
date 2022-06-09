@@ -21,6 +21,11 @@ public class Inicio extends AppCompatActivity {
         setContentView(R.layout.activity_inicio);
         referenciar();
     }
+    @Override
+    public void onBackPressed() { moveTaskToBack(true); }
+
+
+
 
     private void referenciar() {
         button2 = findViewById(R.id.button2);
@@ -55,7 +60,7 @@ public class Inicio extends AppCompatActivity {
                 startActivity(intent1);
                 return true;
             case R.id.CerrarSesion:
-                Intent intent3 = new Intent(Inicio.this, IniciarSesion.class);
+                Intent intent3 = new Intent(Inicio.this, Dashboard.class);
                 startActivity(intent3);
                 return true;
         }
