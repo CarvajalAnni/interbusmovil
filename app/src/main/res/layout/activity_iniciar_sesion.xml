@@ -78,8 +78,8 @@
 
         <ImageButton
             android:id="@+id/bntGoogle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="39dp"
+            android:layout_height="32dp"
             android:background="@drawable/goo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/button"
@@ -88,18 +88,18 @@
             app:layout_constraintTop_toBottomOf="@+id/button"
             app:layout_constraintVertical_bias="0.714" />
 
+
         <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
 
-        android:text="Ingresar"
-        app:layout_constraintEnd_toEndOf="@+id/txtOlvideCon"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="@+id/txtOlvideCon"
-        app:layout_constraintTop_toBottomOf="@+id/txtOlvideCon" />
-
+            android:text="Ingresar"
+            app:layout_constraintEnd_toEndOf="@+id/txtOlvideCon"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/txtOlvideCon"
+            app:layout_constraintTop_toBottomOf="@+id/txtOlvideCon" />
 
         <TextView
         android:id="@+id/textView9"
