@@ -75,7 +75,7 @@ public class Dashboard extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         //Abrir MainActivity con SigIn button
                         if(task.isSuccessful()){
-                            Intent mainActivity = new Intent(getApplicationContext(), Inicio.class);
+                            Intent mainActivity = new Intent(getApplicationContext(), IniciarSesion.class);
                             startActivity(mainActivity);
                             Dashboard.this.finish();
                         }else{
