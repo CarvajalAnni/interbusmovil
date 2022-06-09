@@ -35,7 +35,14 @@ public class Ayuda extends AppCompatActivity {
 
     private void referenciar() {
         btnAtras = findViewById(R. id. btnatrasflecha);
-        //antigua=findViewById(R.id.texContraseñaAntigua);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Ayuda.this, Inicio.class);
+                startActivity(intent);
+            }
+        });
+        antigua=findViewById(R.id.idTxtconAn);
         nueva=findViewById(R.id.idTxtconnu);
         repetir=findViewById(R.id.textconfirm);
         btnguargar=findViewById(R.id.btnCambiarContraseña);
@@ -45,11 +52,11 @@ public class Ayuda extends AppCompatActivity {
 
 
 
-                        //if (antigua.length() < 10 ){
-                          //  antigua.setError("Contraseña no anterior");
-                        //}else{
-                          //  antigua.setError(null);
-                        //}
+                        if (antigua.length() < 10 ){
+                            antigua.setError("Contraseña no anterior");
+                        }else{
+                            antigua.setError(null);
+                        }
                         contrasenas=nueva.getText().toString();
 
                         contrasenas2=repetir.getText().toString();

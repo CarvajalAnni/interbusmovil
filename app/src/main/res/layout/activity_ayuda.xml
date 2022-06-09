@@ -30,22 +30,47 @@
         app:layout_constraintVertical_bias="0.033"
         app:srcCompat="@drawable/interbus" />
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/texContraseñaAntigua"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="297dp"
         android:layout_height="79dp"
-        android:layout_marginTop="44dp"
-        android:hint="Confirma Tu nueva Contraseña"
+        android:hint="Ingresa tu contraseña Antigua"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
         app:counterEnabled="true"
         app:counterMaxLength="30"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/idTxtconAn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:maxLength="30"
+            app:errorEnabled="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/texContraseñaNueva"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="297dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="24dp"
+        android:hint="Crea Tu nueva Contraseña"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/texContraseñaAntigua">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/idTxtconnu"
@@ -56,16 +81,30 @@
             app:errorEnabled="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <ImageView
         android:id="@+id/imagen3"
         android:layout_width="50dp"
         android:layout_height="50dp"
 
+        android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/texContraseñaAntigua"
         app:layout_constraintEnd_toStartOf="@+id/texContraseñaAntigua"
         app:layout_constraintTop_toTopOf="@+id/texContraseñaAntigua"
-        app:layout_constraintVertical_bias="0.379"
+        app:layout_constraintVertical_bias="0.482"
         app:srcCompat="@drawable/cerrado" />
+
+    <ImageView
+        android:id="@+id/imagen1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/texContraseñaNueva"
+        app:layout_constraintEnd_toStartOf="@+id/texContraseñaNueva"
+        app:layout_constraintTop_toTopOf="@+id/texContraseñaNueva"
+        app:layout_constraintVertical_bias="0.482"
+        app:srcCompat="@drawable/candadito" />
 
     <ImageView
         android:id="@+id/imagen4"
@@ -75,7 +114,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textRepetirContraseña"
         app:layout_constraintEnd_toStartOf="@+id/textRepetirContraseña"
         app:layout_constraintTop_toTopOf="@+id/textRepetirContraseña"
-        app:layout_constraintVertical_bias="0.235"
+        app:layout_constraintVertical_bias="0.647"
         app:srcCompat="@drawable/candadocargando" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -83,7 +122,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="84dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="128dp"
         android:hint="Confirma Tu nueva Contraseña"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusTopEnd="10dp"
@@ -93,7 +132,7 @@
         app:endIconMode="password_toggle"
 
         app:layout_constraintEnd_toEndOf="@+id/texContraseñaAntigua"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/texContraseñaAntigua"
         app:layout_constraintTop_toBottomOf="@+id/texContraseñaAntigua">
 
