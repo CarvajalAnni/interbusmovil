@@ -18,10 +18,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class Inicio extends AppCompatActivity {
 
     ImageView imgemergencia;
     Button button2;
+    FloatingActionButton btnnotificacion;
+
     private static final int VALUE_TOTAL = 200;
 
     @Override
@@ -66,6 +70,14 @@ public class Inicio extends AppCompatActivity {
 
     }
     private void referenciar() {
+
+        btnnotificacion = findViewById(R.id.fbottnotificacion);
+        btnnotificacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Inicio.this, "Notificaciones", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         imgemergencia = findViewById(R.id.imgEmergencia);
         imgemergencia.setOnClickListener(new View.OnClickListener() {

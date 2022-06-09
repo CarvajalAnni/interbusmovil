@@ -7,6 +7,22 @@
     tools:context=".Inicio">
 
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbottnotificacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+
+        android:backgroundTint="#54DCDC"
+        android:src="@drawable/al"
+        app:fabSize="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imgEmergencia"
         android:layout_width="wrap_content"
