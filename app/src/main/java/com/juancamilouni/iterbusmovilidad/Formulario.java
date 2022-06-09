@@ -24,23 +24,35 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import Model.Datos;
 import Model.Observaciones;
@@ -50,7 +62,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     String[] items = {"Menor", "Moderada", "Seria", "Grave", "Crítica", "Máxima"};
     AutoCompleteTextView autoCompleteTextView;
     ArrayAdapter<String> adapterItems;
-    LinearLayout LnTomarFoto, LnSubirFoto, LnUbicacion, LnReportar;
+    LinearLayout LnTomarFoto, LnSubirFoto, LnUbicacion, LnReportar,LnReportarDespachador;
     ImageView ImgFotoReporte;
     TextInputLayout TxtGravedad;
     TextView TxtLatitud, TxtLongitud;
@@ -68,6 +80,13 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("envieratodos").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+            }
+        });
 
         autoCompleteTextView = findViewById(R.id.autoCompleteTextView5);
 
@@ -101,6 +120,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         TxtLatitud=findViewById(R.id.textlatitudcolision);
         TxtLongitud=findViewById(R.id.textlongitudcolision);
         EtxtObservaciones=findViewById(R.id.textObservacionC);
+        LnReportarDespachador=findViewById(R.id.btnReporteDespachador);
     }
 
     private void formulario() {
@@ -191,7 +211,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 break;
 
             case R.id.btnReporte:
-
                 indice = indice + 1;
                 id = String.valueOf(indice);
 
@@ -230,7 +249,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                             Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
                                         }
                                     });
-
                         }).addOnFailureListener(e -> {
 
                 });
@@ -251,7 +269,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                 Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
                             }
                         })
-
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
@@ -259,8 +276,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                 Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
                             }
                         });
-
-
                 //guardar observaciones
                 String Observaciones = EtxtObservaciones.getText().toString();
 
@@ -275,7 +290,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                 Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
                             }
                         })
-
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
@@ -283,7 +297,13 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                 Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
                             }
                         });
+                            llamaratopico();
+                            Intent intentt = new Intent(Formulario.this, Incidente.class );
+                            startActivity(intentt);
+                            break;
 
+            case R.id.btnReporteDespachador:
+                llamarespecifico();
                 break;
 
         }
@@ -316,5 +336,71 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    private void llamaratopico() {
+        RequestQueue myrequest = Volley.newRequestQueue(getApplicationContext());
+        JSONObject json = new JSONObject();
 
+       /* String mensaje = especifico.getText().toString();
+        String title =  titulo.getText().toString();*/
+
+        try {
+            json.put("to", "/topics/"+"envieratodos");
+            JSONObject notificacion = new JSONObject();
+            notificacion.put("titulo", "Interbus");
+            notificacion.put("detalle", "Se Reporto un Incidente");
+
+            json.put("data",notificacion);
+
+            String URL = "https://fcm.googleapis.com/fcm/send";
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
+
+                @Override
+                public Map<String, String> getHeaders(){
+                    Map<String,String> header = new HashMap<>();
+                    header.put("content-type", "application/json");
+                    header.put("authorization", "key=AAAALeT1rgo:APA91bH4bT4E70reoTjsbCPH63nnoZN2ioq_LvuU3KZgHngw48wJWqkrBxLmvL3OSDIwu0zsLBM54J2ovzPKh08tVEHhUjs-YYUkukMAKVzQHcPgvL6Itw6lz3d43NcgBm3KkydbZOiS");// key configuraciones del cloud menssagin
+
+                    return header;
+                }
+            };
+            myrequest.add(request);
+
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+    }
+
+    private void llamarespecifico() {
+        RequestQueue myrequest = Volley.newRequestQueue(getApplicationContext());
+        JSONObject json = new JSONObject();
+
+        try {
+            // tomar el valor de token
+            String token = "d5qwpYVGTjmbVtyJqoLnSe:APA91bHZYhLjNt8IbHrh-LhrisdiHMS5akfxA8gVAPFIHnFfgpLYV4B-7fpz8hc9PqtXi4NCB5tAcoAw-l61q4EZN5dAIPSrPiYlJ-IsqLEcZdn8rUIY70Cz66_-atSyh4fNU9F3Y7SK";
+            json.put("to", token);
+            JSONObject notificacion = new JSONObject();
+
+            // notificacion que se recibe
+            notificacion.put("titulo", "Interbus");
+            notificacion.put("detalle", "Un conductor te ha notificado");
+
+            json.put("data",notificacion);
+
+            String URL = "https://fcm.googleapis.com/fcm/send";
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
+                @Override
+                public Map<String, String> getHeaders(){
+                    Map<String,String> header = new HashMap<>();
+                    header.put("content-type", "application/json");
+                    header.put("authorization", "key=AAAALeT1rgo:APA91bH4bT4E70reoTjsbCPH63nnoZN2ioq_LvuU3KZgHngw48wJWqkrBxLmvL3OSDIwu0zsLBM54J2ovzPKh08tVEHhUjs-YYUkukMAKVzQHcPgvL6Itw6lz3d43NcgBm3KkydbZOiS");// key configuraciones del cloud menssagin
+
+                    return header;
+                }
+            };
+            myrequest.add(request);
+
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+    }
 }
