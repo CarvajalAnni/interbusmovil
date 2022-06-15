@@ -182,6 +182,13 @@ public class IniciarSesion extends AppCompatActivity {
 
     private boolean validarEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
+        Boolean esValido = true;
+        if (!pattern.matcher(email).find()){
+            correo.setError("Email invalido");
+            esValido = false;
+        } else {
+            esValido = true;
+        }
         return pattern.matcher(email).matches();
     }
 
