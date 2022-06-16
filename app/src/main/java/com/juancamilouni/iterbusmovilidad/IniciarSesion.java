@@ -42,8 +42,8 @@ public class IniciarSesion extends AppCompatActivity {
     TextView TxtOlvide;
     int RC_SIGN_IN = 1;
     Button btningresar;
-    String TAG = "GoogleSignIn", correoString, contraaseniaString;
-    EditText correo, contrasenia;
+    public static String TAG = "GoogleSignIn", correoString, contraaseniaString;
+    public static EditText correo, contrasenia;
 
 
     private FirebaseAuth mAuth;
@@ -182,6 +182,13 @@ public class IniciarSesion extends AppCompatActivity {
 
     private boolean validarEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
+        Boolean esValido = true;
+        if (!pattern.matcher(email).find()){
+            correo.setError("Email invalido");
+            esValido = false;
+        } else {
+            esValido = true;
+        }
         return pattern.matcher(email).matches();
     }
 
