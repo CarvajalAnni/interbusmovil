@@ -95,7 +95,7 @@ public class Fcm extends FirebaseMessagingService {
     }
     // para que cuando presione la notificacion se vaya alguna actividad
     public PendingIntent clicknoti(){
-        Intent nf = new Intent(getApplicationContext(),Inicio.class);
+        Intent nf = new Intent(getApplicationContext(),RecyclerActivity.class);
         nf.putExtra("color","rojo");
         // si ya esta abierta no se vuelva abrir sino que cargue la informacion y muestre la notificacion y evitar estar abriendo varias notificaciones
         nf.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);

@@ -15,7 +15,7 @@ public class olvidarcon extends AppCompatActivity {
 
     TextView txtsi;
     EditText txtnumero;
-    Button btncancelado;
+    Button btncancelado, btnvere;
     String TAG = "GoogleSignIn",numeroString;
 
 
@@ -38,7 +38,9 @@ public class olvidarcon extends AppCompatActivity {
             }
         });
         txtnumero = findViewById(R.id.número);
-        txtnumero.setOnClickListener(new View.OnClickListener() {
+
+        btnvere=findViewById(R.id.ver);
+        btnvere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numeroString = txtnumero.getText().toString();
