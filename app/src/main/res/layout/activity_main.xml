@@ -11,7 +11,7 @@
         android:id="@+id/imaglogointerbus"
         android:layout_width="370dp"
         android:layout_height="419dp"
-        android:src="@drawable/interbus"
+        android:src="@drawable/logoazul"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,32 +8,33 @@
 
 
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".Formulario">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="730dp"
-            android:layout_height="253dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/fondo" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="199dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondodegradado" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="152dp"
+        android:layout_height="120dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/logoazul" />
+        app:srcCompat="@drawable/logoblan" />
 
     <TextView
         android:id="@+id/textView"
@@ -40,6 +42,8 @@
         android:layout_height="wrap_content"
         android:text="FORMULARIO DE INCIDENTES"
         android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.497"
@@ -207,11 +211,12 @@
         android:id="@+id/textlongitudcolision"
         android:layout_width="166dp"
         android:layout_height="22dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:hint="@string/longitud"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintHorizontal_bias="0.404"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
         app:layout_constraintTop_toBottomOf="@+id/textlatitudcolision" />
 
@@ -219,11 +224,11 @@
         android:id="@+id/textlatitudcolision"
         android:layout_width="166dp"
         android:layout_height="22dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:hint="@string/latitud"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
         app:layout_constraintTop_toBottomOf="@+id/imgColicion" />
 
@@ -244,28 +249,51 @@
         android:id="@+id/btnReporte"
         android:layout_width="150dp"
         android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/color_btnreporte"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textObservacionC"
-        app:layout_constraintVertical_bias="0.34">
+        app:layout_constraintStart_toStartOf="@+id/textObservacionC"
+        app:layout_constraintTop_toBottomOf="@+id/textObservacionC">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="REPORTAR"
+            android:text="Reportar a todos"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="24dp"
+            android:textSize="16dp"
             tools:layout_editor_absoluteX="123dp"
             tools:layout_editor_absoluteY="316dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnReporteDespachador"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/color_btnreporte"
+
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textObservacionC"
+        app:layout_constraintTop_toBottomOf="@+id/textObservacionC">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Reportar a Despachador"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
     </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
+</ScrollView>

@@ -19,8 +19,9 @@ import java.util.regex.Pattern;
 public class Ayuda extends AppCompatActivity {
     ImageView btnAtras;
     Button btnguargar;
-    String contrasenas,contrasenas2;
+    String contrasenas,contrasenas2,contraaseniaStringH ;
     EditText antigua, nueva, repetir;
+
 
 
     @Override
@@ -49,37 +50,26 @@ public class Ayuda extends AppCompatActivity {
         btnguargar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
-                        if (antigua.length() < 10 ){
-                            antigua.setError("Contraseña no anterior");
-                        }else{
-                            antigua.setError(null);
-                        }
-                        contrasenas=nueva.getText().toString();
-
-                        contrasenas2=repetir.getText().toString();
+                contraaseniaStringH=antigua.getText().toString();
+                contrasenas2=repetir.getText().toString();
+                contrasenas=nueva.getText().toString();
+                //if (validarcontrasenas(IniciarSesion.contraaseniaString)){
+                    if (validarcontrasenas(contrasenas)) {
                         if (validarcontrasenas(contrasenas)) {
-
-                            if (contrasenas.equals(contrasenas2)){
+                            if (IniciarSesion.contraaseniaString.equals(contraaseniaStringH) && contrasenas.equals(contrasenas2)) {
                                 Toast.makeText(Ayuda.this, "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
-
                                 Intent intent = new Intent(Ayuda.this, Inicio.class);
                                 startActivity(intent);
 
-                            }
-                            else {
-                                Toast.makeText(Ayuda.this, "contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-                            }
+                            } else {Toast.makeText(Ayuda.this, "Datos incorrectos", Toast.LENGTH_SHORT).show();
+                                antigua.setError("contraseña no invalida");}
                         }
+                    }
 
-
-
+                //}
             }
         });
     }
-
     public boolean validarcontrasenas(String contrasenas) {
         Boolean esValido = true;
         Pattern mayusculas = Pattern.compile("[A-Z]");
@@ -87,11 +77,19 @@ public class Ayuda extends AppCompatActivity {
         Pattern numeros = Pattern.compile("[0-9]");
 
         if (!minusculas.matcher(contrasenas).find()) {
-            nueva.setError("contraseña invalida");
+            nueva.setError("contraseña invalida ");
             esValido = false;
         } else {
             esValido = true;
         }
+
+        if (!minusculas.matcher(contrasenas).find()) {
+            repetir.setError("contraseña invalida ");
+            esValido = false;
+        } else {
+            esValido = true;
+        }
+
 
         if (!mayusculas.matcher(contrasenas).find()) {
             nueva.setError("contraseña invalida");
@@ -101,8 +99,28 @@ public class Ayuda extends AppCompatActivity {
             esValido = true;
 
         }
+        if (!mayusculas.matcher(contrasenas).find()) {
+            repetir.setError("contraseña invalida");
+
+            esValido = false;
+        } else {
+            esValido = true;
+
+        }
+
         if (!numeros.matcher(contrasenas).find()) {
-          nueva.setError("contraseña invalida");
+          nueva.setError("contraseña invalida ");
+
+            esValido = false;
+
+        } else {
+
+            esValido = true;
+
+        }
+
+        if (!numeros.matcher(contrasenas).find()) {
+            repetir.setError("contraseña invalida");
 
             esValido = false;
 
@@ -113,6 +131,15 @@ public class Ayuda extends AppCompatActivity {
         }
         if (contrasenas.length() < 8) {
             nueva.setError("contraseña invalida");
+            esValido = false;
+            //charcount.setTextColor(Color.RED);
+        } else {
+            esValido = true;
+            // charcount.setTextColor(Color.GREEN);
+        }
+
+        if (contrasenas.length() < 8) {
+            repetir.setError("contraseña invalida");
             esValido = false;
             //charcount.setTextColor(Color.RED);
         } else {

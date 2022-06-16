@@ -9,13 +9,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="209dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondo" />
+        app:srcCompat="@drawable/fondodegradado" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -25,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/logoazul" />
+        app:srcCompat="@drawable/logoblan" />
 
     <TextView
         android:id="@+id/textView"
@@ -33,6 +34,7 @@
         android:layout_height="wrap_content"
         android:text="FORMULARIO DE INCIDENTES"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.497"
@@ -200,11 +202,12 @@
         android:id="@+id/textlongitudcolision"
         android:layout_width="166dp"
         android:layout_height="22dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:hint="@string/longitud"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintHorizontal_bias="0.404"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
         app:layout_constraintTop_toBottomOf="@+id/textlatitudcolision" />
 
@@ -212,11 +215,11 @@
         android:id="@+id/textlatitudcolision"
         android:layout_width="166dp"
         android:layout_height="22dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:hint="@string/latitud"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
         app:layout_constraintTop_toBottomOf="@+id/imgColicion" />
 

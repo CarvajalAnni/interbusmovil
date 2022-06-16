@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/listaCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="398dp">
+
+            <ImageView
+                android:id="@+id/Imagen1"
+                android:layout_width="202dp"
+                android:layout_height="211dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/autobus" />
+
+            <TextView
+                android:id="@+id/Latitud"
+                android:layout_width="373dp"
+                android:layout_height="146dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="-196dp"
+                android:layout_marginTop="238dp"
+                android:layout_toRightOf="@+id/Imagen1"
+                android:text="Latitud"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/Observacion"
+                android:layout_width="214dp"
+                android:layout_height="188dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginTop="38dp"
+                android:layout_toRightOf="@+id/Imagen1"
+                android:text="Observacion"
+                android:textSize="30sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

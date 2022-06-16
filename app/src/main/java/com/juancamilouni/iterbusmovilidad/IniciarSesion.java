@@ -42,8 +42,8 @@ public class IniciarSesion extends AppCompatActivity {
     TextView TxtOlvide;
     int RC_SIGN_IN = 1;
     Button btningresar;
-    String TAG = "GoogleSignIn", correoString, contraaseniaString;
-    EditText correo, contrasenia;
+    public static String TAG = "GoogleSignIn", correoString, contraaseniaString;
+    public static EditText correo, contrasenia;
 
 
     private FirebaseAuth mAuth;

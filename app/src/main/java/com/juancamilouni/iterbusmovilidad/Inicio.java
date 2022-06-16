@@ -75,7 +75,8 @@ public class Inicio extends AppCompatActivity {
         btnnotificacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Inicio.this, "Notificaciones", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Inicio.this, RecyclerActivity.class);
+                startActivity(intent);
             }
         });
 
