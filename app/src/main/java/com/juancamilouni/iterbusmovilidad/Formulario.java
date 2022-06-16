@@ -12,6 +12,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -52,6 +54,8 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import Model.Datos;
@@ -68,7 +72,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     TextView TxtLatitud, TxtLongitud;
     EditText EtxtObservaciones;
     int indice = 0;
-    String id, urlObtenida,stringlati,stringlongi;
+    String id, urlObtenida,stringlati,stringlongi,url,Observaciones;
     private Uri imageUri = null;
     LocationManager locationManager;
     Location location;
@@ -125,7 +129,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
     private void formulario() {
 
-
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -134,18 +137,37 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         LnUbicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TxtLatitud.setText(""+ String.valueOf(location.getLatitude()));
+               TxtLatitud.setText(""+ String.valueOf(location.getLatitude()));
                 TxtLongitud.setText(""+String.valueOf(location.getLongitude()));
 
                 //convertir a string
-                stringlati = TxtLatitud.getText().toString();
-                stringlongi = TxtLongitud.getText().toString();
+                /*stringlati = TxtLatitud.getText().toString();*/
+                //stringlongi = TxtLongitud.getText().toString();
+
+                if (location.getLatitude() != 0.0 && location.getLongitude() != 0.0) {
+                    try {
+                        Geocoder geocoder = new Geocoder(Formulario.this,Locale.getDefault());
+                        List<Address> list = geocoder.getFromLocation(
+                                location.getLatitude(), location.getLongitude(), 1);
+                        if (!list.isEmpty()) {
+                            Address DirCalle = list.get(0);
+                            TxtLatitud.setText(DirCalle.getAddressLine(0));
+                            stringlati = TxtLatitud.getText().toString();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
             }
         });
+
+
         LnTomarFoto.setOnClickListener(this);
         LnSubirFoto.setOnClickListener(this);
         LnReportar.setOnClickListener(this);
-
+        LnReportarDespachador.setOnClickListener(this);
 
 
     }
@@ -198,15 +220,16 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                             while (!uriTask.isSuccessful()) ;
                             String uploadedImageUri = "" + uriTask.getResult();
                             //sendList(uploadedImageUri, timestamp);
-                            Toast.makeText(Formulario.this, "Reporte enviado correctamente ", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
                             //urlimagen.setText(uploadedImageUri);
 
-                            //String Url = urlimagen.getText().toString();
+                            url = uploadedImageUri;
+                            Observaciones = EtxtObservaciones.getText().toString();
 
-                            Datos datos = new Datos(uploadedImageUri);
+                            Datos datos = new Datos(url,stringlati,Observaciones);
 
                             FirebaseFirestore db = FirebaseFirestore.getInstance();
-                            db.collection("ColicionUrl")
+                            db.collection("Reportes")
                                     .add(datos)
                                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                         @Override
@@ -227,11 +250,11 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
                 });
 
-                // guardar ubicacion
+                /*// guardar ubicacion
 
                 //Ubicacion ubicacion = new Ubicacion(latitud, longitud);
 
-                Ubicacion ubicacion = new Ubicacion(stringlati, stringlongi);
+                Datos datos = new Datos(stringlati);
 
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 db.collection("UbicacionColi")
@@ -253,7 +276,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 //guardar observaciones
                 String Observaciones = EtxtObservaciones.getText().toString();
 
-                Model.Observaciones observaciones = new Observaciones(Observaciones);
+                Observaciones observaciones = new Observaciones(Observaciones);
 
                 db.collection("ObservacionesColicion")
                         .add(observaciones)
@@ -270,14 +293,18 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                 Log.w(TAG, "Error adding document", e);
                                 Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
                             }
-                        });
+                        });*/
+                            //
                             llamaratopico();
-                            Intent intentt = new Intent(Formulario.this, Incidente.class );
+                            Intent intentt = new Intent(Formulario.this, Formulario.class );
                             startActivity(intentt);
                             break;
 
             case R.id.btnReporteDespachador:
 //                llamarespecifico();
+                //prueba recicler
+                Intent intent3 = new Intent(Formulario.this, RecyclerActivity.class );
+                startActivity(intent3);
                 break;
 
         }
