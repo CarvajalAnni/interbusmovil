@@ -63,7 +63,6 @@ public class Ayuda extends AppCompatActivity {
 
                             } else {Toast.makeText(Ayuda.this, "Datos incorrectos", Toast.LENGTH_SHORT).show();}
                         }
-
                     }
 
                 }
