@@ -17,6 +17,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Random;
+import java.util.UUID;
 
 // Para cuando el telefono este bloqueado o apagada la pantalla
 public class Fcm extends FirebaseMessagingService {
@@ -35,9 +36,14 @@ public class Fcm extends FirebaseMessagingService {
     }
 
     private void guardartoken(String token) {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("token");
-
-        ref.child("token").setValue(token);//orden de los usuarios
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        String id = UUID.randomUUID().toString();
+        Token token1 = new Token();
+        token1.setId(id);
+        token1.setNombre("");
+        token1.setCorreo("");
+        token1.setToken(token);
+        ref.child("Datos").child(token1.getId()).setValue(token1);//orden de los usuarios
 
     }
     // recibir todas las notificaciones validar si es mensaje version de cel
