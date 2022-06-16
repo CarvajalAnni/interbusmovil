@@ -200,11 +200,12 @@
         android:id="@+id/textlongitudcolision"
         android:layout_width="166dp"
         android:layout_height="22dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:hint="@string/longitud"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintHorizontal_bias="0.404"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
         app:layout_constraintTop_toBottomOf="@+id/textlatitudcolision" />
 
@@ -212,11 +213,11 @@
         android:id="@+id/textlatitudcolision"
         android:layout_width="166dp"
         android:layout_height="22dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:hint="@string/latitud"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
         app:layout_constraintTop_toBottomOf="@+id/imgColicion" />
 
