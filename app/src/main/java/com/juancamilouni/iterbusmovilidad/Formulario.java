@@ -296,7 +296,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                         });*/
                             //
                             llamaratopico();
-                            Intent intentt = new Intent(Formulario.this, Formulario.class );
+                            Intent intentt = new Intent(Formulario.this, Inicio.class );
                             startActivity(intentt);
                             break;
 

@@ -201,7 +201,7 @@
     <TextView
         android:id="@+id/textlongitudcolision"
         android:layout_width="166dp"
-        android:layout_height="22dp"
+        android:layout_height="30dp"
         android:layout_marginTop="12dp"
         android:gravity="center"
         android:hint="@string/longitud"
@@ -214,7 +214,7 @@
     <TextView
         android:id="@+id/textlatitudcolision"
         android:layout_width="166dp"
-        android:layout_height="22dp"
+        android:layout_height="30dp"
         android:layout_marginTop="48dp"
         android:gravity="center"
         android:hint="@string/latitud"
