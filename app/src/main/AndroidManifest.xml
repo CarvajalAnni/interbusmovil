@@ -24,6 +24,9 @@
         android:theme="@style/Theme.IterbusMovilidad"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".RecyclerDespachador"
+            android:exported="false" />
+        <activity
             android:name=".RecyclerActivity"
             android:exported="false" />
         <activity
