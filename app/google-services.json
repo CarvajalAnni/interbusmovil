@@ -44,19 +44,13 @@
       },
       "oauth_client": [
         {
-<<<<<<< HEAD
+
           "client_id": "197114834442-fvsp8hlecmi1n4c69jddabpaprta91m8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.juancamilouni.iterbusmovilidad",
             "certificate_hash": "1efe021e1c3576b3d9adf36ea590926a75a28b59"
-=======
-          "client_id": "197114834442-lr2a8r8ilrhs94cf21308omdu66t2qjm.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.juancamilouni.iterbusmovilidad",
-            "certificate_hash": "9b2d0ecb6f56fec7de86846f6d4449790027f2b1"
->>>>>>> 426d2abdf6c8adfa0fcf11893950418e63295dca
+
           }
         },
         {
