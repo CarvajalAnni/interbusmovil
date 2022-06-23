@@ -42,15 +42,6 @@
             android:name=".Despachador"
             android:exported="false" />
         <activity
-            android:name=".EstadisticaNoti"
-            android:exported="false" />
-        <activity
-            android:name=".InfoNotificacion"
-            android:exported="false" />
-        <activity
-            android:name=".Notificacion"
-            android:exported="false" />
-        <activity
             android:name=".Emergencia"
             android:exported="false" />
         <activity

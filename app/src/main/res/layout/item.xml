@@ -30,7 +30,7 @@
                 android:layout_marginLeft="-196dp"
                 android:layout_marginTop="238dp"
                 android:layout_toRightOf="@+id/Imagen1"
-                android:text="Latitud"
+                android:text="Ubicacion"
                 android:textSize="30sp" />
 
 

@@ -38,9 +38,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Datos datos=listDatos.get(position);
 
-        Glide.with(context).load(datos.getUrl().toString()).into(holder.foto);
-        holder.ubicacion.setText(datos.getUbicacion().toString());
-        holder.observa.setText(datos.getObservaciones().toString());
+        Glide.with(context).load(datos.getUrl()).into(holder.foto);
+        holder.ubicacion.setText(datos.getUbicacion());
+        holder.observa.setText(datos.getObservaciones());
 
     }
 
