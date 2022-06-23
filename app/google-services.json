@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:197114834442:android:6509b1a9ddad574a2d39f3",
+        "android_client_info": {
+          "package_name": "com.annicarvajal.bottomnavigation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197114834442-a1e43244s5i66neac3q8a4rlgbq4tf6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnTq9m7GNMTKvRpSic3xZN88xx9c96qAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197114834442-a1e43244s5i66neac3q8a4rlgbq4tf6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:197114834442:android:fdc46861d541c1202d39f3",
         "android_client_info": {
           "package_name": "com.ez.firestoreystorage"
@@ -44,15 +73,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "197114834442-lr2a8r8ilrhs94cf21308omdu66t2qjm.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.juancamilouni.iterbusmovilidad",
-            "certificate_hash": "9b2d0ecb6f56fec7de86846f6d4449790027f2b1"
-          }
-        },
-        {
-          "client_id": "197114834442-ohm11gdqpiqbbr1bgamgb8ubmkmpr553.apps.googleusercontent.com",
+          "client_id": "197114834442-j0mk8i7gj5p9bfu14uj3a4rnhnjftm2t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.juancamilouni.iterbusmovilidad",
@@ -60,34 +81,13 @@
           }
         },
         {
-          "client_id": "197114834442-a1e43244s5i66neac3q8a4rlgbq4tf6e.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCnTq9m7GNMTKvRpSic3xZN88xx9c96qAU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "197114834442-a1e43244s5i66neac3q8a4rlgbq4tf6e.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:197114834442:android:0ad7624b986769e52d39f3",
-        "android_client_info": {
-          "package_name": "com.yulder.token"
-        }
-      },
-      "oauth_client": [
+          "client_id": "197114834442-k1h9d7hol56db6eb1g4vlod92fnenqkb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.juancamilouni.iterbusmovilidad",
+            "certificate_hash": "13b36dcb602866fe314ef5c215aa8b576ffdd1c7"
+          }
+        },
         {
           "client_id": "197114834442-a1e43244s5i66neac3q8a4rlgbq4tf6e.apps.googleusercontent.com",
           "client_type": 3
