@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".Formulario">
 
     <ImageView
@@ -213,13 +212,13 @@
 
     <TextView
         android:id="@+id/textlatitudcolision"
-        android:layout_width="166dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="176dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
         android:gravity="center"
         android:hint="@string/Ubicacion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
         app:layout_constraintTop_toBottomOf="@+id/imgColicion" />
 
