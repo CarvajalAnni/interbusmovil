@@ -217,7 +217,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="48dp"
         android:gravity="center"
-        android:hint="@string/latitud"
+        android:hint="@string/Ubicacion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toEndOf="@+id/lnUbicacion"

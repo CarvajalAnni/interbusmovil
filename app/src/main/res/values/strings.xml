@@ -21,6 +21,7 @@
     <string name="cargar_foto">Cargar foto</string>
     <string name="colision">Colisión</string>
     <string name="ob">Observación</string>
+    <string name="Ubicacion">ubicacion</string>
     <string-array name="gravedad">
         <item>Menor</item>
         <item>Moderada</item>

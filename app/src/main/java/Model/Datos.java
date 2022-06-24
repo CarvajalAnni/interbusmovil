@@ -1,7 +1,10 @@
 package Model;
 
+import java.util.Date;
+
 public class Datos {
 
+    Date tiempo;
     String Url;
     String Ubicacion;
     String Observaciones;
@@ -9,10 +12,19 @@ public class Datos {
     public Datos() {
     }
 
-    public Datos(String url, String ubicacion, String observaciones) {
+    public Datos(Date tiempo, String url, String ubicacion, String observaciones) {
+        this.tiempo = tiempo;
         Url = url;
         Ubicacion = ubicacion;
         Observaciones = observaciones;
+    }
+
+    public Date getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(Date tiempo) {
+        this.tiempo = tiempo;
     }
 
     public String getUrl() {

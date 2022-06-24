@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -43,6 +44,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
@@ -53,10 +55,14 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.TimeZone;
 
 import Model.Datos;
 import Model.Observaciones;
@@ -72,10 +78,11 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     TextView TxtLatitud, TxtLongitud;
     EditText EtxtObservaciones;
     int indice = 0;
-    String id, urlObtenida,stringlati,stringlongi,url,Observaciones;
+    String id, urlObtenida,stringlati,url,Observaciones;
     private Uri imageUri = null;
     LocationManager locationManager;
     Location location;
+    Date fechasub;
 
 
 
@@ -137,7 +144,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         LnUbicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               TxtLatitud.setText(""+ String.valueOf(location.getLatitude()));
+                //TxtLatitud.setText(""+ String.valueOf(location.getLatitude()));
                 TxtLongitud.setText(""+String.valueOf(location.getLongitude()));
 
                 //convertir a string
@@ -158,8 +165,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                         e.printStackTrace();
                     }
                 }
-
-
             }
         });
 
@@ -168,8 +173,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         LnSubirFoto.setOnClickListener(this);
         LnReportar.setOnClickListener(this);
         LnReportarDespachador.setOnClickListener(this);
-
-
     }
 
 
@@ -226,7 +229,21 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                             url = uploadedImageUri;
                             Observaciones = EtxtObservaciones.getText().toString();
 
-                            Datos datos = new Datos(url,stringlati,Observaciones);
+                            //incrementar id
+                           /* double autoincre= 0;
+                            autoincre= autoincre+1;
+                            idauto= autoincre;*/
+
+                            //stringid= String.valueOf(idauto);
+
+                            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                            Date date = new Date();
+
+                            String fecha = dateFormat.format(date);
+
+                            fechasub= date;
+
+                            Datos datos = new Datos(fechasub,url,stringlati,Observaciones);
 
                             FirebaseFirestore db = FirebaseFirestore.getInstance();
                             db.collection("Reportes")
@@ -235,6 +252,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                         @Override
                                         public void onSuccess(DocumentReference documentReference) {
                                             Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                                           // documentReference.update("idauto", FieldValue.increment(1));
                                             Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
                                         }
                                     })
@@ -247,7 +265,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                         }
                                     });
                         }).addOnFailureListener(e -> {
-
                 });
 
                 /*// guardar ubicacion
