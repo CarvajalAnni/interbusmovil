@@ -53,9 +53,6 @@
             android:name=".Ayuda"
             android:exported="false" />
         <activity
-            android:name=".Perfil"
-            android:exported="false" />
-        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity

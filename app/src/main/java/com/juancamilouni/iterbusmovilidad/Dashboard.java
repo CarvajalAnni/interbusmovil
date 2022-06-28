@@ -3,8 +3,10 @@ package com.juancamilouni.iterbusmovilidad;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -18,13 +20,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Dashboard extends AppCompatActivity {
+public class Dashboard extends Activity {
     private GoogleSignInClient mGoogleSignInClient;
     private GoogleSignInOptions gso;
 
@@ -33,11 +36,36 @@ public class Dashboard extends AppCompatActivity {
     private TextView textView2, textView4, textView6;
     private ImageView imagenUser;
 
+    //navegacion
+    BottomNavigationView navegacion;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        //navegacion
+        navegacion=findViewById(R.id.botton);
+        navegacion.setSelectedItemId(R.id.perfil);
+        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.emergencia:
+                        startActivity(new Intent(getApplicationContext(),Inicio.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.incidente:
+                        startActivity(new Intent(getApplicationContext(),Incidente.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.perfil:
+                        return true;
+                }
+                return false;
+            }
+        });
 
 
 
