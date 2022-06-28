@@ -23,6 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IterbusMovilidad"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".RecyclerDespachador"
             android:exported="false" />
@@ -35,9 +36,7 @@
         <activity
             android:name=".olvidarcon"
             android:exported="false" />
-        <activity
-            android:name=".Inicio"
-            android:exported="false" />
+
         <activity
             android:name=".Formulario"
             android:exported="false" />
@@ -64,6 +63,9 @@
             android:exported="false" />
         <activity
             android:name=".IniciarSesion"
+            android:exported="false" />
+        <activity
+            android:name=".Inicio"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
