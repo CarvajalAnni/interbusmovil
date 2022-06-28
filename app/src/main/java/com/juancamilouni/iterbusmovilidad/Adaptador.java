@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.Date;
 import java.util.List;
 
 import Model.Datos;
@@ -38,7 +39,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Datos datos=listDatos.get(position);
 
-        //holder.fecha.setText(datos.getTiempo());
+
+
+        holder.fecha.setText(datos.getTiempo().toString());
         Glide.with(context).load(datos.getUrl()).into(holder.foto);
         holder.ubicacion.setText(datos.getUbicacion());
         holder.observa.setText(datos.getObservaciones());

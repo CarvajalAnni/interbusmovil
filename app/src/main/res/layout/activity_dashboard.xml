@@ -48,7 +48,7 @@
 
         android:gravity="center"
         android:text="Nombre"
-        android:textColor="@color/black"
+
         android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -61,7 +61,7 @@
         android:layout_height="57dp"
         android:gravity="center"
         android:text=" "
-        android:textColor="@color/black"
+
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
@@ -75,7 +75,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Correo"
-        android:textColor="@color/black"
         android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
@@ -90,7 +89,7 @@
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:text=""
-        android:textColor="@color/black"
+
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.496"
