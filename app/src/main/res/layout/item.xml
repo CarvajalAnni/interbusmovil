@@ -22,18 +22,28 @@
                 android:layout_width="199dp"
                 android:layout_height="172dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="16dp"
                 android:src="@drawable/autobus" />
 
+            <TextView
+                android:id="@+id/Fecha"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/Imagen1"
+                android:gravity="center"
+                android:text="fecha"
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/Latitud"
                 android:layout_width="150dp"
                 android:layout_height="39dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="1dp"
-                android:layout_marginTop="117dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="131dp"
                 android:layout_toRightOf="@+id/Imagen1"
                 android:gravity="center"
                 android:text="Ubicacion"
@@ -44,8 +54,8 @@
                 android:layout_width="162dp"
                 android:layout_height="70dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="-6dp"
-                android:layout_marginTop="19dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="38dp"
                 android:layout_toRightOf="@+id/Imagen1"
                 android:gravity="center"
                 android:text="Observacion"
