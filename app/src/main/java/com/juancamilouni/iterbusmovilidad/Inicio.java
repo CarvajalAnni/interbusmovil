@@ -56,8 +56,8 @@ public class Inicio extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Incidente.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.reportar:
-                        startActivity(new Intent(getApplicationContext(),Formulario.class));
+                    case R.id.perfil:
+                        startActivity(new Intent(getApplicationContext(),Perfil.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

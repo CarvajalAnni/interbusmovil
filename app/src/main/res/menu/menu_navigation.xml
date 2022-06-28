@@ -4,15 +4,15 @@
     <item
         android:id="@+id/emergencia"
         android:title="EMERGENCIA"
-        android:icon="@drawable/dashboard"/>
+        android:icon="@drawable/hospital"/>
 
     <item
         android:id="@+id/incidente"
         android:title="INCIDENTES"
-        android:icon="@drawable/home"/>
+        android:icon="@drawable/info"/>
 
     <item
-        android:id="@+id/reportar"
-        android:title="REPORTAR"
-        android:icon="@drawable/info"/>
+        android:id="@+id/perfil"
+        android:title="PERFIL"
+        android:icon="@drawable/ic_baseline_person_24"/>
 </menu>

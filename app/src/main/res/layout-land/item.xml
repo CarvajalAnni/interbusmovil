@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_marginLeft="110dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/listaCard"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:cardUseCompatPadding="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="498dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/Imagen1"
+                android:layout_width="199dp"
+                android:layout_height="172dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/autobus" />
+
+            <TextView
+                android:id="@+id/Fecha"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/Imagen1"
+                android:gravity="center"
+                android:text="fecha"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/Latitud"
+                android:layout_width="150dp"
+                android:layout_height="39dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="131dp"
+                android:layout_toRightOf="@+id/Imagen1"
+                android:gravity="center"
+                android:text="Ubicacion"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/Observacion"
+                android:layout_width="162dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="38dp"
+                android:layout_toRightOf="@+id/Imagen1"
+                android:gravity="center"
+                android:text="Observacion"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

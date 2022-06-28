@@ -50,8 +50,8 @@ public class Incidente extends AppCompatActivity{
                         return true;
                     case R.id.incidente:
                         return true;
-                    case R.id.reportar:
-                        startActivity(new Intent(getApplicationContext(),Formulario.class));
+                    case R.id.perfil:
+                        startActivity(new Intent(getApplicationContext(),Perfil.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

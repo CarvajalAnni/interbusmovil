@@ -43,7 +43,7 @@ public class IniciarSesion extends AppCompatActivity {
     ImageButton bntGoogle;
     TextView TxtOlvide;
     int RC_SIGN_IN = 1;
-    Button btningresar, btnInicioD;
+    Button btningresar;
     public static String TAG = "GoogleSignIn", correoString, contraaseniaString;
     public static EditText correo, contrasenia;
 
@@ -142,14 +142,7 @@ public class IniciarSesion extends AppCompatActivity {
                 }
             }
         });
-        btnInicioD = findViewById(R.id.btnInicioD);
-        btnInicioD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(IniciarSesion.this, RecyclerDespachador.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 

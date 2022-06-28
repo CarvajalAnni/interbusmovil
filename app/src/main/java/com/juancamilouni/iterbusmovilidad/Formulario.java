@@ -100,7 +100,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
         //navegacion
         navegacion=findViewById(R.id.botton);
-        navegacion.setSelectedItemId(R.id.reportar);
+        navegacion.setSelectedItemId(R.id.perfil);
         navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -113,7 +113,9 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                         startActivity(new Intent(getApplicationContext(),Incidente.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.reportar:
+                    case R.id.perfil:
+                        startActivity(new Intent(getApplicationContext(),Perfil.class));
+                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
