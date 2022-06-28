@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboard"
+        android:title="EMERGENCIA"
+        android:icon="@drawable/dashboard"/>
+
+    <item
+        android:id="@+id/home"
+        android:title="INCIDENTES"
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/info"
+        android:title="REPORTAR"
+        android:icon="@drawable/info"/>
+</menu>

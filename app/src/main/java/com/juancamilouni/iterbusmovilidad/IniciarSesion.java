@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -24,6 +25,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,6 +48,11 @@ public class IniciarSesion extends AppCompatActivity {
     public static EditText correo, contrasenia;
 
 
+
+    //navegacion
+    //BottomNavigationView navegacion;
+
+
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInCliebt;
 
@@ -55,6 +62,28 @@ public class IniciarSesion extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
+
+        //navegacion
+       /* navegacion=findViewById(R.id.botton);
+        navegacion.setSelectedItemId(R.id.home);
+        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.dashboard:
+                        startActivity(new Intent(getApplicationContext(),Inicio.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.home:
+                        return true;
+                    case R.id.info:
+                        startActivity(new Intent(getApplicationContext(),Formulario.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });*/
 
         referenciar();
 

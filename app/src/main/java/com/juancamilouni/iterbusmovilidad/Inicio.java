@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Inicio extends AppCompatActivity {
@@ -26,12 +27,41 @@ public class Inicio extends AppCompatActivity {
     Button button2;
     FloatingActionButton btnnotificacion;
 
+
+    //navegacion
+    BottomNavigationView navegacion;
+
     private static final int VALUE_TOTAL = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+
+        //navegacion
+        navegacion=findViewById(R.id.botton);
+        navegacion.setSelectedItemId(R.id.dashboard);
+        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.dashboard:
+                        return true;
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),IniciarSesion.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.info:
+                        startActivity(new Intent(getApplicationContext(),Formulario.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
+
+
         Permiso();
         referenciar();
     }
