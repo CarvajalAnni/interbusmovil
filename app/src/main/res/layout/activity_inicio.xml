@@ -15,7 +15,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
-        android:backgroundTint="#54DCDC"
+        android:backgroundTint="#53A4FA"
         android:src="@drawable/al"
         app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"
