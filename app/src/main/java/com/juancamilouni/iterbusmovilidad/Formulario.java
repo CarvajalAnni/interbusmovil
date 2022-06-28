@@ -100,20 +100,20 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
         //navegacion
         navegacion=findViewById(R.id.botton);
-        navegacion.setSelectedItemId(R.id.info);
+        navegacion.setSelectedItemId(R.id.reportar);
         navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.dashboard:
+                    case R.id.emergencia:
                         startActivity(new Intent(getApplicationContext(),Inicio.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),IniciarSesion.class));
+                    case R.id.incidente:
+                        startActivity(new Intent(getApplicationContext(),Incidente.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.info:
+                    case R.id.reportar:
                         return true;
                 }
                 return false;

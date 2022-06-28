@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/dashboard"
+        android:id="@+id/emergencia"
         android:title="EMERGENCIA"
         android:icon="@drawable/dashboard"/>
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/incidente"
         android:title="INCIDENTES"
         android:icon="@drawable/home"/>
 
     <item
-        android:id="@+id/info"
+        android:id="@+id/reportar"
         android:title="REPORTAR"
         android:icon="@drawable/info"/>
 </menu>

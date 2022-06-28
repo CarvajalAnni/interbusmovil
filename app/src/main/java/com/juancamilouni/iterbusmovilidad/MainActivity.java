@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         TimerTask espera = new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,Inicio.class);
+                Intent intent = new Intent(MainActivity.this,Emergencia.class);
                 startActivity(intent);
                 finish();
             }
