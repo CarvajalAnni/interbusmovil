@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -19,10 +20,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class Incidente extends AppCompatActivity{
     LinearLayout lnColision, lnViaCerrada, lnFalla, lnObras, lnRetencion, lnCarrilCortado, lnAmbulancia, lnOtro, lnPolicia;
     public static int bandera;
     private static final int VALUE_TOTAL = 200;
+
+    //navegacion
+    BottomNavigationView navegacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +36,30 @@ public class Incidente extends AppCompatActivity{
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_incidente);
+
+        //navegacion
+        navegacion=findViewById(R.id.botton);
+        navegacion.setSelectedItemId(R.id.incidente);
+        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.emergencia:
+                        startActivity(new Intent(getApplicationContext(),Inicio.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.incidente:
+                        return true;
+                    case R.id.reportar:
+                        startActivity(new Intent(getApplicationContext(),Formulario.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
+
         Permiso();
         referenciar();
 

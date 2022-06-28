@@ -18,7 +18,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import com.airbnb.lottie.LottieAnimationView;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Inicio extends AppCompatActivity {
@@ -28,12 +32,41 @@ public class Inicio extends AppCompatActivity {
     LottieAnimationView sos;
     FloatingActionButton btnnotificacion;
 
+
+    //navegacion
+   BottomNavigationView navegacion;
+
     private static final int VALUE_TOTAL = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+
+        //navegacion
+        navegacion=findViewById(R.id.botton);
+        navegacion.setSelectedItemId(R.id.emergencia);
+        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.emergencia:
+                        return true;
+                    case R.id.incidente:
+                        startActivity(new Intent(getApplicationContext(),Incidente.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.reportar:
+                        startActivity(new Intent(getApplicationContext(),Formulario.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
+
+
         Permiso();
         referenciar();
     }
@@ -92,16 +125,6 @@ public class Inicio extends AppCompatActivity {
             }
         });
 
-
-        button2 = findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Inicio.this, Incidente.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
 
@@ -117,8 +140,18 @@ public class Inicio extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.verPerfil:
-                Intent intent = new Intent(Inicio.this, IniciarSesion.class);
+                Intent intent = new Intent(Inicio.this, Perfil.class);
                 startActivity(intent);
+                return true;
+
+            case R.id.CambiarContraseña:
+                Intent intent1 = new Intent(Inicio.this, Ayuda.class);
+                startActivity(intent1);
+                return true;
+
+            case R.id.CerrarSesion:
+                Intent intent2 = new Intent(Inicio.this, Dashboard.class);
+                startActivity(intent2);
                 return true;
         }
         return super.onOptionsItemSelected(item);

@@ -392,8 +392,26 @@
                 tools:layout_editor_absoluteX="123dp"
                 tools:layout_editor_absoluteY="316dp" />
 
+
+
         </LinearLayout>
 
+
+
     </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/botton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        app:itemBackground="@color/azul"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_navigation" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

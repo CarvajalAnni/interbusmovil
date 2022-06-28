@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -42,6 +43,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
@@ -85,12 +87,41 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     Date fechasub;
 
 
+    //navegacion
+    BottomNavigationView navegacion;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
+
+
+        //navegacion
+        navegacion=findViewById(R.id.botton);
+        navegacion.setSelectedItemId(R.id.reportar);
+        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.emergencia:
+                        startActivity(new Intent(getApplicationContext(),Inicio.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.incidente:
+                        startActivity(new Intent(getApplicationContext(),Incidente.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.reportar:
+                        return true;
+                }
+                return false;
+            }
+        });
+
+
+
 
         FirebaseMessaging.getInstance().subscribeToTopic("envieratodos").addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
