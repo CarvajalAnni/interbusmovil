@@ -100,13 +100,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
 
         //navegacion
-<<<<<<< HEAD
         navegacion = findViewById(R.id.botton);
-        navegacion.setSelectedItemId(R.id.reportar);
-=======
-        navegacion=findViewById(R.id.botton);
-        navegacion.setSelectedItemId(R.id.perfil);
->>>>>>> 76df455623d8dada997e209038852243a32d29b8
+        navegacion.setSelectedItemId(R.id.btnReporte);
         navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -119,9 +114,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                         startActivity(new Intent(getApplicationContext(), Incidente.class));
                         overridePendingTransition(0, 0);
                         return true;
-                    case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
+                    case R.id.btnReporte:
                         return true;
                 }
                 return false;
@@ -312,7 +305,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             case R.id.btnReporteDespachador:
 
                 if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())){
-                    EtxtObservaciones.setError("Campo requerido");
+                    EtxtObservaciones.setError("campo requerido");
 
 
                 }else {
