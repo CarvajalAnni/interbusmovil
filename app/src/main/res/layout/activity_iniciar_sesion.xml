@@ -23,8 +23,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="338dp"
-                android:layout_height="82dp"
+                android:layout_width="343dp"
+                android:layout_height="90dp"
                 android:layout_marginTop="28dp"
                 android:hint="Ingresa tu Correo "
                 app:boxBackgroundMode="outline"
@@ -38,8 +38,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/idTxtCorreo"
-                    android:layout_width="323dp"
-                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
                     android:inputType="textEmailAddress"
                     android:maxLength="30"
                     app:errorEnabled="true" />
