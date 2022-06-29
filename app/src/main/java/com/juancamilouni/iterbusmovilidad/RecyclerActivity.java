@@ -12,6 +12,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -54,7 +56,7 @@ public class RecyclerActivity extends Activity {
 
     private void llenarLista() {
         //Traer la coleccion de url
-        db.collection("Reportes")./*whereGreaterThanOrEqualTo("idauto",1).*/orderBy("tiempo", Query.Direction.DESCENDING).limit(10).get()
+        db.collection("Reportes").orderBy("tiempo", Query.Direction.DESCENDING).limit(10).get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -83,6 +85,5 @@ public class RecyclerActivity extends Activity {
                     }
 
                 });
-
     }
 }
