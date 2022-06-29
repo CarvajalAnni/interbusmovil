@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Perfil extends AppCompatActivity {
     ImageView btnatras;
+    TextView Txtcorreo, Txtcontraseña;
+    Bundle extras;
 
 
     @Override
@@ -18,19 +21,11 @@ public class Perfil extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
-        referenciar();
-    }
-
-    private void referenciar() {
-
-        btnatras = findViewById(R.id.btnatrasflecha);
-        btnatras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent (Perfil.this, Inicio.class);
-                startActivity(intent);
-            }
-        });
 
     }
 }
+
+
+
+
+

@@ -4,104 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/bordes"
     tools:context=".Perfil">
 
 
-    <TextView
-        android:layout_width="417dp"
-        android:layout_height="79dp"
-        android:background="@color/azulinterbus"
-        android:gravity="center"
-        android:text="@string/mi_perfil"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <ImageView
-        android:id="@+id/btnatrasflecha"
-        android:layout_width="51dp"
+        android:id="@+id/imageView2"
+        android:layout_width="84dp"
         android:layout_height="77dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.899"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/flechaatras" />
+        app:srcCompat="@drawable/logoblan" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="98dp"
-        android:layout_height="95dp"
+        android:layout_width="136dp"
+        android:layout_height="131dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293"
-        app:srcCompat="@mipmap/iconoperfil" />
+        app:layout_constraintVertical_bias="0.271"
+        app:srcCompat="@mipmap/conductor" />
 
     <EditText
         android:id="@+id/textNombreP"
         android:layout_width="154dp"
         android:layout_height="52dp"
-        android:layout_marginTop="40dp"
-        android:text="Nombre"
+        android:layout_marginTop="312dp"
         android:gravity="center"
+        android:hint="Correo"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.579"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/textCorreoP"
         android:layout_width="155dp"
         android:layout_height="58dp"
-        android:layout_marginTop="100dp"
-        android:text="Correo"
+        android:layout_marginTop="88dp"
         android:gravity="center"
+        android:hint="Contraseña"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/textNombreP"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/textRolP"
-        android:layout_width="150dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="176dp"
-        android:text="Rol"
+        android:layout_width="158dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="92dp"
         android:gravity="center"
+        android:hint="Rol"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/textCorreoP"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:layout_width="413dp"
-        android:layout_height="76dp"
-        android:background="@color/azulinterbus"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRolP"
-        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,146 +6,129 @@
     android:layout_height="match_parent"
     tools:context=".IniciarSesion">
 
-<ScrollView
-    android:orientation="vertical"
-
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".IniciarSesion">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="28dp"
-            android:hint="Ingresa tu Correo "
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:counterEnabled="true"
-            app:counterMaxLength="30"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/idTxtCorreo"
-                android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".IniciarSesion"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-33dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="338dp"
+                android:layout_height="82dp"
+                android:layout_marginTop="28dp"
+                android:hint="Ingresa tu Correo "
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idTxtCorreo"
+                    android:layout_width="323dp"
+                    android:layout_height="50dp"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="30"
+                    app:errorEnabled="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="347dp"
+                android:layout_height="102dp"
+                android:layout_marginTop="28dp"
+                android:hint="Ingresa tu Contraseña "
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="20"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idTxtContrasenia"
+                    android:layout_width="327dp"
+                    android:layout_height="57dp"
+                    android:inputType="textPassword"
+                    android:maxLength="20" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="288dp"
+                android:layout_height="208dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.03"
+                app:srcCompat="@drawable/logoazul" />
+
+
+            <ImageButton
+                android:id="@+id/bntGoogle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:maxLength="30"
-                app:errorEnabled="true" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="644dp"
+                android:background="@drawable/goo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="28dp"
-            android:hint="Ingresa tu Contraseña "
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:counterEnabled="true"
-            app:counterMaxLength="20"
-            app:endIconMode="password_toggle"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+            <Button
+                android:id="@+id/button"
+                android:layout_width="145dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="92dp"
+                android:text="Ingresar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView9" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/idTxtContrasenia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:maxLength="20" />
-        </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="351dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="28dp"
+                android:gravity="center"
+                android:text="La contraseña debe contener al menos una letra mayuscula,una minuscula,un numero"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="288dp"
-            android:layout_height="208dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.03"
-            app:srcCompat="@drawable/logoazul" />
+            <Button
+                android:id="@+id/btnInicioD"
+                android:layout_width="170dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="212dp"
+                android:layout_marginTop="92dp"
+                android:text="Despachador"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView9" />
 
 
-        <ImageButton
-            android:id="@+id/bntGoogle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="596dp"
-            android:background="@drawable/goo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Ingresar"
-            app:layout_constraintEnd_toEndOf="@+id/txtOlvideCon"
-            app:layout_constraintHorizontal_bias="0.266"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtOlvideCon" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="350dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:gravity="center"
-            android:text="La contraseña debe contener al menos una letra mayuscula,una minuscula,un numero"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-            app:layout_constraintHorizontal_bias="0.52"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
-
-        <TextView
-            android:id="@+id/txtOlvideCon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="Olvidaste tu contraseña"
-            android:textColor="@color/azulinterbus"
-
-
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView9"
-            app:layout_constraintStart_toStartOf="@+id/textView9"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-        <Button
-            android:id="@+id/btnInicioD"
-            android:layout_width="140dp"
-            android:layout_height="49dp"
-            android:text="Despachador"
-            android:textSize="13dp"
-            android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.885"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.883" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

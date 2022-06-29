@@ -33,9 +33,6 @@
         <activity
             android:name=".verificarsi"
             android:exported="false" />
-        <activity
-            android:name=".olvidarcon"
-            android:exported="false" />
 
         <activity
             android:name=".Formulario"
