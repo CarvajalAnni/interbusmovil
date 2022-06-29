@@ -21,6 +21,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -246,6 +247,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 break;
 
             case R.id.btnReporte:
+
+                //if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())){
+                    //EtxtObservaciones.setError("Campo requerido");
+
                 indice = indice + 1;
                 id = String.valueOf(indice);
 
@@ -348,6 +353,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                             break;
 
             case R.id.btnReporteDespachador:
+
+
 //                llamarespecifico();
                 //prueba recicler
                 Intent intent3 = new Intent(Formulario.this, RecyclerActivity.class );
