@@ -41,12 +41,10 @@ import java.util.regex.Pattern;
 public class IniciarSesion extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     ImageButton bntGoogle;
-    TextView TxtOlvide;
     int RC_SIGN_IN = 1;
     Button btningresar;
     public static String TAG = "GoogleSignIn", correoString, contraaseniaString;
     public static EditText correo, contrasenia;
-
 
 
     //navegacion
@@ -63,28 +61,6 @@ public class IniciarSesion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
 
-        //navegacion
-       /* navegacion=findViewById(R.id.botton);
-        navegacion.setSelectedItemId(R.id.home);
-        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.dashboard:
-                        startActivity(new Intent(getApplicationContext(),Inicio.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.home:
-                        return true;
-                    case R.id.info:
-                        startActivity(new Intent(getApplicationContext(),Formulario.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });*/
-
         referenciar();
 
         bntGoogle = findViewById(R.id.bntGoogle);
@@ -94,16 +70,6 @@ public class IniciarSesion extends AppCompatActivity {
 
                 signIn();
 
-
-            }
-        });
-
-        TxtOlvide = findViewById(R.id.txtOlvideCon);
-        TxtOlvide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(IniciarSesion.this, olvidarcon.class);
-                startActivity(intent);
 
             }
         });
@@ -119,8 +85,11 @@ public class IniciarSesion extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
     }
+
     @Override
-    public void onBackPressed() { moveTaskToBack(true); }
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
 
     private void referenciar() {
         correo = findViewById(R.id.idTxtCorreo);
@@ -131,6 +100,11 @@ public class IniciarSesion extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                // Intent intennt6 = new Intent(IniciarSesion.this, Perfil.class);
+                // intennt6.putExtra("correo", correo.getText().toString());
+                //intennt6.putExtra("contraseña",contrasenia.getText().toString());
+                //startActivity(intennt6);*//
+
                 correoString = correo.getText().toString();
                 contraaseniaString = contrasenia.getText().toString();
                 if (!(validarEmail(correoString)) || !(validarcontrasenas(contraaseniaString))) {
@@ -140,6 +114,8 @@ public class IniciarSesion extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
+
+
             }
         });
 
@@ -170,16 +146,17 @@ public class IniciarSesion extends AppCompatActivity {
             }
         }
     }
-        @Override
-        protected void onStart() {
-            FirebaseUser user = mAuth.getCurrentUser();
-            if (user != null) { //si no es null el usuario ya esta logueado
-                //mover al usuario al dashboard
-                Intent dashboardActivity = new Intent(IniciarSesion.this, Inicio.class);
-                startActivity(dashboardActivity);
-            }
-            super.onStart();
+
+    @Override
+    protected void onStart() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) { //si no es null el usuario ya esta logueado
+            //mover al usuario al dashboard
+            Intent dashboardActivity = new Intent(IniciarSesion.this, Inicio.class);
+            startActivity(dashboardActivity);
         }
+        super.onStart();
+    }
 
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
@@ -213,7 +190,7 @@ public class IniciarSesion extends AppCompatActivity {
     private boolean validarEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
         Boolean esValido = true;
-        if (!pattern.matcher(email).find()){
+        if (!pattern.matcher(email).find()) {
             correo.setError("Email invalido");
             esValido = false;
         } else {
@@ -223,49 +200,52 @@ public class IniciarSesion extends AppCompatActivity {
     }
 
     public boolean validarcontrasenas(String contrasenas) {
+
         Boolean esValido = true;
         Pattern mayusculas = Pattern.compile("[A-Z]");
         Pattern minusculas = Pattern.compile("[a-z]");
         Pattern numeros = Pattern.compile("[0-9]");
 
-        if (!minusculas.matcher(contrasenas).find()) {
-            contrasenia.setError("contraseña invalida");
-            esValido = false;
-        } else {
-            esValido = true;
+
+
+            if (!minusculas.matcher(contrasenas).find()) {
+                contrasenia.setError("contraseña invalida");
+                esValido = false;
+            } else {
+                esValido = true;
+            }
+
+            if (!mayusculas.matcher(contrasenas).find()) {
+                contrasenia.setError("contraseña invalida");
+
+                esValido = false;
+            } else {
+                esValido = true;
+
+            }
+            if (!numeros.matcher(contrasenas).find()) {
+                contrasenia.setError("contraseña invalida");
+                esValido = false;
+
+            } else {
+
+                esValido = true;
+
+            }
+            if (contrasenas.length() < 8) {
+                contrasenia.setError("contraseña invalida");
+                esValido = false;
+                //charcount.setTextColor(Color.RED);
+            } else {
+                esValido = true;
+                // charcount.setTextColor(Color.GREEN);
+            }
+
+
+            return esValido;
         }
 
-        if (!mayusculas.matcher(contrasenas).find()) {
-            contrasenia.setError("contraseña invalida");
-
-            esValido = false;
-        } else {
-            esValido = true;
-
-        }
-        if (!numeros.matcher(contrasenas).find()) {
-            contrasenia.setError("contraseña invalida");
-
-            esValido = false;
-
-        } else {
-
-            esValido = true;
-
-        }
-        if (contrasenas.length() < 8) {
-            contrasenia.setError("contraseña invalida");
-            esValido = false;
-            //charcount.setTextColor(Color.RED);
-        } else {
-            esValido = true;
-            // charcount.setTextColor(Color.GREEN);
-        }
-        return esValido;
     }
-
-}
-
 
 
 

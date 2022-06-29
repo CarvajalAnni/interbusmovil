@@ -150,13 +150,14 @@
 
     </LinearLayout>
 
+
     <ImageView
         android:id="@+id/imgColicion"
         android:layout_width="222dp"
         android:layout_height="173dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toEndOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
         app:srcCompat="@drawable/fotoincidente" />
@@ -167,11 +168,11 @@
         android:layout_width="162dp"
         android:layout_height="76dp"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/color_btn5"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
@@ -204,9 +205,9 @@
         android:layout_marginTop="12dp"
         android:gravity="center"
         android:hint="@string/longitud"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.404"
         android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
         app:layout_constraintTop_toBottomOf="@+id/textlatitudcolision" />
 
@@ -214,26 +215,37 @@
         android:id="@+id/textlatitudcolision"
         android:layout_width="176dp"
         android:layout_height="47dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:hint="@string/Ubicacion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
         app:layout_constraintTop_toBottomOf="@+id/imgColicion" />
 
-    <EditText
-        android:id="@+id/textObservacionC"
-        android:layout_width="379dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textObservacionCc"
+        android:layout_width="406dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/observaciones"
         android:inputType="textPersonName"
         android:textAlignment="center"
+        app:boxBackgroundMode="outline"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textlongitudcolision" />
+        app:layout_constraintTop_toBottomOf="@+id/textlongitudcolision">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textObservacionC"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:maxLength="20"
+            app:errorEnabled="true" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:id="@+id/btnReporte"
@@ -243,8 +255,8 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/color_btnreporte"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@+id/textObservacionC"
-        app:layout_constraintTop_toBottomOf="@+id/textObservacionC">
+        app:layout_constraintStart_toStartOf="@+id/textObservacionCc"
+        app:layout_constraintTop_toBottomOf="@+id/textObservacionCc">
 
         <TextView
             android:layout_width="match_parent"
@@ -268,10 +280,9 @@
 
         android:layout_marginEnd="12dp"
         android:background="@drawable/color_btnreporte"
-
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textObservacionC"
-        app:layout_constraintTop_toBottomOf="@+id/textObservacionC">
+        app:layout_constraintEnd_toEndOf="@+id/textObservacionCc"
+        app:layout_constraintTop_toBottomOf="@+id/textObservacionCc">
 
         <TextView
             android:id="@+id/textView14"

@@ -21,6 +21,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -74,13 +75,13 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     String[] items = {"Menor", "Moderada", "Seria", "Grave", "Crítica", "Máxima"};
     AutoCompleteTextView autoCompleteTextView;
     ArrayAdapter<String> adapterItems;
-    LinearLayout LnTomarFoto, LnSubirFoto, LnUbicacion, LnReportar,LnReportarDespachador;
+    LinearLayout LnTomarFoto, LnSubirFoto, LnUbicacion, LnReportar, LnReportarDespachador;
     ImageView ImgFotoReporte;
     TextInputLayout TxtGravedad;
     TextView TxtLatitud, TxtLongitud;
-    EditText EtxtObservaciones;
+    EditText  EtxtObservaciones;
     int indice = 0;
-    String id, urlObtenida,stringlati,url,Observaciones;
+    String id, urlObtenida, stringlati, url, Observaciones;
     private Uri imageUri = null;
     LocationManager locationManager;
     Location location;
@@ -103,23 +104,21 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
 
         //navegacion
-        navegacion=findViewById(R.id.botton);
-        navegacion.setSelectedItemId(R.id.perfil);
+        navegacion = findViewById(R.id.botton);
+        navegacion.setSelectedItemId(R.id.btnReporte);
         navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.emergencia:
-                        startActivity(new Intent(getApplicationContext(),Inicio.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), Inicio.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.incidente:
-                        startActivity(new Intent(getApplicationContext(),Incidente.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), Incidente.class));
+                        overridePendingTransition(0, 0);
                         return true;
-                    case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
+                    case R.id.btnReporte:
                         return true;
                 }
                 return false;
@@ -136,19 +135,19 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
         autoCompleteTextView = findViewById(R.id.autoCompleteTextView5);
 
-        adapterItems = new ArrayAdapter<String>(this,R.layout.lista_nivel_gravedad, items);
+        adapterItems = new ArrayAdapter<String>(this, R.layout.lista_nivel_gravedad, items);
 
         autoCompleteTextView.setAdapter(adapterItems);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(getApplicationContext(),"Nivel gravedad: "+item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Nivel gravedad: " + item, Toast.LENGTH_SHORT).show();
             }
         });
         referenciar();
 
-        if(Incidente.bandera == 1){
+        if (Incidente.bandera == 1) {
             TxtGravedad.setVisibility(View.GONE);
             formulario();
         } else {
@@ -157,16 +156,18 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     }
 
     private void referenciar() {
-        LnTomarFoto=findViewById(R.id.lnTomarfoto);
-        LnSubirFoto=findViewById(R.id.lnOtro);
-        LnUbicacion=findViewById(R.id.lnUbicacion);
-        LnReportar=findViewById(R.id.btnReporte);
-        ImgFotoReporte=findViewById(R.id.imgColicion);
-        TxtGravedad=findViewById(R.id.textInputLayout3);
-        TxtLatitud=findViewById(R.id.textlatitudcolision);
-        TxtLongitud=findViewById(R.id.textlongitudcolision);
-        EtxtObservaciones=findViewById(R.id.textObservacionC);
-        LnReportarDespachador=findViewById(R.id.btnReporteDespachador);
+        LnTomarFoto = findViewById(R.id.lnTomarfoto);
+        LnSubirFoto = findViewById(R.id.lnOtro);
+        LnUbicacion = findViewById(R.id.lnUbicacion);
+        LnReportar = findViewById(R.id.btnReporte);
+        ImgFotoReporte = findViewById(R.id.imgColicion);
+        TxtGravedad = findViewById(R.id.textInputLayout3);
+        TxtLatitud = findViewById(R.id.textlatitudcolision);
+        TxtLongitud = findViewById(R.id.textlongitudcolision);
+        EtxtObservaciones = findViewById(R.id.textObservacionC);
+        LnReportarDespachador = findViewById(R.id.btnReporteDespachador);
+
+
     }
 
     private void formulario() {
@@ -180,7 +181,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View view) {
                 //TxtLatitud.setText(""+ String.valueOf(location.getLatitude()));
-                TxtLongitud.setText(""+String.valueOf(location.getLongitude()));
+                TxtLongitud.setText("" + String.valueOf(location.getLongitude()));
 
                 //convertir a string
                 /*stringlati = TxtLatitud.getText().toString();*/
@@ -188,7 +189,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
                 if (location.getLatitude() != 0.0 && location.getLongitude() != 0.0) {
                     try {
-                        Geocoder geocoder = new Geocoder(Formulario.this,Locale.getDefault());
+                        Geocoder geocoder = new Geocoder(Formulario.this, Locale.getDefault());
                         List<Address> list = geocoder.getFromLocation(
                                 location.getLatitude(), location.getLongitude(), 1);
                         if (!list.isEmpty()) {
@@ -213,7 +214,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.lnTomarfoto:
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 // if (intent.resolveActivity(getPackageManager()) != null) {
@@ -249,22 +250,27 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 indice = indice + 1;
                 id = String.valueOf(indice);
 
-                long timestamp = System.currentTimeMillis();
-                String filePathAndName = "Colision/" + timestamp;
+                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())) {
+                    EtxtObservaciones.setError("campo requerido");
+                }else {
 
-                StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
-                storageReference.putFile(imageUri)
-                        .addOnSuccessListener(taskSnapshot -> {
-                            Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                            while (!uriTask.isSuccessful()) ;
-                            String uploadedImageUri = "" + uriTask.getResult();
-                            //sendList(uploadedImageUri, timestamp);
-                            Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
-                            //urlimagen.setText(uploadedImageUri);
+                    long timestamp = System.currentTimeMillis();
+                    String filePathAndName = "Colision/" + timestamp;
 
-                            url = uploadedImageUri;
-                            Observaciones = EtxtObservaciones.getText().toString();
+                    StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
+                    storageReference.putFile(imageUri)
+                            .addOnSuccessListener(taskSnapshot -> {
+                                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                                while (!uriTask.isSuccessful()) ;
+                                String uploadedImageUri = "" + uriTask.getResult();
+                                //sendList(uploadedImageUri, timestamp);
+                                Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
+                                //urlimagen.setText(uploadedImageUri);
 
+                                url = uploadedImageUri;
+                                Observaciones = EtxtObservaciones.getText().toString();
+
+<<<<<<< HEAD
 
                             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                             Date date = new Date();
@@ -346,13 +352,124 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                             Intent intentt = new Intent(Formulario.this, Inicio.class );
                             startActivity(intentt);
                             break;
+=======
+                                //incrementar id
+                           /* double autoincre= 0;
+                            autoincre= autoincre+1;
+                            idauto= autoincre;*/
+
+                                //stringid= String.valueOf(idauto);
+
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                                Date date = new Date();
+
+                                String fecha = dateFormat.format(date);
+
+                                fechasub = date;
+
+                                Datos datos = new Datos(fechasub, url, stringlati, Observaciones);
+
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                db.collection("Reportes")
+                                        .add(datos)
+                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                            @Override
+                                            public void onSuccess(DocumentReference documentReference) {
+                                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                                                // documentReference.update("idauto", FieldValue.increment(1));
+                                                Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                                            }
+                                        })
+
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.w(TAG, "Error adding document", e);
+                                                Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                            }).addOnFailureListener(e -> {
+                    });
+
+
+                    llamaratopico();
+                    Intent intentt = new Intent(Formulario.this, Inicio.class);
+                    startActivity(intentt);
+                    break;
+                }
+>>>>>>> 5a440e377c6462505f8d3da77a6cbff2b28efc63
 
             case R.id.btnReporteDespachador:
-//                llamarespecifico();
-                //prueba recicler
-                Intent intent3 = new Intent(Formulario.this, RecyclerActivity.class );
-                startActivity(intent3);
-                break;
+
+                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())){
+                    EtxtObservaciones.setError("campo requerido");
+
+
+                }else {
+
+                    long timestampp = System.currentTimeMillis();
+                    String filePathAndNamee = "Colision/" + timestampp;
+
+                    StorageReference storageReferencee = FirebaseStorage.getInstance().getReference(filePathAndNamee);
+                    storageReferencee.putFile(imageUri)
+                            .addOnSuccessListener(taskSnapshot -> {
+                                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                                while (!uriTask.isSuccessful()) ;
+                                String uploadedImageUri = "" + uriTask.getResult();
+                                //sendList(uploadedImageUri, timestamp);
+                                Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
+                                //urlimagen.setText(uploadedImageUri);
+
+                                url = uploadedImageUri;
+                                Observaciones = EtxtObservaciones.getText().toString();
+
+                                //incrementar id
+                           /* double autoincre= 0;
+                            autoincre= autoincre+1;
+                            idauto= autoincre;*/
+
+                                //stringid= String.valueOf(idauto);
+
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                                Date date = new Date();
+
+                                String fecha = dateFormat.format(date);
+
+                                fechasub = date;
+
+                                Datos datos = new Datos(fechasub, url, stringlati, Observaciones);
+
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                db.collection("Reportes")
+                                        .add(datos)
+                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                            @Override
+                                            public void onSuccess(DocumentReference documentReference) {
+                                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                                                // documentReference.update("idauto", FieldValue.increment(1));
+                                                Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                                            }
+                                        })
+
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.w(TAG, "Error adding document", e);
+                                                Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                            }).addOnFailureListener(e -> {
+                    });
+
+
+                    llamaratopico();
+                    Intent intent4 = new Intent(Formulario.this, Inicio.class);
+                    startActivity(intent4);
+                    break;
+
+                }
+
+               break;
 
         }
     }
@@ -377,10 +494,14 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             imageUri = data.getData();
             ImgFotoReporte.setImageURI(data.getData());
 
+<<<<<<< HEAD
             /*imagenUri1 = data.getData();
             ImgFotoReporte.setImageURI(imagenUri1);*/
 
         }else if(resultCode == RESULT_OK && requestCode==TOMAR_FOTO) {
+=======
+        } else if (requestCode == 1 && resultCode == RESULT_OK) {
+>>>>>>> 5a440e377c6462505f8d3da77a6cbff2b28efc63
             Uri uri = Uri.parse(urlObtenida);
             ImgFotoReporte.setImageURI(uri);
         }
@@ -395,19 +516,19 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         String title =  titulo.getText().toString();*/
 
         try {
-            json.put("to", "/topics/"+"envieratodos");
+            json.put("to", "/topics/" + "envieratodos");
             JSONObject notificacion = new JSONObject();
             notificacion.put("titulo", "Interbus");
             notificacion.put("detalle", "Se Reporto un Incidente");
 
-            json.put("data",notificacion);
+            json.put("data", notificacion);
 
             String URL = "https://fcm.googleapis.com/fcm/send";
-            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, URL, json, null, null) {
 
                 @Override
-                public Map<String, String> getHeaders(){
-                    Map<String,String> header = new HashMap<>();
+                public Map<String, String> getHeaders() {
+                    Map<String, String> header = new HashMap<>();
                     header.put("content-type", "application/json");
                     header.put("authorization", "key=AAAALeT1rgo:APA91bH4bT4E70reoTjsbCPH63nnoZN2ioq_LvuU3KZgHngw48wJWqkrBxLmvL3OSDIwu0zsLBM54J2ovzPKh08tVEHhUjs-YYUkukMAKVzQHcPgvL6Itw6lz3d43NcgBm3KkydbZOiS");// key configuraciones del cloud menssagin
 
@@ -416,42 +537,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             };
             myrequest.add(request);
 
-        }catch (JSONException e){
+        } catch (JSONException e) {
             e.printStackTrace();
         }
     }
-
-//    private void llamarespecifico() {
-//        RequestQueue myrequest = Volley.newRequestQueue(getApplicationContext());
-//        JSONObject json = new JSONObject();
-//
-//        try {
-//            // tomar el valor de token
-//            String token = "d5qwpYVGTjmbVtyJqoLnSe:APA91bHZYhLjNt8IbHrh-LhrisdiHMS5akfxA8gVAPFIHnFfgpLYV4B-7fpz8hc9PqtXi4NCB5tAcoAw-l61q4EZN5dAIPSrPiYlJ-IsqLEcZdn8rUIY70Cz66_-atSyh4fNU9F3Y7SK";
-//            json.put("to", token);
-//            JSONObject notificacion = new JSONObject();
-//
-//            // notificacion que se recibe
-//            notificacion.put("titulo", "Interbus");
-//            notificacion.put("detalle", "Un conductor te ha notificado");
-//
-//            json.put("data",notificacion);
-//
-//            String URL = "https://fcm.googleapis.com/fcm/send";
-//            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
-//                @Override
-//                public Map<String, String> getHeaders(){
-//                    Map<String,String> header = new HashMap<>();
-//                    header.put("content-type", "application/json");
-//                    header.put("authorization", "key=AAAALeT1rgo:APA91bH4bT4E70reoTjsbCPH63nnoZN2ioq_LvuU3KZgHngw48wJWqkrBxLmvL3OSDIwu0zsLBM54J2ovzPKh08tVEHhUjs-YYUkukMAKVzQHcPgvL6Itw6lz3d43NcgBm3KkydbZOiS");// key configuraciones del cloud menssagin
-//
-//                    return header;
-//                }
-//            };
-//            myrequest.add(request);
-//
-//        }catch (JSONException e){
-//            e.printStackTrace();
-//        }
-//    }
 }

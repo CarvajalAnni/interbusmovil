@@ -31,7 +31,7 @@
             android:name=".verificarsi"
             android:exported="false" />
         <activity
-            android:name=".olvidarcon"
+            android:name=".Perfil"
             android:exported="false" />
 
         <activity

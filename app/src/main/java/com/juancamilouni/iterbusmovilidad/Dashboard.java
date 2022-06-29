@@ -61,6 +61,9 @@ public class Dashboard extends Activity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.perfil:
+                        startActivity(new Intent(getApplicationContext(),Perfil.class));
+                        overridePendingTransition(0,0);
+
                         return true;
                 }
                 return false;

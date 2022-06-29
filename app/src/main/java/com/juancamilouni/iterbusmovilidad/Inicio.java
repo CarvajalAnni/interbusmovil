@@ -57,7 +57,7 @@ public class Inicio extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
+                        startActivity(new Intent(getApplicationContext(),Perfil.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -140,8 +140,8 @@ public class Inicio extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.verPerfil:
-                Intent intent = new Intent(Inicio.this, Dashboard.class);
-                startActivity(intent);
+                Intent intent7= new Intent(Inicio.this,Perfil.class);
+                startActivity(intent7);
                 return true;
 
             case R.id.CambiarContraseña:
