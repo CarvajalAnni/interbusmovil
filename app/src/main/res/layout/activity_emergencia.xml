@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Emergencia">
+    tools:context=".Emergencia"
+    android:background="@drawable/fondodegradado"
+    >
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -40,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="@color/white"
         android:text="Pulsa el botón de emergencia para llamar directamente a la policia"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

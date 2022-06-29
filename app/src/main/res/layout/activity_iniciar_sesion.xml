@@ -127,8 +127,63 @@
                 app:layout_constraintTop_toTopOf="@+id/textView9" />
 
 
+<<<<<<< HEAD
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+=======
+        <ImageButton
+            android:id="@+id/bntGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="608dp"
+            android:background="@drawable/goo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Ingresar"
+            app:layout_constraintEnd_toEndOf="@+id/txtOlvideCon"
+            app:layout_constraintHorizontal_bias="0.838"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtOlvideCon" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="La contraseña debe contener al menos una letra mayuscula,una minuscula,un numero"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+        <TextView
+            android:id="@+id/txtOlvideCon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Olvidaste tu contraseña"
+            android:textColor="@color/azulinterbus"
+
+
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+>>>>>>> 76df455623d8dada997e209038852243a32d29b8
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

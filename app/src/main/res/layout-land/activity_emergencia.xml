@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Emergencia">
 
+<<<<<<< HEAD
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/inisecion"
@@ -14,6 +15,15 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
 
+=======
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/inisecion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+
+>>>>>>> 76df455623d8dada997e209038852243a32d29b8
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#54DCDC"
@@ -24,6 +34,7 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/sos"
+<<<<<<< HEAD
         android:layout_width="250dp"
         android:layout_height="253dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,6 +43,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.164"
+=======
+        android:layout_width="285dp"
+        android:layout_height="256dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+>>>>>>> 76df455623d8dada997e209038852243a32d29b8
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/sosanimation" />
@@ -45,23 +65,38 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.901" />
+=======
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.93" />
+>>>>>>> 76df455623d8dada997e209038852243a32d29b8
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginStart="200dp"
+=======
+        android:layout_marginStart="252dp"
+>>>>>>> 76df455623d8dada997e209038852243a32d29b8
         android:text="¿Te ocurrió un robo?"
         android:textColor="@color/rojo"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.774" />
+=======
+        app:layout_constraintVertical_bias="0.763" />
+>>>>>>> 76df455623d8dada997e209038852243a32d29b8
 
     <ImageView
         android:id="@+id/imageView13"
@@ -70,9 +105,16 @@
         android:src="@drawable/ladron"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toEndOf="@+id/textView20"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.78" />
+=======
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.783" />
+>>>>>>> 76df455623d8dada997e209038852243a32d29b8
 
 </androidx.constraintlayout.widget.ConstraintLayout>

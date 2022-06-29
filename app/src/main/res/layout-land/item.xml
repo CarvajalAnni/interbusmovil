@@ -3,19 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:layout_marginLeft="110dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/listaCard"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:cardCornerRadius="20dp"
         app:cardElevation="6dp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        >
 
         <RelativeLayout
-            android:layout_width="402dp"
-            android:layout_height="178dp">
+            android:layout_width="498dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center">
 
             <ImageView
                 android:id="@+id/Imagen1"

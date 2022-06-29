@@ -53,7 +53,7 @@ public class RecyclerActivity extends AppCompatActivity {
 
     private void llenarLista() {
         //Traer la coleccion de url
-        db.collection("Reportes")./*whereGreaterThanOrEqualTo("idauto",1).*/orderBy("tiempo", Query.Direction.DESCENDING).limit(5).get()
+        db.collection("Reportes")./*whereGreaterThanOrEqualTo("idauto",1).*/orderBy("tiempo", Query.Direction.DESCENDING).limit(10).get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
