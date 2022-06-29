@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Perfil extends AppCompatActivity {
+    TextView etxcorreo, etxcontrasenia;
+    Bundle extras;
 
 
     @Override
@@ -18,6 +20,21 @@ public class Perfil extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
+        referenciar();
+        recibeDatos();
+
+    }
+    private void recibeDatos() {
+        extras = getIntent().getExtras();
+        String correo = extras.getString("correo");
+        String contrasenia = extras.getString("contraseña");
+        etxcorreo.setText(correo);
+        etxcontrasenia.setText(contrasenia);
+
+    }
+    private void referenciar(){
+        etxcorreo=findViewById(R.id.textNombreP);
+        etxcontrasenia=findViewById(R.id.textCorreoP);
 
     }
 }

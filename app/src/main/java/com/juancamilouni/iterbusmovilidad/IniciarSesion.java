@@ -100,10 +100,10 @@ public class IniciarSesion extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                // Intent intennt6 = new Intent(IniciarSesion.this, Perfil.class);
-                // intennt6.putExtra("correo", correo.getText().toString());
-                //intennt6.putExtra("contraseña",contrasenia.getText().toString());
-                //startActivity(intennt6);*//
+                 Intent intennt6 = new Intent(IniciarSesion.this, Perfil.class);
+                 intennt6.putExtra("correo", correo.getText().toString());
+                intennt6.putExtra("contraseña",contrasenia.getText().toString());
+                startActivity(intennt6);
 
                 correoString = correo.getText().toString();
                 contraaseniaString = contrasenia.getText().toString();
