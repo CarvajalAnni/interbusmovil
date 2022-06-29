@@ -86,6 +86,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     Location location;
     Date fechasub;
 
+    int TOMAR_FOTO = 100;
+    int SELEC_IMAGEN = 200;
+    Uri imagenUri1;
+
 
     //navegacion
     BottomNavigationView navegacion;
@@ -121,8 +125,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 return false;
             }
         });
-
-
 
 
         FirebaseMessaging.getInstance().subscribeToTopic("envieratodos").addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -209,9 +211,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     }
 
 
-
-
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -228,7 +227,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 if (imagenArchivo != null) {
                     Uri fotoUri = FileProvider.getUriForFile(Formulario.this, "com.juancamilouni.iterbusmovilidad", imagenArchivo);
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, fotoUri);
-                    startActivityForResult(intent, 1);
+                    startActivityForResult(intent, TOMAR_FOTO);
                     imageUri = fotoUri;
                 }
 
@@ -238,7 +237,11 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
                 Intent intent2 = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 intent2.setType("image/*");
-                startActivityForResult(intent2.createChooser(intent2, "Seleccione la aplicacion"), 10);
+                startActivityForResult(intent2, SELEC_IMAGEN);
+
+                /*Intent intent2 = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                intent2.setType("image/*");
+                startActivityForResult(intent2.createChooser(intent2, "Seleccione la aplicacion"), 10);*/
 
                 break;
 
@@ -262,12 +265,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                             url = uploadedImageUri;
                             Observaciones = EtxtObservaciones.getText().toString();
 
-                            //incrementar id
-                           /* double autoincre= 0;
-                            autoincre= autoincre+1;
-                            idauto= autoincre;*/
-
-                            //stringid= String.valueOf(idauto);
 
                             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                             Date date = new Date();
@@ -372,7 +369,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Formulario.super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 10) {
+        if (resultCode==RESULT_OK && requestCode == SELEC_IMAGEN) {
             //Uri path= data.getData();
             //img.setImageURI(path);
 
@@ -380,7 +377,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             imageUri = data.getData();
             ImgFotoReporte.setImageURI(data.getData());
 
-        }else if(requestCode == 1 && resultCode == RESULT_OK) {
+            /*imagenUri1 = data.getData();
+            ImgFotoReporte.setImageURI(imagenUri1);*/
+
+        }else if(resultCode == RESULT_OK && requestCode==TOMAR_FOTO) {
             Uri uri = Uri.parse(urlObtenida);
             ImgFotoReporte.setImageURI(uri);
         }

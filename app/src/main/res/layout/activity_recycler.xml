@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondodegradado" />
+        android:src="@drawable/fondodegradado" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/logoblan" />
+        android:src="@drawable/logoblan" />
 
     <TextView
         android:id="@+id/textView"

@@ -23,6 +23,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     List<Datos> listDatos;
     Context context;
 
+    String creado;
+
     public Adaptador(Context context, List<Datos> listDatos) {
         this.listDatos = listDatos;
         this.context = context;
@@ -37,6 +39,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+
         Datos datos=listDatos.get(position);
 
 
