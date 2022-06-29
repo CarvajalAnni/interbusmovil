@@ -79,7 +79,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     ImageView ImgFotoReporte;
     TextInputLayout TxtGravedad;
     TextView TxtLatitud, TxtLongitud;
-    EditText EtxtObservaciones;
+   public static EditText EtxtObservaciones;
     int indice = 0;
     String id, urlObtenida,stringlati,url,Observaciones;
     private Uri imageUri = null;
@@ -105,6 +105,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
         //navegacion
         navegacion=findViewById(R.id.botton);
+        navegacion.setSelectedItemId(R.id.btnReporte);
         navegacion.setSelectedItemId(R.id.perfil);
         navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -118,8 +119,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                         startActivity(new Intent(getApplicationContext(),Incidente.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.btnReporte:
+                        return true;
                     case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
+                        startActivity(new Intent(getApplicationContext(),Perfil.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -253,54 +256,58 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
                 indice = indice + 1;
                 id = String.valueOf(indice);
-
-                long timestamp = System.currentTimeMillis();
-                String filePathAndName = "Colision/" + timestamp;
-
-                StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
-                storageReference.putFile(imageUri)
-                        .addOnSuccessListener(taskSnapshot -> {
-                            Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                            while (!uriTask.isSuccessful()) ;
-                            String uploadedImageUri = "" + uriTask.getResult();
-                            //sendList(uploadedImageUri, timestamp);
-                            Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
-                            //urlimagen.setText(uploadedImageUri);
-
-                            url = uploadedImageUri;
-                            Observaciones = EtxtObservaciones.getText().toString();
+                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())) {
+                    EtxtObservaciones.setError("campo requerido");
+                }else {
 
 
-                            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-                            Date date = new Date();
+                    long timestamp = System.currentTimeMillis();
+                    String filePathAndName = "Colision/" + timestamp;
 
-                            String fecha = dateFormat.format(date);
+                    StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
+                    storageReference.putFile(imageUri)
+                            .addOnSuccessListener(taskSnapshot -> {
+                                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                                while (!uriTask.isSuccessful()) ;
+                                String uploadedImageUri = "" + uriTask.getResult();
+                                //sendList(uploadedImageUri, timestamp);
+                                Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
+                                //urlimagen.setText(uploadedImageUri);
 
-                            fechasub= date;
+                                url = uploadedImageUri;
+                                Observaciones = EtxtObservaciones.getText().toString();
 
-                            Datos datos = new Datos(fechasub,url,stringlati,Observaciones);
 
-                            FirebaseFirestore db = FirebaseFirestore.getInstance();
-                            db.collection("Reportes")
-                                    .add(datos)
-                                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                        @Override
-                                        public void onSuccess(DocumentReference documentReference) {
-                                            Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-                                           // documentReference.update("idauto", FieldValue.increment(1));
-                                            Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
-                                        }
-                                    })
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                                Date date = new Date();
 
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.w(TAG, "Error adding document", e);
-                                            Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                        }).addOnFailureListener(e -> {
-                });
+                                String fecha = dateFormat.format(date);
+
+                                fechasub = date;
+
+                                Datos datos = new Datos(fechasub, url, stringlati, Observaciones);
+
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                db.collection("Reportes")
+                                        .add(datos)
+                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                            @Override
+                                            public void onSuccess(DocumentReference documentReference) {
+                                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                                                // documentReference.update("idauto", FieldValue.increment(1));
+                                                Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                                            }
+                                        })
+
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.w(TAG, "Error adding document", e);
+                                                Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                            }).addOnFailureListener(e -> {
+                    });
 
                 /*// guardar ubicacion
 
@@ -346,23 +353,91 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                 Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
                             }
                         });*/
-                            //
-                            llamaratopico();
-                            Intent intentt = new Intent(Formulario.this, Inicio.class );
-                            startActivity(intentt);
-                            break;
+                    //
+                    llamaratopico();
+                    Intent intentt = new Intent(Formulario.this, Inicio.class);
+                    startActivity(intentt);
+                    break;
+                }
 
             case R.id.btnReporteDespachador:
 
 
 //                llamarespecifico();
                 //prueba recicler
-                Intent intent3 = new Intent(Formulario.this, RecyclerActivity.class );
-                startActivity(intent3);
+                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())){
+                    EtxtObservaciones.setError("campo requerido");
+
+
+                }else {
+
+                    long timestampp = System.currentTimeMillis();
+                    String filePathAndNamee = "Colision/" + timestampp;
+
+                    StorageReference storageReferencee = FirebaseStorage.getInstance().getReference(filePathAndNamee);
+                    storageReferencee.putFile(imageUri)
+                            .addOnSuccessListener(taskSnapshot -> {
+                                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                                while (!uriTask.isSuccessful()) ;
+                                String uploadedImageUri = "" + uriTask.getResult();
+                                //sendList(uploadedImageUri, timestamp);
+                                Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
+                                //urlimagen.setText(uploadedImageUri);
+
+                                url = uploadedImageUri;
+                                Observaciones = EtxtObservaciones.getText().toString();
+
+                                //incrementar id
+                           /* double autoincre= 0;
+                            autoincre= autoincre+1;
+                            idauto= autoincre;*/
+
+                                //stringid= String.valueOf(idauto);
+
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                                Date date = new Date();
+
+                                String fecha = dateFormat.format(date);
+
+                                fechasub = date;
+
+                                Datos datos = new Datos(fechasub, url, stringlati, Observaciones);
+
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                db.collection("Reportes")
+                                        .add(datos)
+                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                            @Override
+                                            public void onSuccess(DocumentReference documentReference) {
+                                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                                                // documentReference.update("idauto", FieldValue.increment(1));
+                                                Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                                            }
+                                        })
+
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.w(TAG, "Error adding document", e);
+                                                Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                            }).addOnFailureListener(e -> {
+                    });
+
+
+                    llamaratopico();
+                    Intent intent4 = new Intent(Formulario.this, Inicio.class);
+                    startActivity(intent4);
+                    break;
+
+                }
+
                 break;
 
         }
     }
+
 
     private File crearImagen() throws IOException {
         String nombreImagen = "fotoLugar";
