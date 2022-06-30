@@ -256,8 +256,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
                 indice = indice + 1;
                 id = String.valueOf(indice);
-                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())) {
-                    EtxtObservaciones.setError("campo requerido");
+                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString()) && TextUtils.isEmpty(TxtLatitud.getText()) && ImgFotoReporte.getDrawable() == null) {
+                    EtxtObservaciones.setError("Campo requerido");
+                    TxtLatitud.setError("Campo requerido");
+                    //ImgFotoReporte
                 }else {
 
 
@@ -365,8 +367,9 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
 //                llamarespecifico();
                 //prueba recicler
-                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())){
+                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString()) && TextUtils.isEmpty(TxtLatitud.getText())){
                     EtxtObservaciones.setError("campo requerido");
+                    TxtLatitud.setError("campo requerido");
 
 
                 }else {
