@@ -78,7 +78,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     LinearLayout LnTomarFoto, LnSubirFoto, LnUbicacion, LnReportar,LnReportarDespachador;
     ImageView ImgFotoReporte;
     TextInputLayout TxtGravedad;
-    TextView TxtLatitud, TxtLongitud;
+    TextView TxtLatitud, TxtLongitud, Txtimagen;
    public static EditText EtxtObservaciones;
     int indice = 0;
     String id, urlObtenida,stringlati,url,Observaciones;
@@ -170,6 +170,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         TxtLatitud=findViewById(R.id.textlatitudcolision);
         TxtLongitud=findViewById(R.id.textlongitudcolision);
         EtxtObservaciones=findViewById(R.id.textObservacionC);
+        Txtimagen=findViewById(R.id.textView33);
         LnReportarDespachador=findViewById(R.id.btnReporteDespachador);
     }
 
@@ -250,18 +251,9 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 break;
 
             case R.id.btnReporte:
-
-                //if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())){
-                    //EtxtObservaciones.setError("Campo requerido");
-
                 indice = indice + 1;
                 id = String.valueOf(indice);
-                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString()) && TextUtils.isEmpty(TxtLatitud.getText()) && ImgFotoReporte.getDrawable() == null) {
-                    EtxtObservaciones.setError("Campo requerido");
-                    TxtLatitud.setError("Campo requerido");
-                    //ImgFotoReporte
-                }else {
-
+                if (validarfor()){
 
                     long timestamp = System.currentTimeMillis();
                     String filePathAndName = "Colision/" + timestamp;
@@ -361,15 +353,15 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                     startActivity(intentt);
                     break;
                 }
-
             case R.id.btnReporteDespachador:
 
 
 //                llamarespecifico();
                 //prueba recicler
-                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString()) && TextUtils.isEmpty(TxtLatitud.getText())){
+                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString()) && TextUtils.isEmpty(TxtLatitud.getText()) && urlObtenida==null){
                     EtxtObservaciones.setError("campo requerido");
                     TxtLatitud.setError("campo requerido");
+                    Txtimagen.setVisibility(View.VISIBLE);
 
 
                 }else {
@@ -539,4 +531,30 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 //            e.printStackTrace();
 //        }
 //    }
+
+
+    public boolean validarfor(){
+        Boolean esValido = true;
+
+        if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())){
+            EtxtObservaciones.setError("campo requerido");
+            esValido = false;
+        } else {
+            EtxtObservaciones.setError(null);
+        }
+        if (TextUtils.isEmpty(TxtLatitud.getText())){
+            TxtLatitud.setError("campo requerido");
+            esValido = false;
+        }else{
+            TxtLatitud.setError(null);
+        }
+        if (urlObtenida==null){
+            Txtimagen.setVisibility(View.VISIBLE);
+            esValido = false;
+        }else{
+            Txtimagen.setError(null);
+        }
+
+        return esValido;
+    }
 }
