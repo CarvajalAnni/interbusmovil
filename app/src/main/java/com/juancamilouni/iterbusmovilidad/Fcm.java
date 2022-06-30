@@ -1,5 +1,7 @@
 package com.juancamilouni.iterbusmovilidad;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -11,8 +13,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -21,7 +27,7 @@ import java.util.UUID;
 
 // Para cuando el telefono este bloqueado o apagada la pantalla
 public class Fcm extends FirebaseMessagingService {
-    public static  String tk;
+
 
 
     @Override
@@ -29,21 +35,43 @@ public class Fcm extends FirebaseMessagingService {
     public void onNewToken(@NonNull String token) {
         super.onNewToken(token);
         //String correo = Dashboard.correo;
-        Log.e("token", "mi token es:" + token);
+        Log.e("token", "Tu token es:" + token);
         guardartoken(token);
-        tk=token;
+
 
     }
 
     private void guardartoken(String token) {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        /*DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         String id = UUID.randomUUID().toString();
         Token token1 = new Token();
         token1.setId(id);
         token1.setNombre("");
         token1.setCorreo("");
         token1.setToken(token);
-        ref.child("Datos").child(token1.getId()).setValue(token1);//orden de los usuarios
+        ref.child("Datos").child(token1.getId()).setValue(token1);//orden de los usuarios*/
+
+        Token token1 = new Token();
+        token1.setToken(token);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("token")
+                .add(token1)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                        Toast.makeText(Fcm.this, "token obtenido", Toast.LENGTH_SHORT).show();
+                    }
+                })
+
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                        Toast.makeText(Fcm.this, "Datos f", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
     }
     // recibir todas las notificaciones validar si es mensaje version de cel
