@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondincid"
     tools:context=".Formulario">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="209dp"
         android:scaleType="centerCrop"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -233,6 +236,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/observaciones"
+        android:textColorHint="@color/white"
         android:inputType="textPersonName"
         android:textAlignment="center"
         app:boxBackgroundMode="outline"
