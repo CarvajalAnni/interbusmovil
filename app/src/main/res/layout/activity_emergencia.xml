@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Emergencia"
-    android:background="@drawable/fondodegradado"
+    android:background="#003153"
     >
 
 
@@ -18,7 +18,7 @@
 
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="#54DCDC"
+        android:backgroundTint="#4682B4"
         android:src="@drawable/al"
         app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.228"
+        app:layout_constraintVertical_bias="0.192"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/sosanimation" />
@@ -41,16 +41,17 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="serif"
         android:gravity="center"
-        android:textColor="@color/white"
         android:text="Pulsa el botón de emergencia para llamar directamente a la policia"
+        android:textColor="#FAFAFA"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.759" />
+        app:layout_constraintVertical_bias="0.776" />
 
     <TextView
         android:id="@+id/textView20"
@@ -58,7 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:text="¿Te ocurrió un robo?"
-        android:textColor="@color/rojo"
+        android:textColor="#FAFAFA"
+        android:fontFamily="serif"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
