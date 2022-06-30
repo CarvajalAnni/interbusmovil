@@ -159,54 +159,54 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imgColicion"
-        android:layout_width="222dp"
-        android:layout_height="173dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.21"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
-        app:srcCompat="@drawable/fotoincidente" />
-
-
-    <LinearLayout
-        android:id="@+id/lnUbicacion"
-        android:layout_width="162dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/color_btn5"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="75dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="10dp"
-            app:srcCompat="@drawable/imgubicacion"
-            tools:layout_editor_absoluteX="122dp"
-            tools:layout_editor_absoluteY="252dp" />
+            android:id="@+id/imgColicion"
+            android:layout_width="680dp"
+            android:layout_height="193dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.439"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            app:srcCompat="@drawable/fotoincidente" />
+
+        <LinearLayout
+            android:id="@+id/lnUbicacion"
+            android:layout_width="162dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/color_btn5"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.103"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="75dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/imgubicacion"
+                tools:layout_editor_absoluteX="122dp"
+                tools:layout_editor_absoluteY="252dp" />
+
+            <TextView
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Obtener ubicación"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                tools:layout_editor_absoluteX="123dp"
+                tools:layout_editor_absoluteY="316dp" />
+        </LinearLayout>
 
         <TextView
-            android:layout_width="78dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Obtener ubicación"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="14dp"
-            tools:layout_editor_absoluteX="123dp"
-            tools:layout_editor_absoluteY="316dp" />
-    </LinearLayout>
-
-    <TextView
         android:id="@+id/textlongitudcolision"
         android:layout_width="166dp"
         android:layout_height="22dp"

@@ -23,7 +23,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IterbusMovilidad"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".DetallesRecycler"
+            android:exported="false" />
         <activity
             android:name=".RecyclerActivity"
             android:exported="false" />
@@ -33,7 +35,6 @@
         <activity
             android:name=".Perfil"
             android:exported="false" />
-
         <activity
             android:name=".Formulario"
             android:exported="false" />
