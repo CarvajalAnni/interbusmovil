@@ -7,6 +7,18 @@
     android:background="@drawable/bordes"
     tools:context=".Perfil">
 
+    <ImageButton
+        android:id="@+id/Imagen1"
+        android:layout_width="66dp"
+        android:layout_height="79dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064"
+        app:srcCompat="@mipmap/flechaatras" />
+
 
     <ImageView
         android:id="@+id/imageView2"
