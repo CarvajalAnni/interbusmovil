@@ -172,6 +172,18 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
             app:srcCompat="@drawable/fotoincidente" />
 
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Debe seleccionar una imagen"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/imgColicion"
+            app:layout_constraintStart_toStartOf="@+id/imgColicion"
+            app:layout_constraintTop_toTopOf="@+id/imgColicion" />
+
         <LinearLayout
         android:id="@+id/lnUbicacion"
         android:layout_width="162dp"
