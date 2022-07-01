@@ -11,10 +11,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class Perfil extends AppCompatActivity {
     TextView etxcorreo, etxcontrasenia;
     Bundle extras;
     ImageButton btnAttrass;
+    FloatingActionButton fbtnatras;
 
 
     @Override
@@ -30,16 +33,12 @@ public class Perfil extends AppCompatActivity {
     }
 
     private void referencio() {
-        btnAttrass = findViewById(R.id.Imagen1);
-        btnAttrass.setOnClickListener(new View.OnClickListener() {
+        fbtnatras = findViewById(R.id.fbtnatras);
+        fbtnatras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intennt6 = new Intent(Perfil.this, Inicio.class);
-
                 startActivity(intennt6);
-
-
             }
         });
     }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E2F4FA"
     tools:context=".Incidente">
 
     <ImageView
@@ -15,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondodegradado" />
+        app:srcCompat="@drawable/fondoformulario" />
 
     <ImageView
         android:id="@+id/imageView2"

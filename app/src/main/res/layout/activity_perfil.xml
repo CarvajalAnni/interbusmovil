@@ -7,17 +7,19 @@
     android:background="@drawable/bordes"
     tools:context=".Perfil">
 
-    <ImageButton
-        android:id="@+id/Imagen1"
-        android:layout_width="66dp"
-        android:layout_height="79dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbtnatras"
+        android:layout_width="57dp"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="304dp"
+        android:backgroundTint="#009ece"
+        android:src="@drawable/atras"
+        app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064"
-        app:srcCompat="@mipmap/flechaatras" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
@@ -26,7 +28,7 @@
         android:layout_height="77dp"
         android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintHorizontal_bias="0.929"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoazul" />
