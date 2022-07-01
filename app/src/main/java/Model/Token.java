@@ -1,22 +1,20 @@
-package com.juancamilouni.iterbusmovilidad;
+package Model;
 
 public class Token {
-    private String Nombre;
-    private String Id;
-    private String Correo;
-    private String Token;
-
-
+     String Nombre;
+     String Correo;
+     String Token;
 
     public Token() {
     }
 
-    public Token(String nombre, String id, String correo, String token) {
+
+    public Token(String nombre, String correo, String token) {
         Nombre = nombre;
-        Token = token;
-        Id = id;
         Correo = correo;
+        Token = token;
     }
+
 
     public String getNombre() {
         return Nombre;
@@ -24,14 +22,6 @@ public class Token {
 
     public void setNombre(String nombre) {
         Nombre = nombre;
-    }
-
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
     }
 
     public String getCorreo() {
@@ -53,10 +43,9 @@ public class Token {
     @Override
     public String toString() {
         return "Token{" +
-                "Nombre='" + Nombre + '\'' +
-                ", Id='" + Id + '\'' +
-                ", Correo='" + Correo + '\'' +
-                ", Token='" + Token + '\'' +
+                  Nombre + '\'' +
+                  Correo + '\'' +
+                 Token + '\'' +
                 '}';
     }
 }

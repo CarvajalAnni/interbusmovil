@@ -3,10 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/MOVIL/interbusmovil/app/src/main/res/layout-land/activity_formulario.xml" value="0.16225749559082892" />
+        <entry key="..\:/AndroidStudioProjects/MOVIL/interbusmovil/app/src/main/res/layout/activity_ayuda.xml" value="0.22146739130434784" />
+        <entry key="..\:/AndroidStudioProjects/MOVIL/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.22146739130434784" />
+        <entry key="..\:/AndroidStudioProjects/MOVIL/interbusmovil/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.22146739130434784" />
         <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_emergencia.xml" value="0.3078125" />
         <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.3078125" />
         <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_incidente.xml" value="0.3078125" />
         <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.1" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout-land/activity_ayuda.xml" value="0.16" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout-land/activity_emergencia.xml" value="0.2" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout-land/activity_iniciar_sesion.xml" value="0.4" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout-land/activity_otros.xml" value="0.2" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout-land/activity_perfil.xml" value="0.2981770833333333" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout/activity_ayuda.xml" value="0.25" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout/activity_emergencia.xml" value="0.25" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.264" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout/activity_incidente.xml" value="0.16111111111111112" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.264" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout/activity_inicio.xml" value="0.16111111111111112" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout/activity_olvidarcon.xml" value="0.25" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout/activity_otros.xml" value="0.16111111111111112" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout/activity_perfil.xml" value="0.264" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/layout/lista_nivel_gravedad.xml" value="0.25" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/menu/interbus.xml" value="0.25" />
+        <entry key="..\:/MOVIL/interbusmovil/app/src/main/res/menu/menu_navigation.xml" value="0.25" />
         <entry key="..\:/MOVILIDAD2/interbusmovil/app/src/main/res/layout/activity_ayuda.xml" value="0.33" />
         <entry key="..\:/MOVILIDAD2/interbusmovil/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.1" />
         <entry key="..\:/MOVILIDAD2/interbusmovil/app/src/main/res/layout/activity_inicio.xml" value="0.1" />
@@ -33,6 +54,14 @@
         <entry key="..\:/Users/Administrador/Desktop/Iterbusmovilidad/app/src/main/res/xml/file_paths.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/interBusmov/interbusmovil/app/src/main/res/drawable/al.xml" value="0.2765" />
         <entry key="..\:/Users/Aprendiz/AndroidStudioProjects/interBusmov/interbusmovil/app/src/main/res/layout/activity_recycler_despachador.xml" value="0.25" />
+        <entry key="..\:/Users/Aprendiz/Desktop/clonar/interbusmovil/app/src/main/res/layout-land/item.xml" value="0.3148148148148148" />
+        <entry key="..\:/Users/Aprendiz/Desktop/clonar/interbusmovil/app/src/main/res/layout/activity_dashboard.xml" value="0.371875" />
+        <entry key="..\:/Users/Aprendiz/Desktop/clonar/interbusmovil/app/src/main/res/layout/activity_inicio.xml" value="0.371875" />
+        <entry key="..\:/Users/Aprendiz/Desktop/clonar/interbusmovil/app/src/main/res/layout/activity_recycler.xml" value="0.18085106382978725" />
+        <entry key="..\:/Users/Aprendiz/Desktop/clonar/interbusmovil/app/src/main/res/layout/activity_recycler_token.xml" value="0.371875" />
+        <entry key="..\:/Users/Aprendiz/Desktop/clonar/interbusmovil/app/src/main/res/layout/item.xml" value="0.371875" />
+        <entry key="..\:/Users/Aprendiz/Desktop/clonar/interbusmovil/app/src/main/res/layout/list_token.xml" value="0.5" />
+        <entry key="..\:/Users/Aprendiz/Desktop/clonar/interbusmovil/app/src/main/res/layout/lista_nivel_gravedad.xml" value="0.371875" />
         <entry key="..\:/Users/Aprendiz/Downloads/Iterbusmovilidad/app/src/main/res/layout-land/activity_iniciar_sesion.xml" value="0.3148148148148148" />
         <entry key="..\:/Users/Aprendiz/Downloads/Iterbusmovilidad/app/src/main/res/layout/activity_ayuda.xml" value="0.371875" />
         <entry key="..\:/Users/Aprendiz/Downloads/Iterbusmovilidad/app/src/main/res/layout/activity_dashboard.xml" value="0.371875" />
@@ -94,6 +123,11 @@
         <entry key="..\:/Users/camil/Downloads/si/Iterbusmovilidad/app/src/main/res/layout/activity_retencion.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/camil/clone/interbusmovil/app/src/main/res/layout/activity_carril_cortado.xml" value="0.1" />
         <entry key="..\:/Users/camil/clone/interbusmovil/app/src/main/res/layout/activity_notificacion.xml" value="0.1" />
+        <entry key="..\:/Users/varel/AndroidStudioProjects/EmergenciaInterbus/interbusmovil/app/src/main/res/drawable/al.xml" value="0.1685" />
+        <entry key="..\:/Users/varel/AndroidStudioProjects/EmergenciaInterbus/interbusmovil/app/src/main/res/layout/activity_inicio.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/varel/AndroidStudioProjects/EmergenciaInterbus/interbusmovil/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/varel/AndroidStudioProjects/EmergenciaInterbus/interbusmovil/app/src/main/res/layout/activity_recycler_despachador.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/varel/AndroidStudioProjects/EmergenciaInterbus/interbusmovil/app/src/main/res/menu/interbus.xml" value="0.27447916666666666" />
         <entry key="..\:/Valncitas/interbusmovil/app/src/main/res/layout/activity_ayuda.xml" value="0.264" />
         <entry key="..\:/Valncitas/interbusmovil/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.27447916666666666" />
         <entry key="..\:/Valncitas/interbusmovil/app/src/main/res/layout/activity_inicio.xml" value="0.1671875" />
@@ -104,39 +138,28 @@
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/drawable/home.xml" value="0.2955" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/drawable/info.xml" value="0.2955" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/drawable/selector.xml" value="0.11" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_dashboard.xml" value="0.3148148148148148" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_emergencia.xml" value="0.3148148148148148" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_estadistica_noti.xml" value="0.1917989417989418" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_formulario.xml" value="0.22" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_incidente.xml" value="0.3148148148148148" />
+        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_formulario.xml" value="0.27380952380952384" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_info_notificacion.xml" value="0.1917989417989418" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_iniciar_sesion.xml" value="0.3148148148148148" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_inicio.xml" value="0.2821718683197948" />
+        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_inicio.xml" value="0.3148148148148148" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_main.xml" value="0.2570546737213404" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_otros.xml" value="0.1917989417989418" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_perfil.xml" value="0.3148148148148148" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/activity_recycler.xml" value="0.3148148148148148" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout-land/item.xml" value="0.3148148148148148" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_ayuda.xml" value="0.371875" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_despachador.xml" value="0.371875" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_detalles_recycler.xml" value="0.22" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_emergencia.xml" value="0.25" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.33" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_incidente.xml" value="0.371875" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.33" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_inicio.xml" value="0.25" />
+        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_inicio.xml" value="0.33" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_main.xml" value="0.371875" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_notificacion.xml" value="0.2265625" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_olvidarcon.xml" value="0.371875" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_otros.xml" value="0.371875" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_perfil.xml" value="0.25" />
+        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_perfil.xml" value="0.371875" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_recycler.xml" value="0.19010416666666666" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_recycler_despachador.xml" value="0.2265625" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/activity_verificarsi.xml" value="0.371875" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/item.xml" value="0.33" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/lista_nivel_gravedad.xml" value="0.371875" />
-        <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/menu/interbus.xml" value="0.371875" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/menu/menu_navigation.xml" value="0.3605128205128205" />
       </map>
     </option>
