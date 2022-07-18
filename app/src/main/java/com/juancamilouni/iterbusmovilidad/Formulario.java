@@ -324,10 +324,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                     //
                     llamaratopico();
 
-                }else {Toast.makeText(Formulario.this, "Faltan campos por llenar ", Toast.LENGTH_SHORT).show();
+                }else {
 
                 } if (!validarfor()) {
-                Toast.makeText(this, "fallo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Formulario.this, "Faltan campos por llenar ", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(Formulario.this, "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
                 Intent intentt = new Intent(Formulario.this, Inicio.class);
