@@ -63,7 +63,7 @@ public class RecyclerToken extends AppCompatActivity {
                                 //Toast.makeText(RecyclerActivity.this, ""+ sSubCadena, Toast.LENGTH_SHORT).show();
                                 Token token = new Token (nombre,correo,tokena);
                                 listToken.add(token);
-                                Toast.makeText(RecyclerToken.this, ""+listToken, Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(RecyclerToken.this, ""+listToken, Toast.LENGTH_SHORT).show();
                                 // listDatos.add(new Datos(url));
                                 adaptadortoken= new AdaptadorToken(RecyclerToken.this,listToken);
                                 recyclerView.setAdapter(adaptadortoken);

@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -123,7 +124,10 @@ public class DetallesRecycler extends AppCompatActivity {
 
         Glide.with(DetallesRecycler.this)
                 .load(foto)
-                .into(img);
+                .apply(new RequestOptions()
+                .override(1000,1000))
+                .into(img)
+                ;
 
 
     }

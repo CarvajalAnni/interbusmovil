@@ -47,6 +47,7 @@
         android:layout_height="233dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="4dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/autobus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
@@ -60,6 +61,7 @@
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@+id/detImg"
         android:gravity="center"
+
         android:text="fecha"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +91,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="24dp"
         android:layout_toRightOf="@+id/detImg"
+
         android:gravity="center"
         android:text="Observacion"
         android:textSize="15sp"

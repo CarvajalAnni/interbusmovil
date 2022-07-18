@@ -20,6 +20,7 @@
             <ImageView
                 android:id="@+id/Imagen1"
                 android:layout_width="199dp"
+
                 android:layout_height="172dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="5dp"

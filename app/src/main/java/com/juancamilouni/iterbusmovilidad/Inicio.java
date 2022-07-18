@@ -93,8 +93,8 @@ public class Inicio extends AppCompatActivity {
         nombredas = nombretok.getText().toString();
         correodas = correotok.getText().toString();
 
-        db.collection("token").document("DdDnUkAwCfxbHJLtJw7o").update("nombre",nombredas);
-        db.collection("token").document("DdDnUkAwCfxbHJLtJw7o").update("correo",correodas);
+        db.collection("token").document("A9EIWAOiMheWVX0pSTuH").update("nombre",nombredas);
+        db.collection("token").document("A9EIWAOiMheWVX0pSTuH").update("correo",correodas);
 
 
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#003153"
     tools:context=".Inicio">
 
 
@@ -15,7 +16,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
-        android:backgroundTint="#53A4FA"
+        android:backgroundTint="#4682B4"
         android:src="@drawable/noti"
         app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.228"
+        app:layout_constraintVertical_bias="0.235"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/sosanimation" />
@@ -63,12 +64,13 @@
         android:id="@+id/textView14"
         android:layout_width="361dp"
         android:layout_height="41dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="52dp"
         android:gravity="center"
         android:text="Pulsa el botón de emergencia para llamar directamente a la policia"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/textView20"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -76,11 +78,12 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         android:text="¿Te ocurrió un robo?"
-        android:textColor="@color/rojo"
+        android:textColor="#FFFFFF"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="@+id/sos"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/sos"
         app:layout_constraintTop_toBottomOf="@+id/sos" />
 
@@ -101,7 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
-        app:itemBackground="@color/azulinterbus"
+        app:itemBackground="@color/blancointerbus"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:layout_constraintBottom_toBottomOf="parent"
