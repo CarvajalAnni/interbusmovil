@@ -5,10 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Inicio">
+    tools:context=".Inicio"
+    android:background="@drawable/fondoformulario">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -19,7 +21,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="28dp"
-            android:backgroundTint="#53A4FA"
+            android:backgroundTint="#FF6D00"
             android:src="@drawable/noti"
             app:fabSize="normal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,16 +39,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/sosanimation" />
+            app:lottie_rawRes="@raw/lf30_editor_ce7ewipc" />
 
         <TextView
             android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="548dp"
+            android:layout_height="63dp"
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="Pulsa el botón de emergencia para llamar directamente a la policia"
-
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:text="¿Te ocurrió un robo?"
-            android:textColor="@color/rojo"
+            android:textColor="@color/white"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

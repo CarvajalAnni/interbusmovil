@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IniciarSesion">
+    tools:context=".IniciarSesion"
+    android:background="#E2F4FA">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -65,7 +66,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/idTxtContrasenia"
-                    android:layout_width="327dp"
+                    android:layout_width="336dp"
                     android:layout_height="57dp"
                     android:inputType="textPassword"
                     android:maxLength="20" />

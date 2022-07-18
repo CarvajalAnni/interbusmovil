@@ -16,7 +16,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
-        android:backgroundTint="#ff9e00"
+        android:backgroundTint="#FF5100"
         android:src="@drawable/noti"
         app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,8 +54,8 @@
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="361dp"
-        android:layout_height="41dp"
+        android:layout_width="364dp"
+        android:layout_height="54dp"
         android:layout_marginTop="52dp"
         android:gravity="center"
         android:text="Pulsa el botón de emergencia para llamar directamente a la policia"

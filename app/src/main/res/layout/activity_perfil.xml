@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bordes"
-    tools:context=".Perfil">
+    tools:context=".Perfil"
+    >
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbtnatras"
@@ -15,7 +16,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="304dp"
-        android:backgroundTint="#009ece"
+        android:backgroundTint="#7AEAFD"
         android:src="@drawable/atras"
         app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"

@@ -8,7 +8,8 @@
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".IniciarSesion">
+    tools:context=".IniciarSesion"
+    android:background="#E2F4FA">
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
