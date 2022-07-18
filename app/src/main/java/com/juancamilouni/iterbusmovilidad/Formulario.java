@@ -323,10 +323,17 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                         });*/
                     //
                     llamaratopico();
-                    Intent intentt = new Intent(Formulario.this, Inicio.class);
-                    startActivity(intentt);
-                    break;
-                }
+
+                }else {Toast.makeText(Formulario.this, "Faltan campos por llenar ", Toast.LENGTH_SHORT).show();
+
+                } if (!validarfor()) {
+                Toast.makeText(this, "fallo", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(Formulario.this, "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
+                Intent intentt = new Intent(Formulario.this, Inicio.class);
+                startActivity(intentt);
+            }
+                break;
             case R.id.btnReporteDespachador:
 
 
@@ -522,7 +529,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         }else{
             TxtLatitud.setError(null);
         }
-        if (urlObtenida==null){
+        if (imageUri == null){
             Txtimagen.setVisibility(View.VISIBLE);
             esValido = false;
         }else{
