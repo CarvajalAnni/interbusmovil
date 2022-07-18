@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Toolbar">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+
+        android:layout_alignParentBottom="true"
+
+        android:background="@color/teal_700">
+
+
+        <ImageView
+            android:id="@+id/bntimagen"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="55dp"
+            android:src="@drawable/ladron" />
+
+        <ImageView
+            android:id="@+id/bntusuario"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/usuarioo" />
+
+        <ImageView
+            android:id="@+id/bntincidenn"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+
+            android:layout_gravity="right"
+            android:layout_marginRight="45dp"
+            android:src="@drawable/hospital" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+</RelativeLayout>

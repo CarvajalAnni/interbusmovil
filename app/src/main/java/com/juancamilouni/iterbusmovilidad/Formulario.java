@@ -103,32 +103,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_formulario);
 
 
-        //navegacion
-        navegacion=findViewById(R.id.botton);
-        navegacion.setSelectedItemId(R.id.btnReporte);
-        navegacion.setSelectedItemId(R.id.perfil);
-        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.emergencia:
-                        startActivity(new Intent(getApplicationContext(),Inicio.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.incidente:
-                        startActivity(new Intent(getApplicationContext(),Incidente.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.btnReporte:
-                        return true;
-                    case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(),Perfil.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });
 
 
         FirebaseMessaging.getInstance().subscribeToTopic("envieratodos").addOnCompleteListener(new OnCompleteListener<Void>() {

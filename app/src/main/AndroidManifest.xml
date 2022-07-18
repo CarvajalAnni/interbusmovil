@@ -24,6 +24,9 @@
         android:theme="@style/Theme.IterbusMovilidad"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Toolbar"
+            android:exported="false" />
+        <activity
             android:name=".RecyclerToken"
             android:exported="false" />
         <activity
