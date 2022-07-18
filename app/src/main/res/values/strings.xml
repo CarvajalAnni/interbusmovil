@@ -22,6 +22,11 @@
     <string name="colision">Colisión</string>
     <string name="ob">Observación</string>
     <string name="Ubicacion">ubicacion</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo">Correo</string>
+    <string name="enviar">Enviar</string>
+    <string name="despachadores">DESPACHADORES</string>
+    <string name="token">token</string>
     <string-array name="gravedad">
         <item>Menor</item>
         <item>Moderada</item>

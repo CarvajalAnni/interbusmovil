@@ -1,11 +1,14 @@
 package com.juancamilouni.iterbusmovilidad;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -19,11 +22,17 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -35,10 +44,29 @@ public class Dashboard extends Activity {
     private FirebaseAuth mAuth;
     private TextView textView2, textView4, textView6;
     private ImageView imagenUser;
+    String nombredas , correodas;
+    FirebaseFirestore db;
+
+
 
     //navegacion
     BottomNavigationView navegacion;
 
+    public String getNombredas() {
+        return nombredas;
+    }
+
+    public void setNombredas(String nombredas) {
+        this.nombredas = nombredas;
+    }
+
+    public String getCorreodas() {
+        return correodas;
+    }
+
+    public void setCorreodas(String correodas) {
+        this.correodas = correodas;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +75,7 @@ public class Dashboard extends Activity {
 
         //navegacion
         navegacion=findViewById(R.id.botton);
+        db= FirebaseFirestore.getInstance();
         navegacion.setSelectedItemId(R.id.perfil);
         navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -85,6 +114,15 @@ public class Dashboard extends Activity {
         textView2.setText(currentUser.getUid());
         textView4.setText(currentUser.getDisplayName());
         textView6.setText(currentUser.getEmail());
+
+        nombredas = textView4.getText().toString();
+        correodas = textView6.getText().toString();
+
+
+
+        //db.collection("token").document("uYJnT5rvIhJg3DEXL4on").update("nombre",nombredas);
+        //db.collection("token").document("uYJnT5rvIhJg3DEXL4on").update("correo",correodas);
+
         //cargar imágen con glide:
         Glide.with(this).load(currentUser.getPhotoUrl()).into(imagenUser);
 

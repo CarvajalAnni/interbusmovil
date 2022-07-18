@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -24,6 +25,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.airbnb.lottie.LottieAnimationView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Inicio extends AppCompatActivity {
 
@@ -31,6 +35,12 @@ public class Inicio extends AppCompatActivity {
     Button button2;
     LottieAnimationView sos;
     FloatingActionButton btnnotificacion;
+
+    //actualizacion
+    private TextView nombretok,correotok;
+    private FirebaseAuth mAuth;
+    String nombredas , correodas;
+    FirebaseFirestore db;
 
 
     //navegacion
@@ -64,6 +74,27 @@ public class Inicio extends AppCompatActivity {
                 return false;
             }
         });
+
+        db= FirebaseFirestore.getInstance();
+
+        //actualizar
+
+        nombretok= findViewById(R.id.nombreToken);
+        correotok = findViewById(R.id.correoToken);
+
+        // Inicializar Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+
+        nombretok.setText(currentUser.getDisplayName());
+        correotok.setText(currentUser.getEmail());
+
+        nombredas = nombretok.getText().toString();
+        correodas = correotok.getText().toString();
+
+        db.collection("token").document("UsNKTLjWeJ8TmSeyMVIP").update("nombre",nombredas);
+        db.collection("token").document("UsNKTLjWeJ8TmSeyMVIP").update("correo",correodas);
 
 
 
