@@ -108,7 +108,7 @@ public class IniciarSesion extends AppCompatActivity {
                     //
                 } else {
                     Intent intent = new Intent(IniciarSesion.this, Inicio.class);
-                    Intent intennt6 = new Intent(IniciarSesion.this, Perfil.class);
+                    Intent intennt6 = new Intent(IniciarSesion.this, Inicio.class);
                     intennt6.putExtra("correo", correo.getText().toString());
                     intennt6.putExtra("contraseña",contrasenia.getText().toString());
                     startActivity(intennt6);
