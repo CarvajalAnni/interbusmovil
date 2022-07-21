@@ -94,7 +94,7 @@ public class AdaptadorToken extends RecyclerView.Adapter<AdaptadorToken.ViewHold
                 case R.id.enviarnoti:
                     Intent intent= new Intent(context2,DetallesRecycler.class);
                     //Toast.makeText(RecyclerToken.this, Toast.LENGTH_LONG, "boton presionado").show();
-                    Toast.makeText(context, "boton:----"+tok, Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, tok, Toast.LENGTH_LONG).show();
                     llamarespecifico();
                     context2.startActivity(intent);
 
