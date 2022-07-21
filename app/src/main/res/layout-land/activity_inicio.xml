@@ -30,24 +30,25 @@
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/sos"
-            android:layout_width="297dp"
-            android:layout_height="176dp"
-
-            android:layout_marginTop="4dp"
+            android:layout_width="230dp"
+            android:layout_height="157dp"
+            android:background="@color/transparente"
+            android:backgroundTint="@color/transparente"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.061"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/lf30_editor_ce7ewipc" />
 
         <TextView
-            android:id="@+id/textView15"
-            android:layout_width="104dp"
-            android:layout_height="61dp"
-            android:background="@color/transparente"
             android:backgroundTint="@color/transparente"
+            android:background="@color/transparente"
+            android:layout_width="76dp"
+            android:layout_height="47dp"
             android:fontFamily="serif"
             android:text="SOS"
             android:textColor="@color/white"
@@ -56,10 +57,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/sos"
             app:layout_constraintEnd_toEndOf="@+id/sos"
-            app:layout_constraintHorizontal_bias="0.544"
+            app:layout_constraintHorizontal_bias="0.539"
             app:layout_constraintStart_toStartOf="@+id/sos"
             app:layout_constraintTop_toTopOf="@+id/sos"
-            app:layout_constraintVertical_bias="0.504" />
+            app:layout_constraintVertical_bias="0.492" />
 
         <TextView
             android:id="@+id/textView14"
