@@ -12,8 +12,7 @@
         android:backgroundTint="@color/transparente"
         android:background="@color/transparente"
         android:id="@+id/imaglogointerbus"
-        android:backgroundTint="@color/transparente"
-        android:background="@color/transparente"
+
         android:layout_width="370dp"
         android:layout_height="419dp"
         android:src="@drawable/logoazul"

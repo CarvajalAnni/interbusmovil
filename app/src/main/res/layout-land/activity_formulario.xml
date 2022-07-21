@@ -31,6 +31,8 @@
         app:srcCompat="@drawable/fondoformulario" />
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imageView2"
         android:layout_width="152dp"
         android:layout_height="120dp"
@@ -42,6 +44,8 @@
 
     <TextView
         android:id="@+id/textView"
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FORMULARIO DE INCIDENTES"
@@ -97,6 +101,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -107,6 +113,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -322,11 +330,4 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 
-<include
-layout="@layout/activity_toolbar"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-app:layout_constraintTop_toBottomOf="@+id/btnReporteDespachador"
-tools:layout_editor_absoluteX="56dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/carpetaandroid/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.24456521739130435" />
-        <entry key="..\:/AndroidStudioProjects/carpetaandroid/interbusmovil/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.24456521739130435" />
         <entry key="..\:/AndroidStudioProjects/movilllll/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.22554347826086957" />
         <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_emergencia.xml" value="0.3078125" />
         <entry key="..\:/INTERBUSMOVIL/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.3078125" />
@@ -193,6 +191,13 @@
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/layout/lista_nivel_gravedad.xml" value="0.371875" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/menu/interbus.xml" value="0.371875" />
         <entry key="..\:/interbusmovi/interbusmovil/app/src/main/res/menu/menu_navigation.xml" value="0.3605128205128205" />
+        <entry key="..\:/xampp/htdocs/interbusmovil/app/src/main/res/layout-land/activity_iniciar_sesion.xml" value="0.2796875" />
+        <entry key="..\:/xampp/htdocs/interbusmovil/app/src/main/res/layout-land/activity_main.xml" value="0.21284185493460167" />
+        <entry key="..\:/xampp/htdocs/interbusmovil/app/src/main/res/layout/activity_emergencia.xml" value="0.1" />
+        <entry key="..\:/xampp/htdocs/interbusmovil/app/src/main/res/layout/activity_formulario.xml" value="0.176" />
+        <entry key="..\:/xampp/htdocs/interbusmovil/app/src/main/res/layout/activity_incidente.xml" value="0.136" />
+        <entry key="..\:/xampp/htdocs/interbusmovil/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.264" />
+        <entry key="..\:/xampp/htdocs/interbusmovil/app/src/main/res/layout/activity_inicio.xml" value="0.24615384615384617" />
       </map>
     </option>
   </component>
