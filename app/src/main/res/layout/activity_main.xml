@@ -9,6 +9,8 @@
 
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imaglogointerbus"
         android:backgroundTint="@color/transparente"
         android:background="@color/transparente"
