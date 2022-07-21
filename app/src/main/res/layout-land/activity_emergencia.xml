@@ -10,6 +10,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/inisecion"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -24,6 +25,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.airbnb.lottie.LottieAnimationView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/sos"
         android:layout_width="237dp"
         android:layout_height="226dp"
@@ -39,6 +42,8 @@
 
     <TextView
         android:id="@+id/textView14"
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:layout_width="782dp"
         android:layout_height="74dp"
         android:gravity="center"
@@ -53,6 +58,8 @@
         app:layout_constraintVertical_bias="0.914" />
 
     <TextView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,6 +73,8 @@
         app:layout_constraintVertical_bias="0.718" />
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imageView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

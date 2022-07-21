@@ -29,6 +29,7 @@
 
 
         <com.airbnb.lottie.LottieAnimationView
+
             android:id="@+id/sos"
             android:layout_width="226dp"
             android:layout_height="152dp"
