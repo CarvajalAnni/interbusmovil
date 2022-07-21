@@ -31,14 +31,18 @@
 
             <TextView
                 android:id="@+id/Fecha"
-                android:layout_width="109dp"
+                android:layout_width="187dp"
                 android:layout_height="wrap_content"
+                android:layout_above="@+id/verDetalle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="73dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginEnd="87dp"
+                android:layout_marginBottom="40dp"
                 android:layout_toEndOf="@+id/Imagen1"
                 android:gravity="center"
                 android:text="fecha"
-                android:textSize="10sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/Latitud"
@@ -50,7 +54,8 @@
                 android:layout_toRightOf="@+id/Imagen1"
                 android:gravity="center"
                 android:text="Ubicacion"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:visibility="invisible"/>
 
             <TextView
                 android:id="@+id/Observacion"
@@ -62,7 +67,22 @@
                 android:layout_toRightOf="@+id/Imagen1"
                 android:gravity="center"
                 android:text="Observacion"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/verDetalle"
+                android:layout_width="154dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="63dp"
+                android:layout_marginEnd="-210dp"
+                android:layout_marginBottom="51dp"
+                android:layout_toStartOf="@+id/Latitud"
+                android:layout_toEndOf="@+id/Imagen1"
+                android:backgroundTint="@color/azulinterbus"
+                android:text="DETALLES"
+                android:textSize="12sp" />
 
         </RelativeLayout>
 

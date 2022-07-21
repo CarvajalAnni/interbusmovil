@@ -20,6 +20,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -28,6 +32,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Inicio extends AppCompatActivity {
 
@@ -93,8 +103,8 @@ public class Inicio extends AppCompatActivity {
         nombredas = nombretok.getText().toString();
         correodas = correotok.getText().toString();
 
-        db.collection("token").document("UsNKTLjWeJ8TmSeyMVIP").update("nombre",nombredas);
-        db.collection("token").document("UsNKTLjWeJ8TmSeyMVIP").update("correo",correodas);
+        db.collection("token").document("ItaM9DCMeiRcI3MxkFuF").update("nombre",nombredas);
+        db.collection("token").document("ItaM9DCMeiRcI3MxkFuF").update("correo",correodas);
 
 
 
@@ -171,13 +181,18 @@ public class Inicio extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.verPerfil:
-                Intent intent7= new Intent(Inicio.this,Perfil.class);
-                startActivity(intent7);
+                /*Intent intent7= new Intent(Inicio.this,Perfil.class);
+                startActivity(intent7);*/
+
+                Intent intent4 = new Intent(Inicio.this, RecyclerToken.class);
+                startActivity(intent4);
+
                 return true;
 
             case R.id.CambiarContraseña:
                 Intent intent1 = new Intent(Inicio.this, Ayuda.class);
                 startActivity(intent1);
+
                 return true;
 
             case R.id.CerrarSesion:

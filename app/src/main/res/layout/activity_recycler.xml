@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RecyclerActivity"
-    android:background="#E2F4FA">
+    tools:context=".RecyclerActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -17,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/fondodegradado" />
+        android:src="@drawable/fondoformulario" />
 
     <ImageView
         android:id="@+id/imageView2"

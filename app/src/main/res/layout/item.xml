@@ -29,15 +29,19 @@
 
             <TextView
                 android:id="@+id/Fecha"
-                android:layout_width="109dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_width="167dp"
+                android:layout_height="37dp"
+                android:layout_above="@+id/verDetalle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="1dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="8dp"
                 android:layout_toEndOf="@+id/Imagen1"
                 android:gravity="center"
                 android:text="fecha"
-                android:textSize="10sp"
+                android:textSize="15sp"
                 android:visibility="visible" />
 
             <TextView
@@ -70,22 +74,23 @@
                 android:layout_width="162dp"
                 android:layout_height="70dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="38dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="43dp"
                 android:layout_toRightOf="@+id/Imagen1"
                 android:gravity="center"
                 android:text="Observacion"
                 android:textSize="15sp"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/verDetalle"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="127dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="-122dp"
-                android:layout_marginBottom="56dp"
+                android:layout_marginEnd="-141dp"
+                android:layout_marginBottom="58dp"
                 android:layout_toStartOf="@+id/Latitud"
+                android:backgroundTint="@color/azulinterbus"
                 android:text="DETALLES"
                 android:textSize="12sp" />
 

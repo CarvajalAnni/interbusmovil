@@ -2,6 +2,7 @@ package com.juancamilouni.iterbusmovilidad;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,8 +43,11 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
 
         Datos datos = listDatos.get(position);
 
+        //viewHolder.dateView.setText(DateFormat.format("dd/MM/yyyy", dateColumnIndex));
+
         holder.url.setText(datos.getUrl());
-        holder.fecha.setText(datos.getTiempo().toString());
+        holder.fecha.setText(DateFormat.format("EEEE dd/LLLL/yyyy HH:mm:ss",datos.getTiempo()));
+        //holder.fecha.setText(datos.getTiempo().toString());
         Glide.with(context).load(datos.getUrl()).into(holder.foto);
         holder.ubicacion.setText(datos.getUbicacion());
         holder.observa.setText(datos.getObservaciones());

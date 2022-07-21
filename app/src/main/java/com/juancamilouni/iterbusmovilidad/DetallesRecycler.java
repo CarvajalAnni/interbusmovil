@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,7 +27,7 @@ import java.util.Date;
 
 import Model.Datos;
 
-public class DetallesRecycler extends AppCompatActivity {
+public class DetallesRecycler extends Activity {
 
     FirebaseFirestore db;
     TextView recfecha,recubi,recobs;
@@ -124,8 +125,9 @@ public class DetallesRecycler extends AppCompatActivity {
 
         Glide.with(DetallesRecycler.this)
                 .load(foto)
-                .apply(new RequestOptions()
-                .override(1000,1000))
+                //.apply(new RequestOptions()
+                .centerCrop()
+                //.override(500,500))
                 .into(img)
                 ;
 

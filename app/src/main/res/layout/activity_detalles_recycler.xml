@@ -11,11 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="209dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/fondodegradado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/fondoformulario" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -43,10 +43,10 @@
 
     <ImageView
         android:id="@+id/detImg"
-        android:layout_width="396dp"
-        android:layout_height="233dp"
+        android:layout_width="365dp"
+        android:layout_height="270dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="48dp"
         android:scaleType="centerCrop"
         android:src="@drawable/autobus"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,49 +55,96 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/detFecha"
-        android:layout_width="194dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="20dp"
-        android:layout_toEndOf="@+id/detImg"
+        android:id="@+id/Fecha"
+        android:layout_width="97dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
+        android:hint="Fecha:"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/detImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/detFecha"
+        android:layout_width="256dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/detImg"
 
         android:text="fecha"
         android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/detImg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/detLatitud"
+        android:layout_width="266dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:layout_toRightOf="@+id/detImg"
+        android:text="Ubicacion"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detImg" />
 
     <TextView
-        android:id="@+id/detLatitud"
-        android:layout_width="276dp"
-        android:layout_height="61dp"
+        android:id="@+id/Ubicacion"
+        android:layout_width="109dp"
+        android:layout_height="26dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/detImg"
         android:gravity="center"
-        android:text="Ubicacion"
+        android:hint="Ubicacion:"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detObservacion" />
+        app:layout_constraintTop_toBottomOf="@+id/detImg" />
 
     <TextView
         android:id="@+id/detObservacion"
-        android:layout_width="360dp"
-        android:layout_height="78dp"
+        android:layout_width="273dp"
+        android:layout_height="103dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_toRightOf="@+id/detImg"
-
-        android:gravity="center"
         android:text="Observacion"
         android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detFecha" />
+        app:layout_constraintTop_toBottomOf="@+id/detLatitud"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <TextView
+        android:id="@+id/Observacion"
+        android:layout_width="120dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="28dp"
+        android:layout_toRightOf="@+id/detImg"
+        android:gravity="center"
+        android:hint="Observacion:"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Ubicacion"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/botton"
