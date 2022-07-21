@@ -14,6 +14,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +41,7 @@ import java.util.regex.Pattern;
 
 public class IniciarSesion extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
-    ImageButton bntGoogle;
+    LinearLayout bntGoogle;
     int RC_SIGN_IN = 1;
     Button btningresar;
     public static String TAG = "GoogleSignIn", correoString, contraaseniaString;
