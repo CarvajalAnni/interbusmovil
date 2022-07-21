@@ -7,6 +7,8 @@
     tools:context=".Ayuda"
     android:background="#E2F4FA">
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/btnatrasflecha"
         android:layout_width="51dp"
         android:layout_height="77dp"
@@ -20,6 +22,8 @@
 
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imageView"
         android:layout_width="268dp"
         android:layout_height="259dp"
@@ -33,6 +37,8 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/texContraseñaAntigua"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="297dp"
@@ -57,6 +63,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/texContraseñaNueva"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="297dp"
@@ -75,6 +83,8 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
+
+
             android:id="@+id/idTxtconnu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,6 +96,8 @@
 
     <ImageView
         android:id="@+id/imagen3"
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="4dp"
@@ -96,6 +108,8 @@
         app:srcCompat="@drawable/cerrado" />
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imagen1"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -107,6 +121,8 @@
         app:srcCompat="@drawable/candadito" />
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imagen4"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -118,6 +134,8 @@
         app:srcCompat="@drawable/candadocargando" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/textRepetirContraseña"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
@@ -137,6 +155,7 @@
         app:layout_constraintTop_toBottomOf="@+id/texContraseñaAntigua">
 
         <com.google.android.material.textfield.TextInputEditText
+
             android:id="@+id/textconfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -146,6 +165,8 @@
 
     <TextView
         android:id="@+id/textView9"
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:gravity="center"
@@ -156,6 +177,7 @@
 
     <Button
         android:id="@+id/btnCambiarContraseña"
+
         android:layout_width="200dp"
         android:layout_height="56dp"
         android:layout_marginBottom="32dp"
