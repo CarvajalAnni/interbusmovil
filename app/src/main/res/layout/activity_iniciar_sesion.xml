@@ -82,49 +82,18 @@
                 app:layout_constraintVertical_bias="0.03"
                 app:srcCompat="@drawable/logoazul" />
 
-            <LinearLayout
-                android:id="@+id/linearLayout4"
-                android:layout_width="347dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnInicioD">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_weight="1"
-                    android:background="@color/azuloscuro" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="O"
-                    android:textColor="@color/azuloscuro"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:background="@color/azuloscuro" />
-            </LinearLayout>
 
             <LinearLayout
-                android:layout_marginBottom="10dp"
                 android:id="@+id/bntGoogle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+                app:layout_constraintTop_toBottomOf="@+id/button">
 
                 <ImageButton
                     android:layout_width="40dp"
@@ -148,7 +117,6 @@
 
             </LinearLayout>
 
-
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="351dp"
@@ -170,15 +138,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView9" />
-
-            <Button
-                android:id="@+id/btnInicioD"
-                android:layout_width="347dp"
-                android:layout_height="48dp"
-                android:text="Despachador"
-                app:layout_constraintEnd_toEndOf="@+id/button"
-                app:layout_constraintStart_toStartOf="@+id/button"
-                app:layout_constraintTop_toBottomOf="@+id/button" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
