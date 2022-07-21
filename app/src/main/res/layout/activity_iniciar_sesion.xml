@@ -4,30 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IniciarSesion"
-    android:background="#E2F4FA">
+    tools:context=".IniciarSesion">
 
     <ScrollView
         android:layout_width="match_parent"
-
-
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".IniciarSesion"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="-33dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".IniciarSesion">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="343dp"
-                android:layout_height="90dp"
+                android:layout_width="347dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:hint="Ingresa tu Correo "
+                android:hint="Ingresa tu Correo"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
@@ -40,7 +40,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/idTxtCorreo"
                     android:layout_width="match_parent"
-                    android:layout_height="59dp"
+                    android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:maxLength="30"
                     app:errorEnabled="true" />
@@ -50,8 +50,7 @@
                 android:id="@+id/textInputLayout2"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="347dp"
-                android:layout_height="102dp"
-                android:layout_marginTop="28dp"
+                android:layout_height="wrap_content"
                 android:hint="Ingresa tu Contraseña "
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusTopEnd="10dp"
@@ -66,8 +65,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/idTxtContrasenia"
-                    android:layout_width="336dp"
-                    android:layout_height="57dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:maxLength="20" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -83,27 +82,72 @@
                 app:layout_constraintVertical_bias="0.03"
                 app:srcCompat="@drawable/logoazul" />
 
-
-            <ImageButton
-                android:id="@+id/bntGoogle"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="347dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="644dp"
-                android:background="@drawable/goo"
+                android:gravity="center"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/btnInicioD">
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="145dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="92dp"
-                android:text="Ingresar"
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/azuloscuro" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O"
+                    android:textColor="@color/azuloscuro"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/azuloscuro" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="10dp"
+                android:id="@+id/bntGoogle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView9" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/goo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnInicioD" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Google"
+                    android:textColor="@color/azuloscuro"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.058"
+                    app:layout_constraintStart_toEndOf="@+id/bntGoogle"
+                    app:layout_constraintTop_toBottomOf="@+id/btnInicioD" />
+
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/textView9"
@@ -118,15 +162,23 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
             <Button
-                android:id="@+id/btnInicioD"
-                android:layout_width="170dp"
+                android:id="@+id/button"
+                android:layout_width="347dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="212dp"
                 android:layout_marginTop="92dp"
-                android:text="Despachador"
+                android:text="Ingresar"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView9" />
 
+            <Button
+                android:id="@+id/btnInicioD"
+                android:layout_width="347dp"
+                android:layout_height="48dp"
+                android:text="Despachador"
+                app:layout_constraintEnd_toEndOf="@+id/button"
+                app:layout_constraintStart_toStartOf="@+id/button"
+                app:layout_constraintTop_toBottomOf="@+id/button" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
