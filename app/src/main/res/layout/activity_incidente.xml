@@ -16,9 +16,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondoformulario" />
+        app:srcCompat="@color/azul" />
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imageView2"
         android:layout_width="245dp"
         android:layout_height="97dp"
@@ -30,6 +32,8 @@
         app:srcCompat="@drawable/usuarioconductor" />
 
     <TextView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,6 +50,8 @@
 
     <TextView
         android:id="@+id/textView2"
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -58,6 +64,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <LinearLayout
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/linearLayout3"
         android:layout_width="330dp"
         android:layout_height="101dp"
@@ -81,6 +89,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,6 +100,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -114,6 +126,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView10"
                 android:layout_width="38dp"
                 android:layout_height="wrap_content"
@@ -123,6 +137,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -149,6 +165,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView11"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
@@ -158,6 +176,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -176,6 +196,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/linearLayout2"
         android:layout_width="330dp"
         android:layout_height="101dp"
@@ -201,6 +223,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView4"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
@@ -210,6 +234,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -224,6 +250,7 @@
         </LinearLayout>
 
         <LinearLayout
+
             android:id="@+id/lnOtro"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
@@ -236,6 +263,8 @@
 
             <ImageView
                 android:id="@+id/imageView3"
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -244,6 +273,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -268,6 +299,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView5"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
@@ -277,6 +310,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -292,6 +327,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/linearLayout"
         android:layout_width="330dp"
         android:layout_height="101dp"
@@ -315,6 +352,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView6"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
@@ -324,6 +363,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -348,6 +389,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView7"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
@@ -357,6 +400,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -381,6 +426,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView8"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
@@ -390,6 +437,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

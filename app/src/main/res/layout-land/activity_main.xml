@@ -9,6 +9,8 @@
 
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:layout_width="334dp"
         android:layout_height="293dp"
         android:src="@drawable/interbus"
@@ -20,6 +22,8 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/autobusmovimiento"
         android:layout_width="84dp"
         android:layout_height="118dp"

@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:scaleType="centerCrop"
-    android:background="#E2F4FA"
     tools:context=".Formulario">
 <ScrollView
+
 
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -17,21 +17,24 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="209dp"
-        android:scaleType="centerCrop"
-        android:background="@drawable/fondoformulario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="209dp"
+            android:background="@color/azul"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+        <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imageView2"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -42,6 +45,8 @@
         app:srcCompat="@drawable/logoblan" />
 
     <TextView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,6 +105,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,6 +117,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -142,6 +151,8 @@
 
 
             <ImageView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/imageView3"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
@@ -152,6 +163,8 @@
                 tools:layout_editor_absoluteY="252dp" />
 
             <TextView
+                android:backgroundTint="@color/transparente"
+                android:background="@color/transparente"
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -206,6 +219,8 @@
 
 
         <ImageView
+            android:backgroundTint="@color/transparente"
+            android:background="@color/transparente"
             android:layout_width="60dp"
             android:layout_height="75dp"
             android:layout_gravity="left"
@@ -215,6 +230,8 @@
             tools:layout_editor_absoluteY="252dp" />
 
         <TextView
+            android:backgroundTint="@color/transparente"
+            android:background="@color/transparente"
             android:layout_width="78dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -287,6 +304,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textObservacionCc">
 
         <TextView
+            android:backgroundTint="@color/transparente"
+            android:background="@color/transparente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -313,6 +332,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textObservacionCc">
 
         <TextView
+            android:backgroundTint="@color/transparente"
+            android:background="@color/transparente"
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -324,33 +345,9 @@
     </LinearLayout>
 
 
-        <LinearLayout
-            android:id="@+id/espacio"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="12dp"
-            app:layout_constraintEnd_toEndOf="@+id/btnReporteDespachador"
-            app:layout_constraintTop_toBottomOf="@+id/btnReporteDespachador">
 
-            <TextView
-                android:id="@+id/espaciodoc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Reportar a Despachador"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="16dp" />
-        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
-    <include
-        layout="@layout/activity_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btnReporteDespachador"
-        tools:layout_editor_absoluteX="56dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -106,8 +106,6 @@ public class Inicio extends AppCompatActivity {
         db.collection("token").document("ItaM9DCMeiRcI3MxkFuF").update("nombre",nombredas);
         db.collection("token").document("ItaM9DCMeiRcI3MxkFuF").update("correo",correodas);
 
-
-
         Permiso();
         referenciar();
     }

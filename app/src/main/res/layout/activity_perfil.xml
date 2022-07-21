@@ -10,13 +10,14 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbtnatras"
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:layout_width="57dp"
         android:layout_height="55dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="304dp"
-        android:backgroundTint="#7AEAFD"
         android:src="@drawable/atras"
         app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +25,8 @@
 
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imageView2"
         android:layout_width="84dp"
         android:layout_height="77dp"
@@ -35,6 +38,8 @@
         app:srcCompat="@drawable/logoazul" />
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imageView"
         android:layout_width="136dp"
         android:layout_height="131dp"
@@ -47,6 +52,8 @@
         app:srcCompat="@mipmap/conductor" />
 
     <TextView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/textusuario"
         android:layout_width="342dp"
         android:layout_height="51dp"
@@ -63,13 +70,15 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/textNombreP"
         android:layout_width="154dp"
         android:layout_height="52dp"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:hint="Correo"
-        android:textColorHint="@color/grisinter"
+        android:textColorHint="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +88,8 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/textCorreoP"
         android:layout_width="155dp"
         android:layout_height="58dp"
@@ -86,7 +97,7 @@
         android:gravity="center"
         android:hint="Contraseña"
         android:textSize="25sp"
-        android:textColorHint="@color/grisinter"
+        android:textColorHint="@color/black"
 
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,6 +107,8 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/textRolP"
         android:layout_width="158dp"
         android:layout_height="61dp"
@@ -103,7 +116,7 @@
         android:gravity="center"
         android:hint="Rol"
         android:textSize="25sp"
-        android:textColorHint="@color/grisinter"
+        android:textColorHint="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.588"

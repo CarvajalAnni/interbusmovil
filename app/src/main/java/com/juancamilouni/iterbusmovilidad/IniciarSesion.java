@@ -14,6 +14,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +41,7 @@ import java.util.regex.Pattern;
 
 public class IniciarSesion extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
-    ImageButton bntGoogle;
+    LinearLayout bntGoogle;
     int RC_SIGN_IN = 1;
     Button btningresar;
     public static String TAG = "GoogleSignIn", correoString, contraaseniaString;
@@ -210,49 +211,36 @@ public class IniciarSesion extends AppCompatActivity {
         Pattern minusculas = Pattern.compile("[a-z]");
         Pattern numeros = Pattern.compile("[0-9]");
 
+        if (contrasenas.isEmpty()){
+            contrasenia.setError("El campo no puede estar vacio");
+            return false;
 
-
-            if (!minusculas.matcher(contrasenas).find()) {
-                contrasenia.setError("contraseña invalida");
-                esValido = false;
-            } else {
-                esValido = true;
-            }
-
-            if (!mayusculas.matcher(contrasenas).find()) {
-                contrasenia.setError("contraseña invalida");
-
-                esValido = false;
-            } else {
-                esValido = true;
-
-            }
-            if (!numeros.matcher(contrasenas).find()) {
-                contrasenia.setError("contraseña invalida");
-                esValido = false;
-
-            } else {
-
-                esValido = true;
-
-            }
-            if (contrasenas.length() < 8) {
-                contrasenia.setError("contraseña invalida");
-                esValido = false;
-                //charcount.setTextColor(Color.RED);
-            } else {
-                esValido = true;
-                // charcount.setTextColor(Color.GREEN);
-            }
-
-
-            return esValido;
         }
 
+
+        if (!minusculas.matcher(contrasenas).find()) {
+            contrasenia.setError("contraseña invalida");
+            return false;
+        }
+        if (!mayusculas.matcher(contrasenas).find()) {
+            contrasenia.setError("contraseña invalida");
+
+            return false;
+        }
+        if (!numeros.matcher(contrasenas).find()) {
+            contrasenia.setError("contraseña invalida");
+            return false;
+
+        }
+        if (contrasenas.length() < 8) {
+            contrasenia.setError("contraseña invalida");
+            return false;
+        }
+
+        return esValido;
     }
 
-
-
+}
 
 
 

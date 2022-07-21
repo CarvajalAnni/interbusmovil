@@ -19,6 +19,8 @@
         android:src="@drawable/fondoformulario" />
 
     <ImageView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:id="@+id/imageView2"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -30,6 +32,8 @@
 
     <TextView
         android:id="@+id/textView"
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REPORTES"
