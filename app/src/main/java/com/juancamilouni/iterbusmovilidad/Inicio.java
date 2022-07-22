@@ -31,6 +31,7 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.json.JSONException;
@@ -49,7 +50,7 @@ public class Inicio extends AppCompatActivity {
     //actualizacion
     private TextView nombretok,correotok;
     private FirebaseAuth mAuth;
-    String nombredas , correodas;
+    String nombredas , correodas,idDoc;
     FirebaseFirestore db;
 
 
@@ -103,8 +104,15 @@ public class Inicio extends AppCompatActivity {
         nombredas = nombretok.getText().toString();
         correodas = correotok.getText().toString();
 
-        db.collection("token").document("2Bb3xSVy6t3oS1JLtyrv").update("nombre",nombredas);
-        db.collection("token").document("2Bb3xSVy6t3oS1JLtyrv").update("correo",correodas);
+        if(Fcm.id != null){
+            idDoc= Fcm.id;
+            Toast.makeText(Inicio.this, idDoc, Toast.LENGTH_LONG).show();
+            db.collection("token").document(idDoc).update("nombre", nombredas);
+            db.collection("token").document(idDoc).update("correo", correodas);
+
+        }
+            /*db.collection("token").document("2Bb3xSVy6t3oS1JLtyrv").update("nombre", nombredas);
+            db.collection("token").document("2Bb3xSVy6t3oS1JLtyrv").update("correo", correodas);*/
 
         Permiso();
         referenciar();

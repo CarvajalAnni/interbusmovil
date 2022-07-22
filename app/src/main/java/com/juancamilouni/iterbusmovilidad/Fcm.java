@@ -51,13 +51,10 @@ public class Fcm extends FirebaseMessagingService {
     private GoogleSignInOptions gso;
     FirebaseFirestore mFirestore;
     private FirebaseAuth mAuth;
-    private String correo1;
-    private String nombre1;
 
-     Spinner spinner;
     DatabaseReference mDatabase;
-
     FirebaseFirestore db;
+    static String id;
 
 
 
@@ -76,10 +73,6 @@ public class Fcm extends FirebaseMessagingService {
 
     private void guardartoken(String token) {
 
-       // Dashboard das= new Dashboard();
-       // nombre1= das.getNombredas();
-        //correo1= das.getCorreodas();
-
         Token token1 = new Token();
         token1.setToken(token);
 
@@ -93,6 +86,8 @@ public class Fcm extends FirebaseMessagingService {
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
                         Toast.makeText(Fcm.this, "token obtenido", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Fcm.this, documentReference.getId(), Toast.LENGTH_SHORT).show();
+                        id= documentReference.getId();
                     }
                 })
 
