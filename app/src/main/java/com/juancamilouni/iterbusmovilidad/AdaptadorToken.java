@@ -26,11 +26,11 @@ import java.util.Map;
 
 import Model.Token;
 
-public class AdaptadorToken extends RecyclerView.Adapter<AdaptadorToken.ViewHolder> {
+public class AdaptadorToken extends RecyclerView.Adapter<AdaptadorToken.ViewHolder> implements View.OnClickListener  {
     List<Token> listToken;
     Context context;
+    private View.OnClickListener listener;
 
-    String tok;
 
     public AdaptadorToken(Context context,List<Token> listToken) {
         this.listToken = listToken;
@@ -41,6 +41,7 @@ public class AdaptadorToken extends RecyclerView.Adapter<AdaptadorToken.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_token, parent, false);
+        view.setOnClickListener(this);
         return new ViewHolder(view);
     }
 
@@ -51,9 +52,6 @@ public class AdaptadorToken extends RecyclerView.Adapter<AdaptadorToken.ViewHold
         holder.correo.setText(token.getCorreo());
         holder.token1.setText(token.getToken());
 
-        tok= token.getToken();
-
-        holder.setOnClickListener();
     }
 
     @Override
@@ -61,11 +59,22 @@ public class AdaptadorToken extends RecyclerView.Adapter<AdaptadorToken.ViewHold
         return listToken.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener= listener;
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        if(listener!= null){
+            listener.onClick(view);
+        }
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nombre;
         TextView correo;
         TextView token1;
-        Button enviar;
         Context context2;
 
         public ViewHolder(View view) {
@@ -75,69 +84,11 @@ public class AdaptadorToken extends RecyclerView.Adapter<AdaptadorToken.ViewHold
             nombre = view.findViewById(R.id.nombre1);
             correo= view.findViewById(R.id.correo1);
             token1 = view.findViewById(R.id.tokens);
-            enviar = view.findViewById(R.id.enviarnoti);
-
-
-        }
-        void setOnClickListener() {
-            enviar.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            //boton enviar
-
-
-
-
-            switch (v.getId()){
-                case R.id.enviarnoti:
-                    Intent intent= new Intent(context2,DetallesRecycler.class);
-                    //Toast.makeText(RecyclerToken.this, Toast.LENGTH_LONG, "boton presionado").show();
-                    Toast.makeText(context, tok, Toast.LENGTH_LONG).show();
-                    llamarespecifico();
-                    context2.startActivity(intent);
-
-                    break;
-            }
 
 
         }
     }
 
-    private void llamarespecifico() {
-        RequestQueue myrequest = Volley.newRequestQueue(context.getApplicationContext());
-        JSONObject json = new JSONObject();
 
-        try {
-            // tomar el valor de token
-            //String token = "c4TL4LrkQjWWXuQWmmXXZA:APA91bHlVCTd-SOZWibl31J8XSG9qu4MaA3EfSEDJnUJcaiDl_gRyP2o8nhY8shutkBnBoRKHww3_LHE2MorP7lDmMt2j8yiuUUitArlvT-n7PsYwkw5aLE4SeB4OF7OtcnqpGzD5qw4";
-            String token= tok;
-            json.put("to", token);
-            JSONObject notificacion = new JSONObject();
-
-            // notificacion que se recibe
-            notificacion.put("titulo", "Interbus");
-            notificacion.put("detalle", "Un conductor te ha notificado");
-
-            json.put("data",notificacion);
-
-            String URL = "https://fcm.googleapis.com/fcm/send";
-            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
-                @Override
-                public Map<String, String> getHeaders(){
-                    Map<String,String> header = new HashMap<>();
-                    header.put("content-type", "application/json");
-                    header.put("authorization", "key=AAAALeT1rgo:APA91bH4bT4E70reoTjsbCPH63nnoZN2ioq_LvuU3KZgHngw48wJWqkrBxLmvL3OSDIwu0zsLBM54J2ovzPKh08tVEHhUjs-YYUkukMAKVzQHcPgvL6Itw6lz3d43NcgBm3KkydbZOiS");// key configuraciones del cloud menssagin
-
-                    return header;
-                }
-            };
-            myrequest.add(request);
-
-        }catch (JSONException e){
-            e.printStackTrace();
-        }
-        }
 
 }

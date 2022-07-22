@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -120,6 +121,8 @@ public class DetallesRecycler extends Activity {
         }
 
         recubi.setText(ubicacion);
+
+        //recfecha.setText(DateFormat.format("EEEE dd/LLLL/yyyy HH:mm:ss", ));
         recfecha.setText(fecha);
         recobs.setText(observacion);
 

@@ -19,9 +19,10 @@ import java.util.List;
 
 import Model.Datos;
 
-public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
+public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> implements View.OnClickListener{
     List<Datos> listDatos;
     Context context;
+    private View.OnClickListener listener;
 
     public Adaptador(Context context, List<Datos> listDatos) {
         this.listDatos = listDatos;
@@ -32,7 +33,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
-        //view.setOnClickListener(this);
+        view.setOnClickListener(this);
 
         return new ViewHolder(view);
     }
@@ -52,7 +53,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
         holder.ubicacion.setText(datos.getUbicacion());
         holder.observa.setText(datos.getObservaciones());
 
-        holder.setOnClickListener();
+
 
     }
 
@@ -61,24 +62,27 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
         return listDatos.size();
     }
 
-    /*@Override
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener= listener;
+    }
+
+    @Override
     public void onClick(View view) {
-        if (listener!=null){
+        if(listener!= null){
             listener.onClick(view);
         }
 
-    }*/
+    }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
 
         Context context1;
         TextView fecha;
-
         TextView url;
         TextView ubicacion;
         TextView observa;
         ImageView foto;
-        Button detalles;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -90,14 +94,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
             ubicacion = itemView.findViewById(R.id.Latitud);
             observa = itemView.findViewById(R.id.Observacion);
             foto = (ImageView) itemView.findViewById(R.id.Imagen1);
-            detalles = itemView.findViewById(R.id.verDetalle);
         }
 
-         void setOnClickListener() {
-            detalles.setOnClickListener(this);
-        }
-
-        @Override
+        /*@Override
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.verDetalle:
@@ -109,6 +108,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
                     context1.startActivity(intent);
                     break;
             }
-        }
+        }*/
     }
 }

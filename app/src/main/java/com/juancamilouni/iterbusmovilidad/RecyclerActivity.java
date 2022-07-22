@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,6 +38,7 @@ public class RecyclerActivity extends Activity {
     FirebaseStorage storageRef;
     FirebaseFirestore db;
     RecyclerView recyclerView;
+    String obser1,url1,ubicacion1,fecha1;
 
 
     @Override
@@ -64,19 +66,35 @@ public class RecyclerActivity extends Activity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                                 //Toast.makeText(RecyclerActivity.this, ""+document.getData(), Toast.LENGTH_SHORT).show();
-                                //String url = document.getData().toString();
                                 Date tiempo= document.getDate("tiempo");
                                 String Cadenaurl = document.getString("url");
                                 String Cadenaobs = document.getString("observaciones");
                                 String Cadenaubi = document.getString("ubicacion");
 
-                                //String sSubCadena1 = Cadenaurl.substring(5);
-                               //Toast.makeText(RecyclerActivity.this, ""+ sSubCadena, Toast.LENGTH_SHORT).show();
                                 Datos datos = new Datos(tiempo,Cadenaurl,Cadenaubi,Cadenaobs);
                                 listDatos.add(datos);
-                              // Toast.makeText(RecyclerActivity.this, ""+listDatos, Toast.LENGTH_SHORT).show();
-                                // listDatos.add(new Datos(url));
+                                // Toast.makeText(RecyclerActivity.this, ""+listDatos, Toast.LENGTH_SHORT).show();
                                 adaptador= new Adaptador(RecyclerActivity.this,listDatos);
+
+                                //metodo click
+                                adaptador.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Intent intent= new Intent(RecyclerActivity.this,DetallesRecycler.class);
+
+                                        fecha1= DateFormat.format("EEEE dd/LLLL/yyyy HH:mm:ss",listDatos.get(recyclerView.getChildAdapterPosition(view)).getTiempo()).toString();
+                                        obser1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getObservaciones();
+                                        url1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUrl();
+                                        ubicacion1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUbicacion();
+
+                                        intent.putExtra("ubicacion",ubicacion1.toString());
+                                        intent.putExtra("fecha",fecha1.toString());
+                                        intent.putExtra("observacion",obser1.toString());
+                                        intent.putExtra("foto",url1.toString());
+                                        startActivity(intent);
+                                    }
+                                });
+
                                 recyclerView.setAdapter(adaptador);
                             }
                         } else {
