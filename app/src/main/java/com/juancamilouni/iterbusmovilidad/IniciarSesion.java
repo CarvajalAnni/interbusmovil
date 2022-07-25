@@ -37,12 +37,22 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
+
+import Model.Userdesp;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class IniciarSesion extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     LinearLayout bntGoogle;
     int RC_SIGN_IN = 1;
+    String content = "", buscar="despachador", buscar2="admin";
+    EditText etxemail, etxcontra;
     Button btningresar;
     public static String TAG = "GoogleSignIn", correoString, contraaseniaString;
     public static EditText correo, contrasenia;
@@ -87,6 +97,7 @@ public class IniciarSesion extends AppCompatActivity {
 
     }
 
+
     @Override
     public void onBackPressed() {
         moveTaskToBack(true);
@@ -102,19 +113,61 @@ public class IniciarSesion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
                 correoString = correo.getText().toString();
                 contraaseniaString = contrasenia.getText().toString();
+
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("https://interbusapi.herokuapp.com/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+
+                InterbusApi interbusApi = retrofit.create(InterbusApi.class);
+                Call<ArrayList<Userdesp>> call = interbusApi.login(correo.getText().toString(), contrasenia.getText().toString());
+
+                call.enqueue(new Callback<ArrayList<Userdesp>>() {
+                                 @Override
+                                 public void onResponse(Call<ArrayList<Userdesp>> call, Response<ArrayList<Userdesp>> response) {
+                                     if (!response.isSuccessful()) {
+                                         Toast.makeText(IniciarSesion.this, "Email o contraseña incorecto", Toast.LENGTH_SHORT).show();
+                                     } else {
+                                         ArrayList<Userdesp> listausu = response.body();
+
+                                         for (Userdesp userdesp : listausu) {
+                                             content += "email = " + userdesp.getEmail() + " \n";
+                                             content += "clave = " + userdesp.getClave() + " \n";
+                                             content += "rol = " + userdesp.getRol() + " \n";
+
+                                         }
+
+                                         for (int i=0; i<listausu.size();i++){
+                                             if (listausu.get(i).getRol().equalsIgnoreCase(buscar) || listausu.get(i).getRol().equalsIgnoreCase(buscar2)) {
+                                                 Intent intent = new Intent(IniciarSesion.this, Inicio.class);
+                                                 startActivity(intent);
+
+                                             } else {
+                                                 Toast.makeText(IniciarSesion.this, "Debes Ser Despachador ", Toast.LENGTH_LONG).show();
+                                             }
+
+                                         }
+
+                                     }
+                                 }
+
+                                 @Override
+                                 public void onFailure(Call<ArrayList<Userdesp>> call, Throwable t) {
+                                     Log.e("ErrorFailure=> ", String.valueOf(t.getMessage()));
+                                 }
+                });
+
+
                 if (!(validarEmail(correoString)) || !(validarcontrasenas(contraaseniaString))) {
                     //
                 } else {
-                    Intent intent = new Intent(IniciarSesion.this, Inicio.class);
-                    Intent intennt6 = new Intent(IniciarSesion.this, Inicio.class);
+                    /*Intent intennt6 = new Intent(IniciarSesion.this, Inicio.class);
                     intennt6.putExtra("correo", correo.getText().toString());
                     intennt6.putExtra("contraseña",contrasenia.getText().toString());
-                    startActivity(intennt6);
-                    startActivity(intent);
-                    finish();
+                    startActivity(intennt6);*/
+                    //finish();
                 }
 
 
