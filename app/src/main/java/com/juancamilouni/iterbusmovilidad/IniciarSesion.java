@@ -57,6 +57,8 @@ public class IniciarSesion extends AppCompatActivity {
     public static String TAG = "GoogleSignIn", correoString, contraaseniaString;
     public static EditText correo, contrasenia;
 
+    String correoenv,contraenv;
+
 
     //navegacion
     //BottomNavigationView navegacion;
@@ -142,6 +144,16 @@ public class IniciarSesion extends AppCompatActivity {
                                          for (int i=0; i<listausu.size();i++){
                                              if (listausu.get(i).getRol().equalsIgnoreCase(buscar) || listausu.get(i).getRol().equalsIgnoreCase(buscar2)) {
                                                  Intent intent = new Intent(IniciarSesion.this, Inicio.class);
+
+
+                                                 Intent intent2 = new Intent(IniciarSesion.this, Perfil.class);
+                                                 intent2.putExtra("correo", listausu.get(i).getEmail());
+                                                 intent2.putExtra("contraseña",listausu.get(i).getClave());
+
+
+                                                /* correoenv= listausu.get(i).getEmail();
+                                                 contraenv= listausu.get(i).getClave();*/
+                                                 startActivity(intent2);
                                                  startActivity(intent);
 
                                              } else {
@@ -163,10 +175,8 @@ public class IniciarSesion extends AppCompatActivity {
                 if (!(validarEmail(correoString)) || !(validarcontrasenas(contraaseniaString))) {
                     //
                 } else {
-                    /*Intent intennt6 = new Intent(IniciarSesion.this, Inicio.class);
-                    intennt6.putExtra("correo", correo.getText().toString());
-                    intennt6.putExtra("contraseña",contrasenia.getText().toString());
-                    startActivity(intennt6);*/
+                    //Intent intennt6 = new Intent(IniciarSesion.this, Inicio.class);
+
                     //finish();
                 }
 
