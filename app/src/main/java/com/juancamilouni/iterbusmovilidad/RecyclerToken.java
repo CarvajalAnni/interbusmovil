@@ -39,7 +39,7 @@ public class RecyclerToken extends AppCompatActivity {
 
     FirebaseFirestore db;
     RecyclerView recyclerView;
-    String tok;
+    String tok,conductor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +84,7 @@ public class RecyclerToken extends AppCompatActivity {
                                     public void onClick(View view) {
                                         //Toast.makeText(RecyclerToken.this, "selecciono: "+listToken.get(recyclerView.getChildAdapterPosition(view)).getToken(), Toast.LENGTH_SHORT).show();
                                         tok=listToken.get(recyclerView.getChildAdapterPosition(view)).getToken();
+                                        //conductor=listToken.get(recyclerView.getChildAdapterPosition(view)).getNombre();
                                         Toast.makeText(RecyclerToken.this, tok, Toast.LENGTH_LONG).show();
                                         llamarespecifico();
                                     }
@@ -113,7 +114,8 @@ public class RecyclerToken extends AppCompatActivity {
 
             // notificacion que se recibe
             notificacion.put("titulo", "Interbus");
-            notificacion.put("detalle", "Un conductor te ha notificado");
+            notificacion.put("detalle", "Un conductor te ha notificado ");
+            //notificacion.put("nombre", conductor);
 
             json.put("data",notificacion);
 

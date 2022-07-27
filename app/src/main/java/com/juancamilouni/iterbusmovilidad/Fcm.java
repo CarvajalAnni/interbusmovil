@@ -106,12 +106,15 @@ public class Fcm extends FirebaseMessagingService {
         super.onMessageReceived(remotemessage);
         // nos dira el id de la persona que la envia
 
-        String from = remotemessage.getFrom();
+        //String from = remotemessage.getFrom();
+
 
         //clave valor desde firebase
         if(remotemessage.getData().size() >0){
             String titulo = remotemessage.getData().get("titulo");
             String detalle = remotemessage.getData().get("detalle");
+            //String nombre = remotemessage.getFrom();
+
             // enviar la notificacion enviar
 
             mayorqueoreo(titulo,detalle);
@@ -137,6 +140,7 @@ public class Fcm extends FirebaseMessagingService {
                 .setContentTitle(titulo)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentText(detalle)
+                //.setContentText(nombre)
                 .setContentIntent(clicknoti())
                 .setContentInfo("nuevo");
 

@@ -88,6 +88,9 @@ dependencies {
     //botton navigation
     implementation 'com.google.android.material:material:1.0.0'
 
+    //refrecar
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
 
     implementation "com.airbnb.android:lottie:5.2.0"
 

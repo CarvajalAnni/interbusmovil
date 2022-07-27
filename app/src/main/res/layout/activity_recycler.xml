@@ -12,49 +12,63 @@
         android:layout_width="match_parent"
         android:layout_height="209dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/fondoformulario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/fondoformulario" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:backgroundTint="@color/transparente"
-        android:background="@color/transparente"
         android:id="@+id/imageView2"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="16dp"
+        android:background="@color/transparente"
+        android:backgroundTint="@color/transparente"
+        android:src="@drawable/logoblan"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        android:src="@drawable/logoblan" />
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/textView"
-        android:backgroundTint="@color/transparente"
-        android:background="@color/transparente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REPORTES"
-        android:textStyle="bold"
-        android:textColor="@color/white"
         android:layout_marginEnd="8dp"
+        android:background="@color/transparente"
+        android:backgroundTint="@color/transparente"
+        android:text="REPORTES"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcreportes"
-        android:layout_width="412dp"
-        android:layout_height="533dp"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="400dp"
+        android:layout_height="506dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        tools:ignore="MissingConstraints">
+
+        <androidx.recyclerview.widget.RecyclerView
+
+
+            android:id="@+id/rcreportes"
+            android:layout_width="412dp"
+            android:layout_height="533dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
