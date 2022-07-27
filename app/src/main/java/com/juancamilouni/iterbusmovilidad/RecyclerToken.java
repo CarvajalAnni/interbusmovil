@@ -3,11 +3,14 @@ package com.juancamilouni.iterbusmovilidad;
 import static android.content.ContentValues.TAG;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -18,7 +21,11 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -26,10 +33,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import Model.Datos;
 import Model.Token;
 
 public class RecyclerToken extends AppCompatActivity {
@@ -56,7 +65,7 @@ public class RecyclerToken extends AppCompatActivity {
 
     private void llenarLista() {
         //Traer la coleccion de url
-        db.collection("token")/*.orderBy("tiempo", Query.Direction.DESCENDING)*/.limit(10).get()
+        /*db.collection("token")*//*.orderBy("tiempo", Query.Direction.DESCENDING)*//*.limit(10).get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -97,7 +106,67 @@ public class RecyclerToken extends AppCompatActivity {
                         }
                     }
 
+                });*/
+
+
+        ////actualizar en tiempo real
+        db.collection("token")/*.orderBy("tiempo", Query.Direction.DESCENDING).limit(10)*/
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot snapshots,
+                                        @Nullable FirebaseFirestoreException e) {
+                        if (e != null) {
+                            Log.w(TAG, "listen:error", e);
+                            return;
+                        }
+
+                        for (DocumentChange dc : snapshots.getDocumentChanges()) {
+                            switch (dc.getType()) {
+                                case ADDED:
+                                    //Log.d(TAG, "New city: " + dc.getDocument().getData());
+
+                                    String nombre = dc.getDocument().getString("nombre");
+                                    String correo = dc.getDocument().getString("correo");
+                                    String tokena = dc.getDocument().getString("token");
+
+                                    //String sSubCadena1 = Cadenaurl.substring(5);
+                                    //Toast.makeText(RecyclerActivity.this, ""+ sSubCadena, Toast.LENGTH_SHORT).show();
+                                    Token token = new Token (nombre,correo,tokena);
+                                    listToken.add(token);
+                                    // Toast.makeText(RecyclerToken.this, ""+listToken, Toast.LENGTH_SHORT).show();
+                                    // listDatos.add(new Datos(url));
+                                    adaptadortoken= new AdaptadorToken(RecyclerToken.this,listToken);
+
+                                    //metodo click
+                                    adaptadortoken.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            //Toast.makeText(RecyclerToken.this, "selecciono: "+listToken.get(recyclerView.getChildAdapterPosition(view)).getToken(), Toast.LENGTH_SHORT).show();
+                                            tok=listToken.get(recyclerView.getChildAdapterPosition(view)).getToken();
+                                            //conductor=listToken.get(recyclerView.getChildAdapterPosition(view)).getNombre();
+                                            Toast.makeText(RecyclerToken.this, tok, Toast.LENGTH_LONG).show();
+                                            llamarespecifico();
+                                        }
+                                    });
+
+                                    recyclerView.setAdapter(adaptadortoken);
+
+
+
+                                    break;
+                                /*case MODIFIED:
+                                    Log.d(TAG, "Modified city: " + dc.getDocument().getData());
+                                    break;*/
+                                case REMOVED:
+                                    Log.d(TAG, "Removed city: " + dc.getDocument().getData());
+                                    break;
+                            }
+                        }
+
+                    }
                 });
+
+
     }
 
 

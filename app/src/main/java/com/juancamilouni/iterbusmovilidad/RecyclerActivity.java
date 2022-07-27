@@ -3,6 +3,7 @@ package com.juancamilouni.iterbusmovilidad;
 import static android.content.ContentValues.TAG;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +21,10 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -70,7 +74,7 @@ public class RecyclerActivity extends Activity {
 
     private void llenarLista() {
         //Traer la coleccion de url
-        db.collection("Reportes").orderBy("tiempo", Query.Direction.DESCENDING).limit(10).get()
+        /*db.collection("Reportes").orderBy("tiempo", Query.Direction.DESCENDING).limit(10).get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -114,6 +118,76 @@ public class RecyclerActivity extends Activity {
                         }
                     }
 
+                });*/
+
+
+
+
+
+        ////////detectar actualizaciones
+        db.collection("Reportes").orderBy("tiempo", Query.Direction.DESCENDING).limit(10)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot snapshots,
+                                        @Nullable FirebaseFirestoreException e) {
+                        if (e != null) {
+                            Log.w(TAG, "listen:error", e);
+                            return;
+                        }
+
+                        for (DocumentChange dc : snapshots.getDocumentChanges()) {
+                            switch (dc.getType()) {
+                                case ADDED:
+                                    //Log.d(TAG, "New city: " + dc.getDocument().getData());
+
+                                    Date tiempo= dc.getDocument().getDate("tiempo");
+                                    String Cadenaurl = dc.getDocument().getString("url");
+                                    String Cadenaobs = dc.getDocument().getString("observaciones");
+                                    String Cadenaubi = dc.getDocument().getString("ubicacion");
+
+                                    Datos datos = new Datos(tiempo,Cadenaurl,Cadenaubi,Cadenaobs);
+                                    listDatos.add(datos);
+                                    // Toast.makeText(RecyclerActivity.this, ""+listDatos, Toast.LENGTH_SHORT).show();
+                                    adaptador= new Adaptador(RecyclerActivity.this,listDatos);
+
+                                    //metodo click
+                                    adaptador.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent intent= new Intent(RecyclerActivity.this,DetallesRecycler.class);
+
+                                            fecha1= DateFormat.format("EEEE dd/LLLL/yyyy HH:mm:ss",listDatos.get(recyclerView.getChildAdapterPosition(view)).getTiempo()).toString();
+                                            obser1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getObservaciones();
+                                            url1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUrl();
+                                            ubicacion1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUbicacion();
+
+                                            intent.putExtra("ubicacion",ubicacion1.toString());
+                                            intent.putExtra("fecha",fecha1.toString());
+                                            intent.putExtra("observacion",obser1.toString());
+                                            intent.putExtra("foto",url1.toString());
+                                            startActivity(intent);
+                                        }
+                                    });
+
+                                    recyclerView.setAdapter(adaptador);
+
+
+
+                                    break;
+                                /*case MODIFIED:
+                                    Log.d(TAG, "Modified city: " + dc.getDocument().getData());
+                                    break;*/
+                                case REMOVED:
+                                    Log.d(TAG, "Removed city: " + dc.getDocument().getData());
+                                    break;
+                            }
+                        }
+
+                    }
                 });
+
+
+
+
     }
 }
