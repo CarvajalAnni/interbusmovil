@@ -47,6 +47,7 @@ public class Inicio extends AppCompatActivity {
     LottieAnimationView sos;
     FloatingActionButton btnnotificacion;
 
+
     //actualizacion
     private TextView nombretok,correotok;
     private FirebaseAuth mAuth;
@@ -78,7 +79,7 @@ public class Inicio extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
+                        startActivity(new Intent(getApplicationContext(),Perfil.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -97,14 +98,15 @@ public class Inicio extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
-
-        nombretok.setText(currentUser.getDisplayName());
-        correotok.setText(currentUser.getEmail());
+        if(Fcm.id != null) {
+            nombretok.setText(currentUser.getDisplayName());
+            correotok.setText(currentUser.getEmail());
+       // }
 
         nombredas = nombretok.getText().toString();
         correodas = correotok.getText().toString();
 
-        if(Fcm.id != null){
+        //if(Fcm.id != null){
             idDoc= Fcm.id;
             Toast.makeText(Inicio.this, idDoc, Toast.LENGTH_LONG).show();
             db.collection("token").document(idDoc).update("nombre", nombredas);
@@ -202,7 +204,7 @@ public class Inicio extends AppCompatActivity {
                 return true;
 
             case R.id.CerrarSesion:
-                Intent intent2 = new Intent(Inicio.this, Dashboard.class);
+                Intent intent2 = new Intent(Inicio.this, IniciarSesion.class);
                 startActivity(intent2);
                 return true;
         }

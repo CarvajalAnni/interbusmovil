@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Perfil extends AppCompatActivity {
-    TextView etxcorreo, etxcontrasenia;
+    TextView etxcorreo, etxcontrasenia,etxrol;
     Bundle extras;
     ImageButton btnAttrass;
     FloatingActionButton fbtnatras;
@@ -48,13 +48,17 @@ public class Perfil extends AppCompatActivity {
         extras = getIntent().getExtras();
         String correo = extras.getString("correo");
         String contrasenia = extras.getString("contraseña");
+        String rol = extras.getString("rol");
+
         etxcorreo.setText(correo);
         etxcontrasenia.setText(contrasenia);
+        etxrol.setText(rol);
 
     }
     private void referenciar(){
         etxcorreo=findViewById(R.id.textNombreP);
         etxcontrasenia=findViewById(R.id.textCorreoP);
+        etxrol=findViewById(R.id.textRolP);
 
     }
 

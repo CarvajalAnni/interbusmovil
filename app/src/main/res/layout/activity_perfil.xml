@@ -70,12 +70,12 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:backgroundTint="@color/transparente"
-        android:background="@color/transparente"
         android:id="@+id/textNombreP"
-        android:layout_width="154dp"
-        android:layout_height="52dp"
+        android:layout_width="293dp"
+        android:layout_height="44dp"
         android:layout_marginTop="40dp"
+        android:background="@color/transparente"
+        android:backgroundTint="@color/transparente"
         android:gravity="center"
         android:hint="Correo"
         android:textColorHint="@color/black"
