@@ -461,13 +461,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
                 //llamarespecifico();
                 //prueba recicler
-                if (TextUtils.isEmpty(EtxtObservaciones.getText().toString()) && TextUtils.isEmpty(TxtLatitud.getText()) && urlObtenida==null){
-                    EtxtObservaciones.setError("campo requerido");
-                    TxtLatitud.setError("campo requerido");
-                    Txtimagen.setVisibility(View.VISIBLE);
-
-
-                }else {
+                if (validarfor()) {
 
                     long timestampp = System.currentTimeMillis();
                     String filePathAndNamee = "Colision/" + timestampp;
@@ -521,7 +515,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                             }
                                         });
                             }).addOnFailureListener(e -> {
-                    });
+                            });
+
 
 
 
@@ -532,6 +527,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 }
 
                 break;
+
 
         }
     }
