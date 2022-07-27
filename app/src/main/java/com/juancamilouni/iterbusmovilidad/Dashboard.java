@@ -119,10 +119,6 @@ public class Dashboard extends Activity {
         correodas = textView6.getText().toString();
 
 
-
-        //db.collection("token").document("uYJnT5rvIhJg3DEXL4on").update("nombre",nombredas);
-        //db.collection("token").document("uYJnT5rvIhJg3DEXL4on").update("correo",correodas);
-
         //cargar imágen con glide:
         Glide.with(this).load(currentUser.getPhotoUrl()).into(imagenUser);
 

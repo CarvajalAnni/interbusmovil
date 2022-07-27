@@ -24,6 +24,11 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -53,6 +58,11 @@ public class Inicio extends AppCompatActivity {
     private FirebaseAuth mAuth;
     String nombredas , correodas,idDoc;
     FirebaseFirestore db;
+
+    //cerrar google
+    private GoogleSignInClient mGoogleSignInClient;
+    private GoogleSignInOptions gso;
+    //private FirebaseAuth mAuth;
 
 
     //navegacion
@@ -204,6 +214,37 @@ public class Inicio extends AppCompatActivity {
                 return true;
 
             case R.id.CerrarSesion:
+
+
+                gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                        .requestIdToken(getString(R.string.default_web_client_id))
+                        .requestEmail()
+                        .build();
+                mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+
+                mAuth.signOut();
+
+
+
+                mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //Abrir MainActivity con SigIn button
+                        if(task.isSuccessful()){
+                            Intent mainActivity = new Intent(getApplicationContext(), IniciarSesion.class);
+                            startActivity(mainActivity);
+                            Inicio.this.finish();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "No se pudo cerrar sesión con google",
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+
+
+
                 Intent intent2 = new Intent(Inicio.this, IniciarSesion.class);
                 startActivity(intent2);
                 return true;

@@ -57,7 +57,7 @@ public class IniciarSesion extends AppCompatActivity {
     public static String TAG = "GoogleSignIn", correoString, contraaseniaString;
     public static EditText correo, contrasenia;
 
-    String correoenv,contraenv;
+    public static String correoenvia,contraenvia,rolenvia;
 
 
     //navegacion
@@ -135,10 +135,13 @@ public class IniciarSesion extends AppCompatActivity {
                                          ArrayList<Userdesp> listausu = response.body();
 
                                          for (Userdesp userdesp : listausu) {
-                                             content += "email = " + userdesp.getEmail() + " \n";
+                                             /*content += "email = " + userdesp.getEmail() + " \n";
                                              content += "clave = " + userdesp.getClave() + " \n";
-                                             content += "rol = " + userdesp.getRol() + " \n";
+                                             content += "rol = " + userdesp.getRol() + " \n";*/
 
+                                             correoenvia= userdesp.getEmail();
+                                             contraenvia= userdesp.getClave();
+                                             rolenvia= userdesp.getRol();
                                          }
 
                                          for (int i=0; i<listausu.size();i++){
@@ -146,14 +149,11 @@ public class IniciarSesion extends AppCompatActivity {
                                                  Intent intent = new Intent(IniciarSesion.this, Inicio.class);
 
 
-                                                 Intent intent2 = new Intent(IniciarSesion.this, Perfil.class);
+                                                /* Intent intent2 = new Intent(IniciarSesion.this, Perfil.class);
                                                  intent2.putExtra("correo", listausu.get(i).getEmail());
                                                  intent2.putExtra("contraseña",listausu.get(i).getClave());
-
-
-                                                /* correoenv= listausu.get(i).getEmail();
-                                                 contraenv= listausu.get(i).getClave();*/
-                                                 startActivity(intent2);
+                                                 intent2.putExtra("rol",listausu.get(i).getRol());
+                                                 startActivity(intent2);*/
                                                  startActivity(intent);
 
                                              } else {

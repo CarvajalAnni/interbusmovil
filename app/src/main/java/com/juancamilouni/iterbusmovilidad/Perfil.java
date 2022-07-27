@@ -10,12 +10,23 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+
+import Model.Userdesp;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Perfil extends AppCompatActivity {
     TextView etxcorreo, etxcontrasenia,etxrol;
     Bundle extras;
+    String correo,contrasenia,rol;
     ImageButton btnAttrass;
     FloatingActionButton fbtnatras;
 
@@ -27,9 +38,43 @@ public class Perfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
         referenciar();
-        recibeDatos();
-       referencio();
+        //recibeDatos();
+        referencio();
 
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://interbusapi.herokuapp.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        InterbusApi interbusApi = retrofit.create(InterbusApi.class);
+        Call<ArrayList<Userdesp>> call = interbusApi.login(correo = IniciarSesion.correoenvia, contrasenia= IniciarSesion.contraenvia);
+        call.enqueue(new Callback<ArrayList<Userdesp>>() {
+
+
+            @Override
+            public void onResponse(Call<ArrayList<Userdesp>> call, Response<ArrayList<Userdesp>> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(Perfil.this, "Email o contraseña incorecto", Toast.LENGTH_SHORT).show();
+                } else {
+                    ArrayList<Userdesp> listausu = response.body();
+
+                    for (Userdesp userdesp : listausu) {
+
+                        etxcorreo.setText(userdesp.getEmail());
+                        etxcontrasenia.setText(userdesp.getClave());
+                        etxrol.setText(userdesp.getRol());
+
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Userdesp>> call, Throwable t) {
+
+            }
+        });
     }
 
     private void referencio() {
@@ -50,9 +95,9 @@ public class Perfil extends AppCompatActivity {
         String contrasenia = extras.getString("contraseña");
         String rol = extras.getString("rol");
 
-        etxcorreo.setText(correo);
+        /*etxcorreo.setText(correo);
         etxcontrasenia.setText(contrasenia);
-        etxrol.setText(rol);
+        etxrol.setText(rol);*/
 
     }
     private void referenciar(){
@@ -64,8 +109,4 @@ public class Perfil extends AppCompatActivity {
 
 
 }
-
-
-
-
 
