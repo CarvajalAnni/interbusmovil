@@ -44,7 +44,7 @@ public class RecyclerActivity extends Activity {
     FirebaseFirestore db;
     RecyclerView recyclerView;
     String obser1,url1,ubicacion1,fecha1;
-    SwipeRefreshLayout swipeRefreshLayout;
+    //SwipeRefreshLayout swipeRefreshLayout;
 
 
     @Override
@@ -52,14 +52,14 @@ public class RecyclerActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
 
-        swipeRefreshLayout = findViewById(R.id.refresh);
+      /*  swipeRefreshLayout = findViewById(R.id.refresh);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
 
                 swipeRefreshLayout.setRefreshing(false);
             }
-        });
+        });*/
 
 
 

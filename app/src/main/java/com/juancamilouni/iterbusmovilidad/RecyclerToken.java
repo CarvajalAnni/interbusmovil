@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -41,7 +42,7 @@ import java.util.Map;
 import Model.Datos;
 import Model.Token;
 
-public class RecyclerToken extends AppCompatActivity {
+public class RecyclerToken extends Activity {
 
     List<Token> listToken;
     AdaptadorToken adaptadortoken;

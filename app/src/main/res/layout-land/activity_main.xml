@@ -9,10 +9,10 @@
 
 
     <ImageView
-        android:backgroundTint="@color/transparente"
+        android:layout_width="321dp"
+        android:layout_height="258dp"
         android:background="@color/transparente"
-        android:layout_width="334dp"
-        android:layout_height="293dp"
+        android:backgroundTint="@color/transparente"
         android:src="@drawable/interbus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
