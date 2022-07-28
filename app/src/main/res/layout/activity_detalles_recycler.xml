@@ -43,8 +43,8 @@
 
     <ImageView
         android:id="@+id/detImg"
-        android:layout_width="365dp"
-        android:layout_height="270dp"
+        android:layout_width="366dp"
+        android:layout_height="259dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="48dp"
         android:scaleType="centerCrop"
@@ -86,8 +86,8 @@
 
     <TextView
         android:id="@+id/detLatitud"
-        android:layout_width="266dp"
-        android:layout_height="36dp"
+        android:layout_width="268dp"
+        android:layout_height="59dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="24dp"
         android:layout_toRightOf="@+id/detImg"
@@ -115,8 +115,8 @@
 
     <TextView
         android:id="@+id/detObservacion"
-        android:layout_width="273dp"
-        android:layout_height="103dp"
+        android:layout_width="247dp"
+        android:layout_height="89dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
         android:layout_toRightOf="@+id/detImg"
@@ -124,10 +124,10 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintHorizontal_bias="0.902"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detLatitud"
-        app:layout_constraintVertical_bias="0.026" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/Observacion"
@@ -144,14 +144,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Ubicacion"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.213" />
+
     <include
         android:id="@+id/include"
         layout="@layout/activity_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="56dp" />
-
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

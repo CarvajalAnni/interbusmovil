@@ -48,7 +48,7 @@ public class RecyclerActivity extends Activity {
     FirebaseStorage storageRef;
     FirebaseFirestore db;
     RecyclerView recyclerView;
-    String obser1,url1,ubicacion1,fecha1;
+     public static String obser1,url1,ubicacion1,fecha1;
     //SwipeRefreshLayout swipeRefreshLayout;
 
 
@@ -206,10 +206,10 @@ public class RecyclerActivity extends Activity {
                                             url1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUrl();
                                             ubicacion1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUbicacion();
 
-                                            intent.putExtra("ubicacion",ubicacion1.toString());
+                                            /*intent.putExtra("ubicacion",ubicacion1.toString());
                                             intent.putExtra("fecha",fecha1.toString());
                                             intent.putExtra("observacion",obser1.toString());
-                                            intent.putExtra("foto",url1.toString());
+                                            intent.putExtra("foto",url1.toString());*/
                                             startActivity(intent);
                                         }
                                     });

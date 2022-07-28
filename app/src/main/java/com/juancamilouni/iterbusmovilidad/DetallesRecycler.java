@@ -48,10 +48,6 @@ public class DetallesRecycler extends Activity {
 
         include = findViewById(R.id.include);
 
-
-
-
-
         recfecha= findViewById(R.id.detFecha);
         recubi= findViewById(R.id.detLatitud);
         recobs= findViewById(R.id.detObservacion);
@@ -92,19 +88,23 @@ public class DetallesRecycler extends Activity {
                 });*/
 
 
-        String ubicacion="";
-        String fecha="";
-        String observacion="";
-        String foto="";
-        Bundle extras= getIntent().getExtras();
+        String ubicacion= RecyclerActivity.ubicacion1;
+        String fecha=RecyclerActivity.fecha1;
+        String observacion=RecyclerActivity.obser1;
+        String foto=RecyclerActivity.url1;
+        /*Bundle extras= getIntent().getExtras();
         if(extras != null){
             ubicacion= extras.getString("ubicacion");
             fecha= extras.getString("fecha");
             observacion= extras.getString("observacion");
             foto= extras.getString("foto");
-        }
+        }*/
 
-        recubi.setText(ubicacion);
+        if (ubicacion== null) {
+            recubi.setText("Ubicacion no obtenida");
+        }else{
+            recubi.setText(ubicacion);
+        }
 
         //recfecha.setText(DateFormat.format("EEEE dd/LLLL/yyyy HH:mm:ss", ));
         recfecha.setText(fecha);

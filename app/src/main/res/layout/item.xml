@@ -29,16 +29,16 @@
 
             <TextView
                 android:id="@+id/Fecha"
-                android:layout_width="148dp"
-                android:layout_height="33dp"
+                android:layout_width="121dp"
+                android:layout_height="98dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="11dp"
+                android:layout_marginStart="23dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="67dp"
-                android:layout_marginEnd="28dp"
-                android:layout_marginBottom="78dp"
+                android:layout_marginTop="41dp"
+                android:layout_marginEnd="59dp"
+                android:layout_marginBottom="39dp"
                 android:layout_toEndOf="@+id/Imagen1"
                 android:gravity="center"
                 android:text="fecha"
@@ -75,17 +75,18 @@
 
             <TextView
                 android:id="@+id/Observacion"
-                android:layout_width="162dp"
-                android:layout_height="70dp"
+                android:layout_width="149dp"
+                android:layout_height="22dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="11dp"
-                android:layout_marginTop="43dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginTop="41dp"
+                android:layout_marginEnd="38dp"
                 android:layout_toRightOf="@+id/Imagen1"
                 android:gravity="center"
                 android:text="Observacion"
                 android:textSize="15sp"
                 android:visibility="invisible" />
-
 
 
         </RelativeLayout>
