@@ -27,42 +27,41 @@ public class Incidente extends AppCompatActivity{
     public static int bandera;
     private static final int VALUE_TOTAL = 200;
 
-    //navegacion
-    BottomNavigationView navegacion;
-
+    View include ;
+    ImageView bntimagen, bntusuario, bntincidenn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //quita el titulo de la pantalla
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_incidente);
-
-        //navegacion
-        navegacion=findViewById(R.id.botton);
-        navegacion.setSelectedItemId(R.id.incidente);
-        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.emergencia:
-                        startActivity(new Intent(getApplicationContext(),Inicio.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.incidente:
-                        return true;
-                    case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });
+        include = findViewById(R.id.include);
 
 
         Permiso();
         referenciar();
 
+        navegacio();
+    }
+
+    private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
+        bntusuario = findViewById(R.id.bntusuario);
+        bntincidenn = findViewById(R.id.bntincidenn);
+        bntimagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Incidente.this, Inicio.class);
+                startActivity(intent);
+
+            }
+        });
+        bntusuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Incidente.this, Perfil.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

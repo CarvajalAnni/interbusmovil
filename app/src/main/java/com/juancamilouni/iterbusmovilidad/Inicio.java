@@ -47,8 +47,9 @@ import java.util.Map;
 
 public class Inicio extends AppCompatActivity {
 
-    ImageView imgemergencia;
-    Button button2;
+
+    View include ;
+    ImageView bntimagen, bntusuario, bntincidenn;
     LottieAnimationView sos;
     FloatingActionButton btnnotificacion;
 
@@ -65,8 +66,7 @@ public class Inicio extends AppCompatActivity {
     //private FirebaseAuth mAuth;
 
 
-    //navegacion
-   BottomNavigationView navegacion;
+
 
     private static final int VALUE_TOTAL = 200;
 
@@ -74,28 +74,8 @@ public class Inicio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+        include = findViewById(R.id.include);
 
-        //navegacion
-        navegacion=findViewById(R.id.botton);
-        navegacion.setSelectedItemId(R.id.emergencia);
-        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.emergencia:
-                        return true;
-                    case R.id.incidente:
-                        startActivity(new Intent(getApplicationContext(),Incidente.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(),Perfil.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });
 
         db= FirebaseFirestore.getInstance();
 
@@ -127,7 +107,27 @@ public class Inicio extends AppCompatActivity {
             db.collection("token").document("2Bb3xSVy6t3oS1JLtyrv").update("correo", correodas);*/
 
         Permiso();
-        referenciar();
+        referenciar();navegacio();
+    }
+
+    private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
+        bntusuario = findViewById(R.id.bntusuario);
+        bntincidenn = findViewById(R.id.bntincidenn);
+        bntusuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Inicio.this, Dashboard.class);
+                startActivity(intent);
+            }
+        });
+        bntincidenn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Inicio.this, Incidente.class);
+                startActivity(intent);
+            }
+        });
+
     }
     @Override
     public void onBackPressed() { moveTaskToBack(true); }

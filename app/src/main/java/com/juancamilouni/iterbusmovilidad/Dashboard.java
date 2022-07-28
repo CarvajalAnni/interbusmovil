@@ -46,11 +46,11 @@ public class Dashboard extends Activity {
     private ImageView imagenUser;
     String nombredas , correodas;
     FirebaseFirestore db;
+    View include ;
+    ImageView bntimagen, bntusuario, bntincidenn;
 
 
 
-    //navegacion
-    BottomNavigationView navegacion;
 
     public String getNombredas() {
         return nombredas;
@@ -72,32 +72,9 @@ public class Dashboard extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        include = findViewById(R.id.include);
 
-        //navegacion
-        navegacion=findViewById(R.id.botton);
-        db= FirebaseFirestore.getInstance();
-        navegacion.setSelectedItemId(R.id.perfil);
-        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.emergencia:
-                        startActivity(new Intent(getApplicationContext(),Inicio.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.incidente:
-                        startActivity(new Intent(getApplicationContext(),Incidente.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(),Perfil.class));
-                        overridePendingTransition(0,0);
 
-                        return true;
-                }
-                return false;
-            }
-        });
 
 
 
@@ -152,7 +129,35 @@ public class Dashboard extends Activity {
                 });
 
             }
+        }); navegacio();
+    }
+
+    private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
+        bntusuario = findViewById(R.id.bntusuario);
+        bntincidenn = findViewById(R.id.bntincidenn);
+        bntimagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Inicio.class);
+                startActivity(intent);
+
+            }
         });
+        bntusuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Perfil.class);
+                startActivity(intent);
+            }
+        });
+        bntincidenn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Incidente.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }

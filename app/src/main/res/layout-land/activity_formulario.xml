@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,313 +8,312 @@
     android:scaleType="centerCrop"
     android:background="#E2F4FA"
     tools:context=".Formulario">
-
     <ScrollView
 
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="209dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/fondoformulario"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="199dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondoformulario" />
-
-    <ImageView
-        android:backgroundTint="@color/transparente"
-        android:background="@color/transparente"
-        android:id="@+id/imageView2"
-        android:layout_width="152dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/logoblan" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:backgroundTint="@color/transparente"
-        android:background="@color/transparente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FORMULARIO DE INCIDENTES"
-        android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/white"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:startIconDrawable="@drawable/gravedad">
-
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nivel de gravedad"
-            android:inputType="none" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="113dp"
-        android:layout_height="201dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
-
-        <LinearLayout
-            android:id="@+id/lnTomarfoto"
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:background="@drawable/color_btn6"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
 
 
             <ImageView
-                android:backgroundTint="@color/transparente"
-                android:background="@color/transparente"
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp"
-                app:srcCompat="@drawable/tomarfoto"
-                tools:layout_editor_absoluteX="122dp"
-                tools:layout_editor_absoluteY="252dp" />
+                android:id="@+id/imageView2"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView"
+                app:srcCompat="@drawable/logoblan" />
 
             <TextView
-                android:backgroundTint="@color/transparente"
-                android:background="@color/transparente"
-                android:id="@+id/textView4"
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:text="Tomar Foto"
-                android:textColor="@color/black"
-                android:textSize="14dp"
-                tools:layout_editor_absoluteX="123dp"
-                tools:layout_editor_absoluteY="316dp" />
+                android:text="FORMULARIO DE INCIDENTES"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:text="ó" />
-
-        <LinearLayout
-            android:id="@+id/lnOtro"
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:background="@drawable/color_btnchoque"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="45dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp"
-                app:srcCompat="@drawable/subirfoto"
-                tools:layout_editor_absoluteX="122dp"
-                tools:layout_editor_absoluteY="252dp" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:text="Subir Foto"
-                android:textColor="@color/black"
-                tools:layout_editor_absoluteX="123dp"
-                tools:layout_editor_absoluteY="316dp" />
-
-        </LinearLayout>
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:startIconDrawable="@drawable/gravedad"
 
 
-    </LinearLayout>
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nivel de gravedad"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-        <ImageView
-            android:id="@+id/imgColicion"
-            android:layout_width="680dp"
-            android:layout_height="193dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.439"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
-            app:srcCompat="@drawable/fotoincidente" />
-
-        <LinearLayout
-            android:id="@+id/lnUbicacion"
-            android:layout_width="162dp"
-            android:layout_height="76dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/color_btn5"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.103"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="75dp"
-                android:layout_gravity="left"
-                android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/imgubicacion"
-                tools:layout_editor_absoluteX="122dp"
-                tools:layout_editor_absoluteY="252dp" />
-
-            <TextView
-                android:layout_width="78dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Obtener ubicación"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="14dp"
-                tools:layout_editor_absoluteX="123dp"
-                tools:layout_editor_absoluteY="316dp" />
-        </LinearLayout>
-
-        <TextView
-        android:id="@+id/textlongitudcolision"
-        android:layout_width="166dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:hint="@string/longitud"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.404"
-        android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
-        app:layout_constraintTop_toBottomOf="@+id/textlatitudcolision" />
-
-    <TextView
-        android:id="@+id/textlatitudcolision"
-        android:layout_width="166dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="48dp"
-        android:gravity="center"
-        android:hint="@string/latitud"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
-        app:layout_constraintTop_toBottomOf="@+id/imgColicion" />
-
-    <EditText
-        android:id="@+id/textObservacionC"
-        android:layout_width="379dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/observaciones"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textlongitudcolision" />
-
-    <LinearLayout
-        android:id="@+id/btnReporte"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/color_btnreporte"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@+id/textObservacionC"
-        app:layout_constraintTop_toBottomOf="@+id/textObservacionC">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Reportar a todos"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            tools:layout_editor_absoluteX="123dp"
-            tools:layout_editor_absoluteY="316dp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/btnReporteDespachador"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/color_btnreporte"
-
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textObservacionC"
-        app:layout_constraintTop_toBottomOf="@+id/textObservacionC">
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Reportar a Despachador"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16dp" />
-    </LinearLayout>
             <LinearLayout
-                android:id="@+id/espacio"
+                android:id="@+id/linearLayout2"
+                android:layout_width="113dp"
+                android:layout_height="201dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.104"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+                <LinearLayout
+                    android:id="@+id/lnTomarfoto"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/color_btn6"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="7dp"
+                        app:srcCompat="@drawable/tomarfoto"
+                        tools:layout_editor_absoluteX="122dp"
+                        tools:layout_editor_absoluteY="252dp" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:text="Tomar Foto"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        tools:layout_editor_absoluteX="123dp"
+                        tools:layout_editor_absoluteY="316dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:text="ó" />
+
+                <LinearLayout
+                    android:id="@+id/lnOtro"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/color_btnchoque"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="7dp"
+                        app:srcCompat="@drawable/subirfoto"
+                        tools:layout_editor_absoluteX="122dp"
+                        tools:layout_editor_absoluteY="252dp" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:text="Subir Foto"
+                        android:textColor="@color/black"
+                        tools:layout_editor_absoluteX="123dp"
+                        tools:layout_editor_absoluteY="316dp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/imgColicion"
+                android:layout_width="222dp"
+                android:layout_height="173dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.644"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+                app:srcCompat="@drawable/fotoincidente" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Debe seleccionar una imagen"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/imgColicion"
+                app:layout_constraintStart_toStartOf="@+id/imgColicion"
+                app:layout_constraintTop_toTopOf="@+id/imgColicion" />
+
+            <LinearLayout
+                android:id="@+id/lnUbicacion"
+                android:layout_width="162dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/color_btn5"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.102"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="10dp"
+                    app:srcCompat="@drawable/imgubicacion"
+                    tools:layout_editor_absoluteX="122dp"
+                    tools:layout_editor_absoluteY="252dp" />
+
+                <TextView
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Obtener ubicación"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    tools:layout_editor_absoluteX="123dp"
+                    tools:layout_editor_absoluteY="316dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textlongitudcolision"
+                android:layout_width="166dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:hint="@string/longitud"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.403"
+                app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
+                app:layout_constraintTop_toBottomOf="@+id/textlatitudcolision" />
+
+            <TextView
+                android:id="@+id/textlatitudcolision"
+                android:layout_width="176dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:hint="@string/Ubicacion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
+                app:layout_constraintTop_toBottomOf="@+id/imgColicion" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textObservacionCc"
+                android:layout_width="406dp"
+                android:layout_height="105dp"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:hint="@string/observaciones"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                app:boxBackgroundMode="outline"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textlongitudcolision">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textObservacionC"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:maxLength="20"
+                    app:errorEnabled="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/btnReporte"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_btnreporte"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/textObservacionCc"
+                app:layout_constraintTop_toBottomOf="@+id/textObservacionCc">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Reportar a todos"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    tools:layout_editor_absoluteX="123dp"
+                    tools:layout_editor_absoluteY="316dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnReporteDespachador"
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
+
                 android:layout_marginEnd="12dp"
-                app:layout_constraintEnd_toEndOf="@+id/btnReporteDespachador"
-                app:layout_constraintTop_toBottomOf="@+id/btnReporteDespachador">
+                android:background="@drawable/color_btnreporte"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/textObservacionCc"
+                app:layout_constraintTop_toBottomOf="@+id/textObservacionCc">
 
                 <TextView
-                    android:id="@+id/espaciodoc"
+                    android:id="@+id/textView14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -327,7 +325,13 @@
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="56dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

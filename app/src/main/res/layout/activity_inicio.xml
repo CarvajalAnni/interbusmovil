@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     android:background="@color/azul"
     tools:context=".Inicio">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -125,19 +131,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.65" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/botton"
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        app:itemBackground="@color/blancointerbus"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView14"
-        app:menu="@menu/menu_navigation" />
-
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteX="56dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -86,8 +86,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     Uri imagenUri1;
 
 
-    //navegacion
-    BottomNavigationView navegacion;
+    View include ;
+    ImageView bntimagen, bntusuario, bntincidenn;
 
 
     @Override
@@ -95,6 +95,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
+        include = findViewById(R.id.include);
 
 
 
@@ -126,6 +127,35 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         } else {
             formulario();
         }
+        navegacio();
+    }
+
+    private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
+        bntusuario = findViewById(R.id.bntusuario);
+        bntincidenn = findViewById(R.id.bntincidenn);
+        bntimagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Formulario.this, Inicio.class);
+                startActivity(intent);
+
+            }
+        });
+        bntusuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Formulario.this, Perfil.class);
+                startActivity(intent);
+            }
+        });
+        bntincidenn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Formulario.this, Incidente.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void referenciar() {
