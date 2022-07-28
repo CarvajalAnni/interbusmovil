@@ -25,6 +25,8 @@ import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.google.firebase.firestore.MetadataChanges;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -124,9 +126,19 @@ public class RecyclerActivity extends Activity {
 
 
 
+        /*Actualizacion de datos sin conexion
+        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                .setCacheSizeBytes(FirebaseFirestoreSettings.CACHE_SIZE_UNLIMITED)
+                .build();
+        db.setFirestoreSettings(settings);*/
+
+
+
+
+
         ////////detectar actualizaciones
         db.collection("Reportes").orderBy("tiempo", Query.Direction.DESCENDING).limit(10)
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                .addSnapshotListener(/*MetadataChanges.INCLUDE,*/ new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot snapshots,
                                         @Nullable FirebaseFirestoreException e) {
