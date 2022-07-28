@@ -110,17 +110,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintVertical_bias="0.251" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/botton"
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        app:itemBackground="@color/azulinterbus"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_navigation" />
+        tools:layout_editor_absoluteX="56dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
