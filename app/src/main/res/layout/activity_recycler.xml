@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="209dp"
+        android:layout_height="168dp"
         android:scaleType="centerCrop"
         android:src="@drawable/fondoformulario"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,15 +20,17 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="136dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="4dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
         android:src="@drawable/logoblan"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -41,30 +43,30 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
 
     <androidx.recyclerview.widget.RecyclerView
 
 
         android:id="@+id/rcreportes"
         android:layout_width="match_parent"
-        android:layout_height="575dp"
+        android:layout_height="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.142" />
 
     <include
         android:id="@+id/include"
         layout="@layout/activity_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="56dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="678dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.juancamilouni.iterbusmovilidad;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -145,19 +146,15 @@ public class IniciarSesion extends AppCompatActivity {
                                          }
 
                                          for (int i=0; i<listausu.size();i++){
-                                             if (listausu.get(i).getRol().equalsIgnoreCase(buscar) || listausu.get(i).getRol().equalsIgnoreCase(buscar2)) {
+                                             if (listausu.get(i).getRol().equalsIgnoreCase(buscar)) {
+                                                 Intent intent1 = new Intent(IniciarSesion.this, Despachador.class);
+                                                 startActivity(intent1);
+
+                                             } else if (listausu.get(i).getRol().equalsIgnoreCase(buscar2)){
                                                  Intent intent = new Intent(IniciarSesion.this, Inicio.class);
-
-
-                                                /* Intent intent2 = new Intent(IniciarSesion.this, Perfil.class);
-                                                 intent2.putExtra("correo", listausu.get(i).getEmail());
-                                                 intent2.putExtra("contraseña",listausu.get(i).getClave());
-                                                 intent2.putExtra("rol",listausu.get(i).getRol());
-                                                 startActivity(intent2);*/
                                                  startActivity(intent);
-
                                              } else {
-                                                 Toast.makeText(IniciarSesion.this, "Debes Ser Despachador ", Toast.LENGTH_LONG).show();
+                                                 Toast.makeText(IniciarSesion.this, "Debes ser Despachador o Admin ", Toast.LENGTH_LONG).show();
                                              }
 
                                          }
