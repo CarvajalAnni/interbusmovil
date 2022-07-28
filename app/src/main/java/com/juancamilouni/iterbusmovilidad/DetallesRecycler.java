@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +30,9 @@ import java.util.Date;
 import Model.Datos;
 
 public class DetallesRecycler extends Activity {
+    View include ;
+    ImageView bntimagen, bntusuario, bntincidenn;
+
 
     FirebaseFirestore db;
     TextView recfecha,recubi,recobs;
@@ -42,30 +46,10 @@ public class DetallesRecycler extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_recycler);
 
+        include = findViewById(R.id.include);
 
-        //navegacion
-        navegacion=findViewById(R.id.botton);
-        navegacion.setSelectedItemId(R.id.emergencia);
-        navegacion.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.emergencia:
-                        startActivity(new Intent(getApplicationContext(),Inicio.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.incidente:
-                        startActivity(new Intent(getApplicationContext(),Incidente.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });
+
+
 
 
         recfecha= findViewById(R.id.detFecha);
@@ -134,6 +118,34 @@ public class DetallesRecycler extends Activity {
                 .into(img)
                 ;
 
+        navegacio();
+    }
+
+    private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
+        bntusuario = findViewById(R.id.bntusuario);
+        bntincidenn = findViewById(R.id.bntincidenn);
+        bntimagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetallesRecycler.this, Inicio.class);
+                startActivity(intent);
+
+            }
+        });
+        bntusuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetallesRecycler.this, Perfil.class);
+                startActivity(intent);
+            }
+        });
+        bntincidenn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetallesRecycler.this, Incidente.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

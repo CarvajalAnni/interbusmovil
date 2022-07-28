@@ -322,6 +322,24 @@
                     android:textColor="@color/black"
                     android:textSize="16dp" />
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/btnespacio"
+                android:layout_width="347dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@+id/btnReporte"
+                app:layout_constraintTop_toBottomOf="@+id/btnReporteDespachador">
+
+                <TextView
+                    android:id="@+id/espacio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
 
 
 

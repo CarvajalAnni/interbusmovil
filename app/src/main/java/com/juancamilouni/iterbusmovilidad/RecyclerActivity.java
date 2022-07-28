@@ -16,6 +16,7 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,6 +40,8 @@ import java.util.List;
 import Model.Datos;
 
 public class RecyclerActivity extends Activity {
+    View include ;
+    ImageView bntimagen, bntusuario, bntincidenn;
 
     List<Datos> listDatos;
     Adaptador adaptador;
@@ -53,6 +56,7 @@ public class RecyclerActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
+        include = findViewById(R.id.include);
 
       /*  swipeRefreshLayout = findViewById(R.id.refresh);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -72,6 +76,35 @@ public class RecyclerActivity extends Activity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listDatos= new ArrayList<Datos>();
         llenarLista();
+        navegacio();
+    }
+
+    private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
+        bntusuario = findViewById(R.id.bntusuario);
+        bntincidenn = findViewById(R.id.bntincidenn);
+        bntimagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecyclerActivity.this, Inicio.class);
+                startActivity(intent);
+
+            }
+        });
+        bntusuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecyclerActivity.this, Perfil.class);
+                startActivity(intent);
+            }
+        });
+        bntincidenn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecyclerActivity.this, Incidente.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void llenarLista() {

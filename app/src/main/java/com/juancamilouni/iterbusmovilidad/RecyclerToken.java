@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -43,6 +44,8 @@ import Model.Datos;
 import Model.Token;
 
 public class RecyclerToken extends Activity {
+    View include ;
+    ImageView bntimagen, bntusuario, bntincidenn;
 
     List<Token> listToken;
     AdaptadorToken adaptadortoken;
@@ -55,13 +58,42 @@ public class RecyclerToken extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_token);
+        include = findViewById(R.id.include);
 
         db= FirebaseFirestore.getInstance();
         recyclerView = findViewById(R.id.despachadores);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listToken= new ArrayList<Token>();
-        llenarLista();
+        llenarLista();navegacio();
+    }
+
+    private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
+        bntusuario = findViewById(R.id.bntusuario);
+        bntincidenn = findViewById(R.id.bntincidenn);
+        bntimagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecyclerToken.this, Inicio.class);
+                startActivity(intent);
+
+            }
+        });
+        bntusuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecyclerToken.this, Perfil.class);
+                startActivity(intent);
+            }
+        });
+        bntincidenn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecyclerToken.this, Incidente.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void llenarLista() {
