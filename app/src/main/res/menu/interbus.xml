@@ -5,9 +5,6 @@
         android:title="ver perfil"
         app:showAsAction="never" />
 
-    <item android:id="@+id/CambiarContraseña"
-        android:title="CambiarContraseña"
-        app:showAsAction="never" />
 
     <item android:id="@+id/CerrarSesion"
         android:title="CerrarSesion"

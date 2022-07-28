@@ -207,11 +207,6 @@ public class Inicio extends AppCompatActivity {
 
                 return true;
 
-            case R.id.CambiarContraseña:
-                Intent intent1 = new Intent(Inicio.this, Ayuda.class);
-                startActivity(intent1);
-
-                return true;
 
             case R.id.CerrarSesion:
 
