@@ -13,7 +13,7 @@
 
         android:layout_alignParentBottom="true"
 
-        android:background="@color/azuloscuro">
+        android:background="@color/azulinterbus">
 
 
         <ImageView

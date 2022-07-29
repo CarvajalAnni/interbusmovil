@@ -62,7 +62,7 @@ public class Perfil extends AppCompatActivity {
                     for (Userdesp userdesp : listausu) {
 
                         etxcorreo.setText(userdesp.getEmail());
-                        etxcontrasenia.setText(userdesp.getClave());
+                        etxcontrasenia.setText(userdesp.getNombre());
                         etxrol.setText(userdesp.getRol());
 
                     }

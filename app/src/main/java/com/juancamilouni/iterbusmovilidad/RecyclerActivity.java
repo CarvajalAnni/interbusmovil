@@ -231,9 +231,5 @@ public class RecyclerActivity extends Activity {
 
                     }
                 });
-
-
-
-
     }
 }

@@ -58,7 +58,9 @@ public class IniciarSesion extends AppCompatActivity {
     public static String TAG = "GoogleSignIn", correoString, contraaseniaString;
     public static EditText correo, contrasenia;
 
-    public static String correoenvia,contraenvia,rolenvia;
+    public static int formainicio=0;
+
+    public static String correoenvia,nombreenvia,rolenvia,contraenvia;
 
 
     //navegacion
@@ -76,28 +78,6 @@ public class IniciarSesion extends AppCompatActivity {
         setContentView(R.layout.activity_iniciar_sesion);
 
         referenciar();
-
-        bntGoogle = findViewById(R.id.bntGoogle);
-        bntGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                signIn();
-
-
-            }
-        });
-
-
-
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-        mGoogleSignInCliebt = GoogleSignIn.getClient(this, gso);
-
-        mAuth = FirebaseAuth.getInstance();
-
     }
 
 
@@ -110,6 +90,30 @@ public class IniciarSesion extends AppCompatActivity {
         correo = findViewById(R.id.idTxtCorreo);
         contrasenia = findViewById(R.id.idTxtContrasenia);
 
+        //botones de ingreso
+
+        //boton ingresar con GOOGLE
+        bntGoogle = findViewById(R.id.bntGoogle);
+        bntGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                signIn();
+                formainicio=1;
+            }
+        });
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInCliebt = GoogleSignIn.getClient(this, gso);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        //boton ingresar con formulario
+
+        formainicio=0;
         btningresar = findViewById(R.id.button);
         btningresar.setOnClickListener(new View.OnClickListener() {
 
@@ -131,7 +135,7 @@ public class IniciarSesion extends AppCompatActivity {
                                  @Override
                                  public void onResponse(Call<ArrayList<Userdesp>> call, Response<ArrayList<Userdesp>> response) {
                                      if (!response.isSuccessful()) {
-                                         Toast.makeText(IniciarSesion.this, "Email o contraseña incorecto", Toast.LENGTH_SHORT).show();
+                                         Toast.makeText(IniciarSesion.this, "Email o contraseña incorrecto", Toast.LENGTH_SHORT).show();
                                      } else {
                                          ArrayList<Userdesp> listausu = response.body();
 
@@ -141,13 +145,14 @@ public class IniciarSesion extends AppCompatActivity {
                                              content += "rol = " + userdesp.getRol() + " \n";*/
 
                                              correoenvia= userdesp.getEmail();
+                                             nombreenvia= userdesp.getNombre();
                                              contraenvia= userdesp.getClave();
                                              rolenvia= userdesp.getRol();
                                          }
 
                                          for (int i=0; i<listausu.size();i++){
                                              if (listausu.get(i).getRol().equalsIgnoreCase(buscar)) {
-                                                 Intent intent1 = new Intent(IniciarSesion.this, Despachador.class);
+                                                 Intent intent1 = new Intent(IniciarSesion.this, RecyclerActivity.class);
                                                  startActivity(intent1);
 
                                              } else if (listausu.get(i).getRol().equalsIgnoreCase(buscar2)){

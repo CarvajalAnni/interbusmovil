@@ -4,14 +4,24 @@ public class Userdesp {
     String email;
     String clave;
     String rol;
+    String nombre;
 
     public Userdesp() {
     }
 
-    public Userdesp(String email, String clave, String rol) {
+    public Userdesp(String email, String clave, String rol, String nombre) {
         this.email = email;
         this.clave = clave;
         this.rol = rol;
+        this.nombre= nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getEmail() {

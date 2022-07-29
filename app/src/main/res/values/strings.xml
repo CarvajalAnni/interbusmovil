@@ -27,6 +27,7 @@
     <string name="enviar">Enviar</string>
     <string name="despachadores">DESPACHADORES</string>
     <string name="token">token</string>
+    <string name="salir">Salir</string>
     <string-array name="gravedad">
         <item>Menor</item>
         <item>Moderada</item>
