@@ -681,6 +681,12 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         }else{
             Txtimagen.setError(null);
         }
+        if (TextUtils.isEmpty(autoCompleteTextView.getText().toString())) {
+            autoCompleteTextView.setError("Seleccione uno");
+            esValido = false;
+        } else {
+            autoCompleteTextView.setError(null);
+        }
 
         return esValido;
     }
