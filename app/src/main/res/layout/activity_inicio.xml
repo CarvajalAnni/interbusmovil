@@ -22,7 +22,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="24dp"
-                android:backgroundTint="#FF5100"
+                android:backgroundTint="#FFFFFFFF"
                 android:src="@drawable/noti"
                 app:fabSize="normal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -36,10 +36,10 @@
                 android:backgroundTint="@color/transparente"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.486"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.372"
+                app:layout_constraintVertical_bias="0.3"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
                 app:lottie_rawRes="@raw/lf30_editor_ce7ewipc" />
@@ -89,33 +89,33 @@
 
             <TextView
                 android:id="@+id/textView14"
-                android:layout_width="364dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="52dp"
+                android:layout_width="376dp"
+                android:layout_height="84dp"
+                android:layout_marginTop="60dp"
                 android:background="@color/transparente"
                 android:backgroundTint="@color/transparente"
                 android:gravity="center"
                 android:text="Pulsa el botón de emergencia para llamar directamente a la policia"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/textView20"
-                app:layout_constraintHorizontal_bias="0.54"
-                app:layout_constraintStart_toStartOf="@+id/textView20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
             <TextView
                 android:id="@+id/textView20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="48dp"
                 android:background="@color/transparente"
                 android:backgroundTint="@color/transparente"
                 android:text="¿Te ocurrió un robo?"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="@+id/sos"
-                app:layout_constraintHorizontal_bias="0.234"
-                app:layout_constraintStart_toStartOf="@+id/sos"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sos" />
 
             <ImageView
@@ -127,10 +127,10 @@
                 android:src="@drawable/ladron"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.3"
+                app:layout_constraintHorizontal_bias="0.338"
                 app:layout_constraintStart_toEndOf="@+id/textView20"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.782" />
+                app:layout_constraintVertical_bias="0.729" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

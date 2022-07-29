@@ -13,7 +13,7 @@
 
         android:layout_alignParentBottom="true"
 
-        android:background="@color/azuloscuro">
+        android:background="#E2F4FA">
 
 
         <ImageView
@@ -21,14 +21,14 @@
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="55dp"
-            android:src="@drawable/ladron" />
+            android:src="@drawable/casa" />
 
         <ImageView
             android:id="@+id/bntusuario"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:src="@drawable/usuarioo" />
+            android:src="@drawable/usuario" />
 
         <ImageView
             android:id="@+id/bntincidenn"
@@ -36,7 +36,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="right"
             android:layout_marginRight="45dp"
-            android:src="@drawable/hospital" />
+            android:src="@drawable/alerta" />
     </androidx.appcompat.widget.Toolbar>
 
 

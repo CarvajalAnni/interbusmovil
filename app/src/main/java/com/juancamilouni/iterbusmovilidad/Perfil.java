@@ -26,10 +26,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Perfil extends AppCompatActivity {
     TextView etxcorreo, etxcontrasenia,etxrol;
     Bundle extras;
-    String correo,contrasenia,rol;
-    ImageButton btnAttrass;
-    FloatingActionButton fbtnatras;
+    String correo,contrasenia;
 
+
+    View include ;
+    ImageView bntimagen, bntusuario, bntincidenn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +38,12 @@ public class Perfil extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
+
+        include = findViewById(R.id.include);
+
         referenciar();
         //recibeDatos();
-        referencio();
+
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -75,18 +79,38 @@ public class Perfil extends AppCompatActivity {
 
             }
         });
+        navegacio();
     }
 
-    private void referencio() {
-        fbtnatras = findViewById(R.id.fbtnatras);
-        fbtnatras.setOnClickListener(new View.OnClickListener() {
+    private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
+        bntusuario = findViewById(R.id.bntusuario);
+        bntincidenn = findViewById(R.id.bntincidenn);
+        bntimagen.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intennt6 = new Intent(Perfil.this, Inicio.class);
-                startActivity(intennt6);
+            public void onClick(View v) {
+                Intent intent = new Intent(Perfil.this, Inicio.class);
+                startActivity(intent);
+
             }
         });
+        bntusuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Perfil.this, Perfil.class);
+                startActivity(intent);
+            }
+        });
+        bntincidenn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Perfil.this, Incidente.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 
 
     private void recibeDatos() {
