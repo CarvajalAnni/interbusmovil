@@ -224,6 +224,7 @@ public class RecyclerActivity extends Activity {
                                     break;*/
                                 case REMOVED:
                                     Log.d(TAG, "Removed city: " + dc.getDocument().getData());
+                                    //dc.getDocument().getData()+"ID"+dc.getDocument().getId();
                                     break;
                             }
                         }
