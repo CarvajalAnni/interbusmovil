@@ -13,11 +13,8 @@
 
         android:layout_alignParentBottom="true"
 
-<<<<<<< HEAD
+
         android:background="@color/azulinterbus">
-=======
-        android:background="#E2F4FA">
->>>>>>> 3f6c1e0279a4fa6e8062b7a5dc2e507e24c2b96f
 
 
         <ImageView
