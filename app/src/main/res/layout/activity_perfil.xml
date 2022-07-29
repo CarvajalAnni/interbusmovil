@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Perfil">
+<<<<<<< HEAD
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbtnatras"
@@ -47,6 +48,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.126"
         app:srcCompat="@mipmap/conductor" />
+=======
+
+
+>>>>>>> 3f6c1e0279a4fa6e8062b7a5dc2e507e24c2b96f
 
     <androidx.cardview.widget.CardView
         android:id="@+id/listaCard"
@@ -173,58 +178,100 @@
         android:id="@+id/textusuario"
         android:layout_width="342dp"
         android:layout_height="51dp"
+<<<<<<< HEAD
         android:layout_marginTop="304dp"
+=======
+        android:layout_marginBottom="364dp"
+>>>>>>> 3f6c1e0279a4fa6e8062b7a5dc2e507e24c2b96f
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
         android:gravity="center"
-        android:hint="Usuario"
-        android:textColorHint="@color/black"
-        android:textSize="25sp"
+        android:text="Usuario"
+        android:textSize="20sp"
         android:textStyle="bold"
+<<<<<<< HEAD
         android:visibility="visible"
+=======
+        app:layout_constraintBottom_toBottomOf="parent"
+>>>>>>> 3f6c1e0279a4fa6e8062b7a5dc2e507e24c2b96f
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.768"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <!--<TextView
         android:id="@+id/textNombreP"
         android:layout_width="293dp"
         android:layout_height="44dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
         android:gravity="center"
-        android:hint="Correo"
-        android:textColorHint="@color/black"
-        android:textSize="25sp"
+        android:text="Correo"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textusuario"
         tools:ignore="MissingConstraints" />-->
 
+<<<<<<< HEAD
     <!--<TextView
         android:backgroundTint="@color/transparente"
         android:background="@color/transparente"
+=======
+    <TextView
+>>>>>>> 3f6c1e0279a4fa6e8062b7a5dc2e507e24c2b96f
         android:id="@+id/textCorreoP"
-        android:layout_width="155dp"
+        android:layout_width="253dp"
         android:layout_height="58dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/transparente"
+        android:backgroundTint="@color/transparente"
         android:gravity="center"
-        android:hint="Contraseña"
-        android:textSize="25sp"
+        android:text="Contraseña"
         android:textColorHint="@color/black"
+<<<<<<< HEAD
+=======
+        android:textSize="20sp"
+
+>>>>>>> 3f6c1e0279a4fa6e8062b7a5dc2e507e24c2b96f
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textNombreP"
         tools:ignore="MissingConstraints" />-->
 
 
+<<<<<<< HEAD
+=======
+    <TextView
+        android:id="@+id/textRolP"
+        android:layout_width="158dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="72dp"
+        android:background="@color/transparente"
+        android:backgroundTint="@color/transparente"
+        android:gravity="center"
+        android:text="Rol"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textCorreoP"
+        tools:ignore="MissingConstraints" />
+>>>>>>> 3f6c1e0279a4fa6e8062b7a5dc2e507e24c2b96f
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

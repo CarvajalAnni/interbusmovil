@@ -41,7 +41,7 @@
                 android:layout_marginBottom="39dp"
                 android:layout_toEndOf="@+id/Imagen1"
                 android:gravity="center"
-                android:text="fecha"
+                android:text="Fecha"
                 android:textSize="15sp"
                 android:visibility="visible" />
 
@@ -69,7 +69,7 @@
                 android:layout_marginTop="131dp"
                 android:layout_toRightOf="@+id/Imagen1"
                 android:gravity="center"
-                android:text="Ubicacion"
+                android:text="Ubicación"
                 android:textSize="15sp"
                 android:visibility="invisible"/>
 
@@ -84,7 +84,7 @@
                 android:layout_marginEnd="38dp"
                 android:layout_toRightOf="@+id/Imagen1"
                 android:gravity="center"
-                android:text="Observacion"
+                android:text="Observación"
                 android:textSize="15sp"
                 android:visibility="invisible" />
 
