@@ -107,7 +107,8 @@ public class Inicio extends AppCompatActivity {
             db.collection("token").document("2Bb3xSVy6t3oS1JLtyrv").update("correo", correodas);*/
 
         Permiso();
-        referenciar();navegacio();
+        referenciar();
+        navegacio();
     }
 
     private void navegacio() { bntimagen = findViewById(R.id.bntimagen);

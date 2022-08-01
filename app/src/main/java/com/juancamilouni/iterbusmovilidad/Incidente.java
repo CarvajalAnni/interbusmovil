@@ -20,12 +20,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Incidente extends AppCompatActivity{
+    TextView nombrecond;
+    ImageView fotocond;
     LinearLayout lnColision, lnViaCerrada, lnFalla, lnObras, lnRetencion, lnCarrilCortado, lnAmbulancia, lnOtro, lnPolicia;
     public static int bandera;
     private static final int VALUE_TOTAL = 200;
+
+    private GoogleSignInClient mGoogleSignInClient;
+    private GoogleSignInOptions gso;
+    private FirebaseAuth mAuth;
 
     View include ;
     ImageView bntimagen, bntusuario, bntincidenn;
@@ -40,6 +51,14 @@ public class Incidente extends AppCompatActivity{
 
         Permiso();
         referenciar();
+
+        //datos del conductor
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        nombrecond.setText(currentUser.getDisplayName());
+        //cargar imágen con glide:
+        Glide.with(this).load(currentUser.getPhotoUrl()).into(fotocond);
 
         navegacio();
     }
@@ -75,6 +94,8 @@ public class Incidente extends AppCompatActivity{
         lnAmbulancia=findViewById(R.id.lnAmbulancia);
         lnOtro=findViewById(R.id.lnOtro);
         lnPolicia=findViewById(R.id.lnPolicia);
+        nombrecond=findViewById(R.id.Nombrecond);
+        fotocond=findViewById(R.id.Fotocond);
 
         lnCarrilCortado.setOnClickListener(new View.OnClickListener() {
             @Override

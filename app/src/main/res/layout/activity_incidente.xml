@@ -24,8 +24,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@color/grisinterbus" />
 
-            <ImageView
-                android:id="@+id/imageView2"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/Fotocond"
                 android:layout_width="252dp"
                 android:layout_height="114dp"
                 android:layout_marginTop="16dp"
@@ -36,7 +36,7 @@
                 app:srcCompat="@drawable/usuarioconductor" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/Nombrecond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -48,7 +48,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/imageView"
                 app:layout_constraintHorizontal_bias="0.511"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/Fotocond" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -59,10 +59,10 @@
                 android:textColor="@color/azuloscuro"
                 android:fontFamily="sans-serif-condensed"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="@+id/Nombrecond"
                 app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintStart_toStartOf="@+id/Nombrecond"
+                app:layout_constraintTop_toBottomOf="@+id/Nombrecond" />
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
