@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blancointerbus"
     tools:context=".IniciarSesion">
 
     <ScrollView
@@ -71,17 +72,17 @@
                     android:maxLength="20" />
             </com.google.android.material.textfield.TextInputLayout>
 
+
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="288dp"
-                android:layout_height="198dp"
+                android:layout_width="299dp"
+                android:layout_height="212dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.03"
-                app:srcCompat="@drawable/logoazul" />
-
+                app:layout_constraintVertical_bias="0.011"
+                app:srcCompat="@drawable/logoninterbus" />
 
             <LinearLayout
                 android:id="@+id/bntGoogle"
@@ -137,6 +138,7 @@
                 android:layout_width="200dp"
                 android:layout_height="48dp"
                 android:text="Ingresar"
+                android:fontFamily="sans-serif-condensed"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />

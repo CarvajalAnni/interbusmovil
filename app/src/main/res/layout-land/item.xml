@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
+    android:background="@color/blancointerbus"
     android:layout_marginLeft="110dp">
 
     <androidx.cardview.widget.CardView

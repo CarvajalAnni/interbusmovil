@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/blancointerbus"
     tools:context=".RecyclerActivity">
 
     <ImageView
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="168dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/fondoformulario"
+        android:src="@color/grisinterbus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,12 +21,12 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="136dp"
-        android:layout_height="131dp"
+        android:layout_width="149dp"
+        android:layout_height="138dp"
         android:layout_marginTop="4dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
-        android:src="@drawable/logoblan"
+        android:src="@drawable/logoninterbus"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +41,8 @@
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
         android:text="REPORTES"
-        android:textColor="@color/white"
+        android:textColor="@color/azuloscuro"
+        android:fontFamily="sans-serif-condensed"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.51"

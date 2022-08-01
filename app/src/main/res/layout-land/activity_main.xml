@@ -9,11 +9,11 @@
 
 
     <ImageView
-        android:layout_width="321dp"
+        android:layout_width="451dp"
         android:layout_height="258dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
-        android:src="@drawable/interbus"
+        android:src="@drawable/logoninterbus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"

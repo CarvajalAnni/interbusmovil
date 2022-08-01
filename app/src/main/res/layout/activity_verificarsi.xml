@@ -10,14 +10,14 @@
     <ImageView
 
         android:id="@+id/imageView12"
-        android:layout_width="77dp"
-        android:layout_height="74dp"
+        android:layout_width="157dp"
+        android:layout_height="154dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.007"
-        app:srcCompat="@drawable/logoazul" />
+        app:srcCompat="@drawable/logoninterbus" />
 
     <TextView
         android:id="@+id/textView18"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul"
+    android:background="@color/blancointerbus"
     tools:context=".Inicio">
     <ScrollView
         android:layout_width="match_parent"
@@ -45,25 +45,24 @@
                 app:lottie_rawRes="@raw/lf30_editor_ce7ewipc" />
 
             <TextView
-        android:backgroundTint="@color/transparente"
-        android:background="@color/transparente"
-        android:id="@+id/textView15"
-        android:layout_width="76dp"
-        android:layout_height="47dp"
-        android:fontFamily="serif"
-        android:text="SOS"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/sos"
-        app:layout_constraintEnd_toEndOf="@+id/sos"
-        app:layout_constraintHorizontal_bias="0.539"
-        app:layout_constraintStart_toStartOf="@+id/sos"
-        app:layout_constraintTop_toTopOf="@+id/sos"
-        app:layout_constraintVertical_bias="0.492" />
+                android:id="@+id/textView15"
+                android:layout_width="76dp"
+                android:layout_height="47dp"
+                android:background="@color/transparente"
+                android:backgroundTint="@color/transparente"
+                android:fontFamily="sans-serif-condensed"
+                android:text="SOS"
+                android:textColor="@color/grisinter"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/sos"
+                app:layout_constraintEnd_toEndOf="@+id/sos"
+                app:layout_constraintHorizontal_bias="0.59"
+                app:layout_constraintStart_toStartOf="@+id/sos"
+                app:layout_constraintTop_toTopOf="@+id/sos"
+                app:layout_constraintVertical_bias="0.507" />
 
-    <TextView
+            <TextView
         android:id="@+id/nombreToken"
         android:layout_width="262dp"
         android:layout_height="57dp"
@@ -96,7 +95,8 @@
                 android:backgroundTint="@color/transparente"
                 android:gravity="center"
                 android:text="Pulsa el botón de emergencia para llamar directamente a la policia"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/grisinterbus"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.489"
@@ -111,7 +111,9 @@
                 android:background="@color/transparente"
                 android:backgroundTint="@color/transparente"
                 android:text="¿Te ocurrió un robo?"
-                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold"
+                android:textColor="@color/azuloscuro"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="@+id/sos"
                 app:layout_constraintHorizontal_bias="1.0"

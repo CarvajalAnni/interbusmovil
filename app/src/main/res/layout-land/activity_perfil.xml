@@ -12,7 +12,7 @@
         android:layout_height="55dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="660dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
@@ -23,16 +23,16 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="84dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="93dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="32dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logoazul" />
+        app:srcCompat="@drawable/logoninterbus" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -45,7 +45,6 @@
         app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407"
         app:srcCompat="@mipmap/conductor" />
 
     <androidx.cardview.widget.CardView
@@ -83,6 +82,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="207dp"
                 android:hint="Nombre:"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -98,6 +98,7 @@
                 android:layout_marginTop="44dp"
                 android:layout_marginEnd="18dp"
                 android:hint="nombre"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -113,6 +114,7 @@
                 android:layout_marginTop="91dp"
                 android:layout_marginEnd="212dp"
                 android:hint="Correo:"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -142,6 +144,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="44dp"
                 android:layout_marginEnd="32dp"
+                android:fontFamily="sans-serif-condensed"
                 android:hint="correo"
                 android:textSize="15sp" />
 
@@ -156,6 +159,7 @@
                 android:layout_marginTop="155dp"
                 android:layout_marginEnd="212dp"
                 android:hint="Rol:"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -173,6 +177,7 @@
                 android:background="@color/transparente"
                 android:backgroundTint="@color/transparente"
                 android:hint="Rol"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="15sp"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="149dp" />
@@ -189,6 +194,7 @@
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
         android:hint="Usuario"
+        android:fontFamily="sans-serif-condensed"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"

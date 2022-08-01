@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blancointerbus"
     tools:context=".Perfil">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -12,8 +13,8 @@
         android:layout_height="55dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="304dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="340dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
         android:src="@drawable/atras"
@@ -23,8 +24,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="84dp"
-        android:layout_height="77dp"
+        android:layout_width="88dp"
+        android:layout_height="96dp"
         android:layout_marginTop="28dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
@@ -32,7 +33,7 @@
         app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logoazul" />
+        app:srcCompat="@drawable/logoninterbus" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -42,10 +43,10 @@
         android:backgroundTint="@color/transparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126"
+        app:layout_constraintVertical_bias="0.175"
         app:srcCompat="@mipmap/conductor" />
 
     <androidx.cardview.widget.CardView
@@ -83,6 +84,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="207dp"
                 android:hint="Nombre:"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -97,8 +99,8 @@
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="44dp"
                 android:layout_marginEnd="18dp"
-
                 android:hint="nombre"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -114,6 +116,7 @@
                 android:layout_marginTop="102dp"
                 android:layout_marginEnd="212dp"
                 android:hint="Correo:"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -131,6 +134,7 @@
                 android:layout_marginEnd="26dp"
                 android:layout_marginBottom="132dp"
                 android:hint="correo"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="15sp" />
 
             <TextView
@@ -144,6 +148,7 @@
                 android:layout_marginTop="184dp"
                 android:layout_marginEnd="212dp"
                 android:hint="Rol:"
+                android:fontFamily="sans-serif-condensed"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -161,6 +166,7 @@
                 android:background="@color/transparente"
                 android:backgroundTint="@color/transparente"
                 android:hint="Rol"
+                android:fontFamily=""
                 android:textSize="15sp"
                 tools:ignore="DuplicateIds,MissingConstraints"
                 tools:layout_editor_absoluteX="149dp" />

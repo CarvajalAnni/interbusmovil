@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blancointerbus"
     tools:context=".IniciarSesion">
 
     <ScrollView
@@ -80,7 +81,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.03"
-                app:srcCompat="@drawable/logoazul" />
+                app:srcCompat="@drawable/logoninterbus" />
 
 
             <LinearLayout
@@ -125,6 +126,8 @@
                 android:layout_marginTop="28dp"
                 android:gravity="center"
                 android:text="La contraseña debe contener al menos una letra mayúscula, una minúscula y un número"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/grisinter"
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
@@ -136,6 +139,8 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="92dp"
                 android:text="Ingresar"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView9" />

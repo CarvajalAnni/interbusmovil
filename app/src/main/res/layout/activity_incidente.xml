@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E2F4FA"
+    android:background="@color/blancointerbus"
     tools:context=".Incidente">
     <ScrollView
         android:layout_width="match_parent"
@@ -22,15 +22,15 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/fondoformulario" />
+                app:srcCompat="@color/grisinterbus" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="245dp"
-                android:layout_height="97dp"
-                android:layout_marginTop="36dp"
+                android:layout_width="252dp"
+                android:layout_height="114dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageView"
                 app:srcCompat="@drawable/usuarioconductor" />
@@ -41,9 +41,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="serif"
+                android:fontFamily="sans-serif-condensed"
                 android:text="CONDUCTOR"
-                android:textColor="#FAFAFA"
+                android:textColor="@color/azuloscuro"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/imageView"
                 app:layout_constraintHorizontal_bias="0.511"
@@ -56,8 +56,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="VEHICULO NO. 1234"
-                android:textColor="#FAFAFA"
-                android:fontFamily="serif"
+                android:textColor="@color/azuloscuro"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/textView"
                 app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="@+id/textView"
@@ -80,7 +81,7 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
-                    android:background="@drawable/color_btnchoque"
+                    android:background="@drawable/color_btnfallamecanica"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -102,6 +103,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="5dp"
                         android:text="Colisión"
+                        android:fontFamily="sans-serif-condensed"
                         android:textColor="@color/black"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="316dp" />
@@ -113,7 +115,7 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
-                    android:background="@drawable/color_btn2"
+                    android:background="@drawable/color_btn4"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -135,6 +137,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="5dp"
                         android:text="Via cerrada"
+                        android:fontFamily="sans-serif-condensed"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="11dp"
@@ -170,6 +173,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="5dp"
                         android:text="Falla mecánica"
+                        android:fontFamily="sans-serif-condensed"
                         android:textColor="@color/black"
                         android:textSize="10dp"
                         tools:layout_editor_absoluteX="123dp"
@@ -222,6 +226,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="5dp"
                         android:text="Ambulancia"
+                        android:fontFamily="sans-serif-condensed"
                         android:textColor="@color/black"
                         android:textSize="12dp"
                         tools:layout_editor_absoluteX="123dp"
@@ -256,6 +261,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="5dp"
                         android:text="Otro"
+                        android:fontFamily="sans-serif-condensed"
                         android:textColor="@color/black"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="316dp" />
@@ -289,6 +295,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="5dp"
                         android:text="Policia"
+                        android:fontFamily="sans-serif-condensed"
                         android:textColor="@color/black"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="316dp" />
@@ -336,6 +343,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="5dp"
                         android:text="Obras"
+                        android:fontFamily="sans-serif-condensed"
                         android:textColor="@color/black"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="316dp" />
@@ -369,6 +377,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="5dp"
                         android:text="Retención"
+                        android:fontFamily="sans-serif-condensed"
                         android:textColor="@color/black"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="316dp" />
@@ -402,6 +411,7 @@
                         android:layout_gravity="center"
                         android:layout_marginBottom="5dp"
                         android:text="Carril cortado"
+                        android:fontFamily="sans-serif-condensed"
                         android:textColor="@color/black"
                         android:textSize="10dp"
                         tools:layout_editor_absoluteX="123dp"
