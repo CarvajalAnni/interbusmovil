@@ -196,7 +196,9 @@ public class RecyclerToken extends Activity {
                                     Log.d(TAG, "Modified city: " + dc.getDocument().getData());
                                     break;*/
                                 case REMOVED:
-                                    Log.d(TAG, "Removed city: " + dc.getDocument().getData());
+                                    //Log.d(TAG, "Removed city: " + dc.getDocument().getData());
+                                    listToken.remove(dc.getDocument().getData() + "ID" + dc.getDocument().getId());
+                                    recyclerView.setAdapter(adaptadortoken);
                                     break;
                             }
                         }

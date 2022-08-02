@@ -13,13 +13,14 @@
         android:layout_height="55dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="340dp"
+        android:layout_marginTop="40dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
         android:src="@drawable/atras"
         app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView

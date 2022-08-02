@@ -44,8 +44,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import Model.Userdesp;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Inicio extends Activity {
 
@@ -58,10 +66,11 @@ public class Inicio extends Activity {
 
 
     //actualizacion
-    private TextView nombretok,correotok;
+    TextView nombretok,correotok;
     private FirebaseAuth mAuth;
     String nombredas , correodas,idDoc;
     FirebaseFirestore db;
+    String correo3,contrasenia3;
 
     //cerrar google
     private GoogleSignInClient mGoogleSignInClient;
@@ -92,20 +101,68 @@ public class Inicio extends Activity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if(Fcm.id != null) {
-            nombretok.setText(currentUser.getDisplayName());
+           /* nombretok.setText(currentUser.getDisplayName());
             correotok.setText(currentUser.getEmail());
-       // }
 
-        nombredas = nombretok.getText().toString();
-        correodas = correotok.getText().toString();
+            nombredas = nombretok.getText().toString();
+            correodas = correotok.getText().toString();
 
-        //if(Fcm.id != null){
             idDoc= Fcm.id;
             Toast.makeText(Inicio.this, idDoc, Toast.LENGTH_LONG).show();
             db.collection("token").document(idDoc).update("nombre", nombredas);
-            db.collection("token").document(idDoc).update("correo", correodas);
+            db.collection("token").document(idDoc).update("correo", correodas);*/
+
+
+
+
+            //base de datos
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("https://interbusapi.herokuapp.com/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            InterbusApi interbusApi = retrofit.create(InterbusApi.class);
+            Call<ArrayList<Userdesp>> call = interbusApi.login(correo3 = IniciarSesion.correoenvia, contrasenia3= IniciarSesion.contraenvia);
+            call.enqueue(new Callback<ArrayList<Userdesp>>() {
+
+                @Override
+                public void onResponse(Call<ArrayList<Userdesp>> call, Response<ArrayList<Userdesp>> response) {
+                    if (!response.isSuccessful()) {
+                        Toast.makeText(Inicio.this, "Email o contraseña incorecto", Toast.LENGTH_SHORT).show();
+                    } else {
+                        ArrayList<Userdesp> listausu = response.body();
+
+                        for (Userdesp userdesp : listausu) {
+
+                            nombretok.setText(userdesp.getNombre());
+                            correotok.setText(userdesp.getEmail());
+
+                            nombredas = nombretok.getText().toString();
+                            correodas = correotok.getText().toString();
+
+                            Toast.makeText(Inicio.this, nombredas, Toast.LENGTH_LONG).show();
+
+
+                            idDoc= Fcm.id;
+                            Toast.makeText(Inicio.this, idDoc, Toast.LENGTH_LONG).show();
+                            db.collection("token").document(idDoc).update("nombre", nombredas);
+                            db.collection("token").document(idDoc).update("correo", correodas);
+                        }
+                    }
+
+                }
+                @Override
+                public void onFailure(Call<ArrayList<Userdesp>> call, Throwable t) {
+
+                }
+            });
+
+
+
 
         }
+
+
 
 
         //boton cerar sesion

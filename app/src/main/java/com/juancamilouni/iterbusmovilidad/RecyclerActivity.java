@@ -228,8 +228,9 @@ public class RecyclerActivity extends Activity {
                                     Log.d(TAG, "Modified city: " + dc.getDocument().getData());
                                     break;*/
                                 case REMOVED:
-                                    Log.d(TAG, "Removed city: " + dc.getDocument().getData());
-                                    //dc.getDocument().getData()+"ID"+dc.getDocument().getId();
+                                    //Log.d(TAG, "Removed city: " + dc.getDocument().getData());
+                                    listDatos.remove(dc.getDocument().getData() + "ID" + dc.getDocument().getId());
+                                    recyclerView.setAdapter(adaptador);
                                     break;
                             }
                         }
