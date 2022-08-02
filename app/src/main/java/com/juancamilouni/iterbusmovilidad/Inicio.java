@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,13 +47,14 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Inicio extends AppCompatActivity {
+public class Inicio extends Activity {
 
 
     View include ;
     ImageView bntimagen, bntusuario, bntincidenn;
     LottieAnimationView sos;
     FloatingActionButton btnnotificacion;
+    LinearLayout salirinicio;
 
 
     //actualizacion
@@ -103,8 +106,41 @@ public class Inicio extends AppCompatActivity {
             db.collection("token").document(idDoc).update("correo", correodas);
 
         }
-            /*db.collection("token").document("2Bb3xSVy6t3oS1JLtyrv").update("nombre", nombredas);
-            db.collection("token").document("2Bb3xSVy6t3oS1JLtyrv").update("correo", correodas);*/
+
+
+        //boton cerar sesion
+        salirinicio= findViewById(R.id.Salirinicio);
+        salirinicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                        .requestIdToken(getString(R.string.default_web_client_id))
+                        .requestEmail()
+                        .build();
+                mGoogleSignInClient = GoogleSignIn.getClient(Inicio.this, gso);
+
+                mAuth.signOut();
+                mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //Abrir MainActivity con SigIn button
+                        if(task.isSuccessful()){
+                            Intent mainActivity = new Intent(getApplicationContext(), IniciarSesion.class);
+                            startActivity(mainActivity);
+                            Inicio.this.finish();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "No se pudo cerrar sesión con google",
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+                Intent intent2 = new Intent(Inicio.this, IniciarSesion.class);
+                startActivity(intent2);
+
+            }
+        });
+
 
         Permiso();
         referenciar();
@@ -117,8 +153,13 @@ public class Inicio extends AppCompatActivity {
         bntusuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (IniciarSesion.formainicio==1){
                 Intent intent = new Intent(Inicio.this, Dashboard.class);
-                startActivity(intent);
+                startActivity(intent);}
+                else {
+                    Intent intent = new Intent(Inicio.this, Perfil.class);
+                    startActivity(intent);
+                }
             }
         });
         bntincidenn.setOnClickListener(new View.OnClickListener() {
@@ -166,6 +207,8 @@ public class Inicio extends AppCompatActivity {
     }
     private void referenciar() {
 
+
+        //animacion del boton sos
         LottieAnimationView sos = (LottieAnimationView) findViewById(R.id.sos);
         sos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -212,7 +255,7 @@ public class Inicio extends AppCompatActivity {
             case R.id.CerrarSesion:
 
 
-                gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+               /* gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                         .requestIdToken(getString(R.string.default_web_client_id))
                         .requestEmail()
                         .build();
@@ -238,11 +281,8 @@ public class Inicio extends AppCompatActivity {
                     }
                 });
 
-
-
-
                 Intent intent2 = new Intent(Inicio.this, IniciarSesion.class);
-                startActivity(intent2);
+                startActivity(intent2);*/
                 return true;
         }
         return super.onOptionsItemSelected(item);

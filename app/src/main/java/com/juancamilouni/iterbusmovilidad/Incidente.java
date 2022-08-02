@@ -27,9 +27,19 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.ArrayList;
+
+import Model.Userdesp;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class Incidente extends AppCompatActivity{
-    TextView nombrecond;
+    TextView nombrecond, rolincidente;
     ImageView fotocond;
+    String correo2,contrasenia2;
     LinearLayout lnColision, lnViaCerrada, lnFalla, lnObras, lnRetencion, lnCarrilCortado, lnAmbulancia, lnOtro, lnPolicia;
     public static int bandera;
     private static final int VALUE_TOTAL = 200;
@@ -52,18 +62,58 @@ public class Incidente extends AppCompatActivity{
         Permiso();
         referenciar();
 
-        //datos del conductor
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (IniciarSesion.formainicio==1){
+            //datos del conductor
+            mAuth = FirebaseAuth.getInstance();
+            FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        nombrecond.setText(currentUser.getDisplayName());
-        //cargar imágen con glide:
-        Glide.with(this).load(currentUser.getPhotoUrl()).into(fotocond);
+            nombrecond.setText(currentUser.getDisplayName());
+            //cargar imágen con glide:
+            Glide.with(this).load(currentUser.getPhotoUrl()).into(fotocond);
+        }else {
+
+            //base de datos
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("https://interbusapi.herokuapp.com/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            InterbusApi interbusApi = retrofit.create(InterbusApi.class);
+            Call<ArrayList<Userdesp>> call = interbusApi.login(correo2 = IniciarSesion.correoenvia, contrasenia2= IniciarSesion.contraenvia);
+            call.enqueue(new Callback<ArrayList<Userdesp>>() {
+
+
+                @Override
+                public void onResponse(Call<ArrayList<Userdesp>> call, Response<ArrayList<Userdesp>> response) {
+                    if (!response.isSuccessful()) {
+                        Toast.makeText(Incidente.this, "Email o contraseña incorecto", Toast.LENGTH_SHORT).show();
+                    } else {
+                        ArrayList<Userdesp> listausu = response.body();
+
+                        for (Userdesp userdesp : listausu) {
+
+                            fotocond.setImageResource(R.drawable.usuarioconductor);
+                            nombrecond.setText(userdesp.getNombre());
+                            rolincidente.setText(userdesp.getRol());
+
+                        }
+                    }
+
+                }
+                @Override
+                public void onFailure(Call<ArrayList<Userdesp>> call, Throwable t) {
+
+                }
+            });
+        }
+
+
 
         navegacio();
     }
 
-    private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
+    private void navegacio() {
+        bntimagen = findViewById(R.id.bntimagen);
         bntusuario = findViewById(R.id.bntusuario);
         bntincidenn = findViewById(R.id.bntincidenn);
         bntimagen.setOnClickListener(new View.OnClickListener() {
@@ -77,11 +127,15 @@ public class Incidente extends AppCompatActivity{
         bntusuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Incidente.this, Perfil.class);
-                startActivity(intent);
+                if (IniciarSesion.formainicio == 1) {
+                    Intent intent = new Intent(Incidente.this, Dashboard.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(Incidente.this, Perfil.class);
+                    startActivity(intent);
+                }
             }
         });
-
     }
 
     private void referenciar() {
@@ -96,6 +150,7 @@ public class Incidente extends AppCompatActivity{
         lnPolicia=findViewById(R.id.lnPolicia);
         nombrecond=findViewById(R.id.Nombrecond);
         fotocond=findViewById(R.id.Fotocond);
+        rolincidente=findViewById(R.id.Rolincidente);
 
         lnCarrilCortado.setOnClickListener(new View.OnClickListener() {
             @Override

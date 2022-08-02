@@ -27,6 +27,8 @@ public class Perfil extends AppCompatActivity {
     TextView etxcorreo, etxcontrasenia,etxrol;
     Bundle extras;
     String correo,contrasenia;
+    public static String nombrerol,rol;
+
 
 
     View include ;
@@ -68,6 +70,9 @@ public class Perfil extends AppCompatActivity {
                         etxcorreo.setText(userdesp.getEmail());
                         etxcontrasenia.setText(userdesp.getNombre());
                         etxrol.setText(userdesp.getRol());
+
+                        nombrerol= etxcontrasenia.getText().toString();
+                        rol= etxrol.getText().toString();
 
                     }
                 }

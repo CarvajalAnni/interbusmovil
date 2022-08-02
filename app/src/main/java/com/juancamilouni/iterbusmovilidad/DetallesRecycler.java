@@ -135,8 +135,13 @@ public class DetallesRecycler extends Activity {
         bntusuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetallesRecycler.this, Perfil.class);
-                startActivity(intent);
+                if (IniciarSesion.formainicio == 1) {
+                    Intent intent = new Intent(DetallesRecycler.this, Dashboard.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(DetallesRecycler.this, Perfil.class);
+                    startActivity(intent);
+                }
             }
         });
         bntincidenn.setOnClickListener(new View.OnClickListener() {

@@ -113,12 +113,14 @@ public class IniciarSesion extends AppCompatActivity {
 
         //boton ingresar con formulario
 
-        formainicio=0;
+        //formainicio=0;
         btningresar = findViewById(R.id.button);
         btningresar.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+
+                formainicio=2;
 
                 correoString = correo.getText().toString();
                 contraaseniaString = contrasenia.getText().toString();
@@ -152,7 +154,7 @@ public class IniciarSesion extends AppCompatActivity {
 
                                          for (int i=0; i<listausu.size();i++){
                                              if (listausu.get(i).getRol().equalsIgnoreCase(buscar)) {
-                                                 Intent intent1 = new Intent(IniciarSesion.this, RecyclerActivity.class);
+                                                 Intent intent1 = new Intent(IniciarSesion.this, Inicio.class);
                                                  startActivity(intent1);
 
                                              } else if (listausu.get(i).getRol().equalsIgnoreCase(buscar2)){

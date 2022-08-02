@@ -170,7 +170,7 @@ public class Dashboard extends Activity {
         bntusuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Dashboard.this, Perfil.class);
+                Intent intent = new Intent(Dashboard.this, Dashboard.class);
                 startActivity(intent);
             }
         });
