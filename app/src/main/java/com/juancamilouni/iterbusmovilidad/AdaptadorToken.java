@@ -29,6 +29,7 @@ import Model.Token;
 public class AdaptadorToken extends RecyclerView.Adapter<AdaptadorToken.ViewHolder> implements View.OnClickListener  {
     List<Token> listToken;
     Context context;
+
     private View.OnClickListener listener;
 
 
@@ -47,10 +48,12 @@ public class AdaptadorToken extends RecyclerView.Adapter<AdaptadorToken.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-    Token token = listToken.get(position);
-        holder.nombre.setText(token.getNombre());
-        holder.correo.setText(token.getCorreo());
-        holder.token1.setText(token.getToken());
+
+        Token token = listToken.get(position);
+            holder.nombre.setText(token.getNombre());
+            holder.correo.setText(token.getCorreo());
+            holder.token1.setText(token.getToken());
+
 
     }
 

@@ -3,18 +3,28 @@ package Model;
 public class Token {
      String Nombre;
      String Correo;
+     String Rol;
      String Token;
+
 
     public Token() {
     }
 
 
-    public Token(String nombre, String correo, String token) {
+    public Token(String nombre, String correo, String rol, String token) {
         Nombre = nombre;
         Correo = correo;
         Token = token;
+        Rol= rol;
     }
 
+    public String getRol() {
+        return Rol;
+    }
+
+    public void setRol(String rol) {
+        Rol = rol;
+    }
 
     public String getNombre() {
         return Nombre;

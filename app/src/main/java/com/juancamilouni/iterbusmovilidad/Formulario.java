@@ -66,9 +66,7 @@ import java.util.Map;
 import Model.Datos;
 
 public class Formulario extends AppCompatActivity implements View.OnClickListener {
-    String[] items = {"Menor", "Moderada", "Seria", "Grave", "Crítica", "Máxima"};
-    AutoCompleteTextView autoCompleteTextView;
-    ArrayAdapter<String> adapterItems;
+
     LinearLayout LnTomarFoto, LnSubirFoto, LnUbicacion, LnReportar,LnReportarDespachador;
     ImageView ImgFotoReporte;
     TextInputLayout TxtGravedad;
@@ -107,26 +105,27 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             }
         });
 
-        autoCompleteTextView = findViewById(R.id.autoCompleteTextView5);
 
-        adapterItems = new ArrayAdapter<String>(this,R.layout.lista_nivel_gravedad, items);
 
-        autoCompleteTextView.setAdapter(adapterItems);
+
+
+        /*autoCompleteTextView.setAdapter(adapterItems);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
                 Toast.makeText(getApplicationContext(),"Nivel gravedad: "+item, Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
         referenciar();
 
-        if(Incidente.bandera == 1){
+        /*if(Incidente.bandera == 1){
             TxtGravedad.setVisibility(View.GONE);
             formulario();
         } else {
             formulario();
-        }
+        }*/
+        formulario();
         navegacio();
     }
 
@@ -169,7 +168,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         LnUbicacion=findViewById(R.id.lnUbicacion);
         LnReportar=findViewById(R.id.btnReporte);
         ImgFotoReporte=findViewById(R.id.imgColicion);
-        TxtGravedad=findViewById(R.id.textInputLayout3);
+
         TxtLatitud=findViewById(R.id.textlatitudcolision);
         TxtLongitud=findViewById(R.id.textlongitudcolision);
         EtxtObservaciones=findViewById(R.id.textObservacionC);
@@ -680,18 +679,19 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         }else{
             TxtLatitud.setError(null);
         }
-        if (imageUri == null){
+        if (imageUri != null){
             Txtimagen.setVisibility(View.VISIBLE);
             esValido = false;
         }else{
             Txtimagen.setError(null);
+           // Txtimagen.setVisibility(View.INVISIBLE);
         }
-        if (TextUtils.isEmpty(autoCompleteTextView.getText().toString())) {
+        /*if (TextUtils.isEmpty(autoCompleteTextView.getText().toString())) {
             autoCompleteTextView.setError("Seleccione uno");
             esValido = false;
         } else {
             autoCompleteTextView.setError(null);
-        }
+        }*/
 
         return esValido;
     }
