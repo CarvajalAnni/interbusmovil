@@ -373,7 +373,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             case R.id.btnReporte:
                 indice = indice + 1;
                 id = String.valueOf(indice);
-                if (validarfor()){
+                if (validarfor()==true){
 
                     long timestamp = System.currentTimeMillis();
                     String filePathAndName = "Colision/" + timestamp;
@@ -425,22 +425,20 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
 
                     llamaratopico();
+                    Toast.makeText(Formulario.this, "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
+                    Intent intentt = new Intent(Formulario.this, Inicio.class);
+                    startActivity(intentt);
 
                 }else {
-
-                } if (!validarfor()) {
                     Toast.makeText(Formulario.this, "Faltan campos por llenar ", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(Formulario.this, "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
-                Intent intentt = new Intent(Formulario.this, Inicio.class);
-                startActivity(intentt);
-            }
+
+                }
                 break;
 
             case R.id.btnReporteDespachador:
 
 
-                if (validarfor()) {
+                if (validarfor()==true) {
 
                     long timestampp = System.currentTimeMillis();
                     String filePathAndNamee = "Colision/" + timestampp;
@@ -457,8 +455,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
                                 url = uploadedImageUri;
                                 Observaciones = EtxtObservaciones.getText().toString();
-
-
 
                                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                                 Date date = new Date();
@@ -491,9 +487,15 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                             }).addOnFailureListener(e -> {
                             });
 
+                    Toast.makeText(Formulario.this, "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
                     Intent intent4 = new Intent(Formulario.this, RecyclerToken.class);
                     startActivity(intent4);
                     break;
+                }
+
+
+                else {
+                    Toast.makeText(Formulario.this, "Faltan campos por llenar ", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
@@ -586,7 +588,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             Txtimagen.setError(null);
         }*/
 
-        if(TextUtils.isEmpty(EtxtObservaciones.getText().toString()) && TextUtils.isEmpty(TxtLatitud.getText()) && ImgFotoReporte != null){
+        if(TextUtils.isEmpty(EtxtObservaciones.getText().toString()) || TextUtils.isEmpty(TxtLatitud.getText()) || ImgFotoReporte.getDrawable()==null){
             EtxtObservaciones.setError("campo requerido");
             TxtLatitud.setError("campo requerido");
             Txtimagen.setVisibility(View.VISIBLE);
@@ -596,7 +598,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             TxtLatitud.setError(null);
             Txtimagen.setError(null);
         }
-
 
         return esValido;
     }
