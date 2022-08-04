@@ -69,7 +69,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
     LinearLayout LnTomarFoto, LnSubirFoto, LnUbicacion, LnReportar,LnReportarDespachador;
     ImageView ImgFotoReporte;
-    TextInputLayout TxtGravedad;
     TextView TxtLatitud, TxtLongitud, Txtimagen;
    public static EditText EtxtObservaciones;
     int indice = 0;
@@ -82,11 +81,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     int TOMAR_FOTO = 100;
     int SELEC_IMAGEN = 200;
     Uri imagenUri1;
-
-
     View include ;
     ImageView bntimagen, bntusuario, bntincidenn;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,8 +90,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
         include = findViewById(R.id.include);
-
-
 
 
         FirebaseMessaging.getInstance().subscribeToTopic("envieratodos").addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -223,10 +217,6 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         }
 
 
-
-
-
-
         LnTomarFoto.setOnClickListener(this);
         LnSubirFoto.setOnClickListener(this);
         LnReportar.setOnClickListener(this);
@@ -251,7 +241,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (LocationListener) Local);
         mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) Local);
 
-        TxtLatitud.setText("Obteniendo Ubicacion");
+        TxtLatitud.setText("Obteniendo Ubicacion...");
         TxtLongitud.setText("");
     }
 
@@ -433,68 +423,23 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                             }).addOnFailureListener(e -> {
                     });
 
-                /*// guardar ubicacion
 
-                //Ubicacion ubicacion = new Ubicacion(latitud, longitud);
-
-                Datos datos = new Datos(stringlati);
-
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-                db.collection("UbicacionColi")
-                        .add(ubicacion)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-                                Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Error adding document", e);
-                                Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                //guardar observaciones
-                String Observaciones = EtxtObservaciones.getText().toString();
-
-                Observaciones observaciones = new Observaciones(Observaciones);
-
-                db.collection("ObservacionesColicion")
-                        .add(observaciones)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-                                Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Error adding document", e);
-                                Toast.makeText(Formulario.this, "Datos f", Toast.LENGTH_SHORT).show();
-                            }
-                        });*/
-                    //
                     llamaratopico();
 
                 }else {
 
                 } if (!validarfor()) {
-                Toast.makeText(Formulario.this, "Faltan campos por llenar ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Formulario.this, "Faltan campos por llenar ", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(Formulario.this, "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
                 Intent intentt = new Intent(Formulario.this, Inicio.class);
                 startActivity(intentt);
             }
                 break;
+
             case R.id.btnReporteDespachador:
 
 
-                //llamarespecifico();
-                //prueba recicler
                 if (validarfor()) {
 
                     long timestampp = System.currentTimeMillis();
@@ -513,12 +458,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                 url = uploadedImageUri;
                                 Observaciones = EtxtObservaciones.getText().toString();
 
-                                //incrementar id
-                           /* double autoincre= 0;
-                            autoincre= autoincre+1;
-                            idauto= autoincre;*/
 
-                                //stringid= String.valueOf(idauto);
 
                                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                                 Date date = new Date();
@@ -551,18 +491,11 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                             }).addOnFailureListener(e -> {
                             });
 
-
-
-
                     Intent intent4 = new Intent(Formulario.this, RecyclerToken.class);
                     startActivity(intent4);
                     break;
-
                 }
-
                 break;
-
-
         }
     }
 
@@ -631,43 +564,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    /*private void llamarespecifico() {
-        RequestQueue myrequest = Volley.newRequestQueue(getApplicationContext());
-        JSONObject json = new JSONObject();
-
-        try {
-            // tomar el valor de token
-            String token = "d5qwpYVGTjmbVtyJqoLnSe:APA91bHZYhLjNt8IbHrh-LhrisdiHMS5akfxA8gVAPFIHnFfgpLYV4B-7fpz8hc9PqtXi4NCB5tAcoAw-l61q4EZN5dAIPSrPiYlJ-IsqLEcZdn8rUIY70Cz66_-atSyh4fNU9F3Y7SK";
-            json.put("to", token);
-            JSONObject notificacion = new JSONObject();
-
-            notificacion.put("detalle", "Un conductor te ha notificado");
-
-            json.put("data",notificacion);
-
-            String URL = "https://fcm.googleapis.com/fcm/send";
-            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
-                @Override
-                public Map<String, String> getHeaders(){
-                    Map<String,String> header = new HashMap<>();
-                    header.put("content-type", "application/json");
-                    header.put("authorization", "key=AAAALeT1rgo:APA91bH4bT4E70reoTjsbCPH63nnoZN2ioq_LvuU3KZgHngw48wJWqkrBxLmvL3OSDIwu0zsLBM54J2ovzPKh08tVEHhUjs-YYUkukMAKVzQHcPgvL6Itw6lz3d43NcgBm3KkydbZOiS");// key configuraciones del cloud menssagin
-
-                    return header;
-                }
-            };
-            myrequest.add(request);
-
-        }catch (JSONException e){
-            e.printStackTrace();
-        }
-    }*/
-
-
     public boolean validarfor(){
         Boolean esValido = true;
 
-        if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())){
+        /*if (TextUtils.isEmpty(EtxtObservaciones.getText().toString())){
             EtxtObservaciones.setError("campo requerido");
             esValido = false;
         } else {
@@ -684,14 +584,19 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             esValido = false;
         }else{
             Txtimagen.setError(null);
-           // Txtimagen.setVisibility(View.INVISIBLE);
-        }
-        /*if (TextUtils.isEmpty(autoCompleteTextView.getText().toString())) {
-            autoCompleteTextView.setError("Seleccione uno");
-            esValido = false;
-        } else {
-            autoCompleteTextView.setError(null);
         }*/
+
+        if(TextUtils.isEmpty(EtxtObservaciones.getText().toString()) && TextUtils.isEmpty(TxtLatitud.getText()) && ImgFotoReporte != null){
+            EtxtObservaciones.setError("campo requerido");
+            TxtLatitud.setError("campo requerido");
+            Txtimagen.setVisibility(View.VISIBLE);
+            esValido = false;
+        }else{
+            EtxtObservaciones.setError(null);
+            TxtLatitud.setError(null);
+            Txtimagen.setError(null);
+        }
+
 
         return esValido;
     }
