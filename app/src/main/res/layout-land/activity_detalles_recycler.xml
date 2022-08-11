@@ -5,56 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetallesRecycler">
-    <ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:scaleType="centerCrop"
-            android:src="@color/grisinterbus"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="174dp"
-            android:layout_height="93dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/logoninterbus"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+        android:layout_height="209dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@color/grisinterbus" />
 
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:gravity="center"
-            android:text="DETALLES REPORTE"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/azuloscuro"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="0.511"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="165dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/logoninterbus"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
-        <ImageView
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="DETALLES REPORTE"
+        android:textColor="@color/azuloscuro"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
         android:id="@+id/detImg"
-        android:layout_width="365dp"
-        android:layout_height="270dp"
+        android:layout_width="370dp"
+        android:layout_height="227dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="48dp"
         android:scaleType="centerCrop"
@@ -87,8 +78,7 @@
         android:layout_marginStart="108dp"
         android:layout_marginTop="12dp"
         android:layout_toEndOf="@+id/detImg"
-
-        android:text="fecha"
+        android:text="Fecha"
         android:fontFamily="sans-serif-condensed"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/detImg"
@@ -98,12 +88,12 @@
 
     <TextView
         android:id="@+id/detLatitud"
-        android:layout_width="266dp"
-        android:layout_height="36dp"
+        android:layout_width="268dp"
+        android:layout_height="59dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="24dp"
         android:layout_toRightOf="@+id/detImg"
-        android:text="Ubicacion"
+        android:text="Ubicación"
         android:fontFamily="sans-serif-condensed"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,24 +117,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detImg" />
 
-        <TextView
-            android:id="@+id/detObservacion"
-            android:layout_width="273dp"
-            android:layout_height="103dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="16dp"
-            android:layout_toRightOf="@+id/detImg"
-            android:text="Observacion"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.906"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detLatitud"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/detObservacion"
+        android:layout_width="247dp"
+        android:layout_height="89dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@+id/detImg"
+        android:text="Observacion"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detLatitud"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
+    <TextView
         android:id="@+id/Observacion"
         android:layout_width="120dp"
         android:layout_height="24dp"
@@ -153,25 +143,53 @@
         android:layout_toRightOf="@+id/detImg"
         android:gravity="center"
         android:hint="Observación:"
-            android:fontFamily="sans-serif-condensed"
+        android:fontFamily="sans-serif-condensed"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Ubicacion"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.213" />
 
+    <LinearLayout
+        android:id="@+id/Eliminar"
+        android:layout_width="176dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
+        <TextView
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:text="@string/eliminar_reporte"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="120dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteY="180dp" />
 
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="25dp"
+            android:src="@drawable/borrar" />
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
     <include
         android:id="@+id/include"
         layout="@layout/activity_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="56dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
