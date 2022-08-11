@@ -9,22 +9,23 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="209dp"
+        android:layout_height="134dp"
         android:scaleType="centerCrop"
+        android:src="@color/grisinterbus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@color/grisinterbus" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="165dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="245dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/logoninterbus"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -32,15 +33,15 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-condensed"
         android:text="DETALLES REPORTE"
         android:textColor="@color/azuloscuro"
+        android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/detImg"
@@ -60,9 +61,9 @@
         android:layout_width="97dp"
         android:layout_height="21dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:hint="Fecha:"
-        android:fontFamily="sans-serif-condensed"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/detImg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,8 +79,8 @@
         android:layout_marginStart="108dp"
         android:layout_marginTop="12dp"
         android:layout_toEndOf="@+id/detImg"
-        android:text="Fecha"
         android:fontFamily="sans-serif-condensed"
+        android:text="Fecha"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/detImg"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,8 +94,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="24dp"
         android:layout_toRightOf="@+id/detImg"
-        android:text="Ubicación"
         android:fontFamily="sans-serif-condensed"
+        android:text="Ubicación"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.896"
@@ -108,9 +109,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/detImg"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:hint="Ubicación:"
-        android:fontFamily="sans-serif-condensed"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -124,8 +125,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
         android:layout_toRightOf="@+id/detImg"
-        android:text="Observacion"
         android:fontFamily="sans-serif-condensed"
+        android:text="Observacion"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -141,9 +142,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="28dp"
         android:layout_toRightOf="@+id/detImg"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:hint="Observación:"
-        android:fontFamily="sans-serif-condensed"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,13 +155,12 @@
 
     <LinearLayout
         android:id="@+id/Eliminar"
-        android:layout_width="176dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="172dp"
-        android:layout_marginRight="10dp"
+        android:layout_width="163dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="88dp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
@@ -168,11 +168,12 @@
         <TextView
             android:layout_width="86dp"
             android:layout_height="wrap_content"
-            android:text="@string/eliminar_reporte"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="120dp"
             android:fontFamily="sans-serif"
+            android:text="@string/eliminar_reporte"
+            android:textColor="@color/azuloscuro"
+            android:textSize="17sp"
             android:textStyle="bold"
+            tools:layout_editor_absoluteX="120dp"
             tools:layout_editor_absoluteY="180dp" />
 
         <ImageView
@@ -188,8 +189,6 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
