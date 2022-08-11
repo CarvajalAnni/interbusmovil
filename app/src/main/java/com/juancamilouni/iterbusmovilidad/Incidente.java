@@ -112,8 +112,7 @@ public class Incidente extends AppCompatActivity{
         navegacio();
     }
 
-    private void navegacio() {
-        bntimagen = findViewById(R.id.bntimagen);
+    private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
         bntusuario = findViewById(R.id.bntusuario);
         bntincidenn = findViewById(R.id.bntincidenn);
         bntimagen.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +135,8 @@ public class Incidente extends AppCompatActivity{
                 }
             }
         });
+
+
     }
 
     private void referenciar() {
