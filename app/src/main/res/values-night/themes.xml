@@ -5,7 +5,7 @@
         <!-- Primary brand color. -->
 
         <!-- Color buttons. -->
-        <item name="colorPrimary">#919AA6</item>
+        <item name="colorPrimary">@color/azul</item>
         <item name="colorPrimaryVariant">#F44336</item>
 
         <!-- Color font. -->
