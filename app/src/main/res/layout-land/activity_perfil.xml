@@ -18,21 +18,11 @@
         android:backgroundTint="@color/transparente"
         android:src="@drawable/atras"
         app:fabSize="normal"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="93dp"
-        android:layout_height="86dp"
-        android:layout_marginTop="32dp"
-        android:background="@color/transparente"
-        android:backgroundTint="@color/transparente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.975"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logoninterbus" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -47,17 +37,53 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/conductor" />
 
+    <!--<TextView
+        android:id="@+id/textNombreP"
+        android:layout_width="293dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/transparente"
+        android:backgroundTint="@color/transparente"
+        android:gravity="center"
+        android:hint="Correo"
+        android:textColorHint="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textusuario"
+        tools:ignore="MissingConstraints" />-->
+
+    <!--<TextView
+        android:backgroundTint="@color/transparente"
+        android:background="@color/transparente"
+        android:id="@+id/textCorreoP"
+        android:layout_width="155dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="88dp"
+        android:gravity="center"
+        android:hint="Contraseña"
+        android:textSize="25sp"
+        android:textColorHint="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textNombreP"
+        tools:ignore="MissingConstraints" />-->
+
     <androidx.cardview.widget.CardView
         android:id="@+id/listaCard"
-        android:layout_width="442dp"
-        android:layout_height="280dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="443dp"
+        android:layout_height="264dp"
+        android:layout_marginTop="44dp"
         android:visibility="visible"
         app:cardCornerRadius="20dp"
         app:cardElevation="6dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
@@ -81,8 +107,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="207dp"
-                android:hint="Nombre:"
                 android:fontFamily="sans-serif-condensed"
+                android:hint="Nombre:"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -97,8 +123,8 @@
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="44dp"
                 android:layout_marginEnd="18dp"
-                android:hint="nombre"
                 android:fontFamily="sans-serif-condensed"
+                android:hint="nombre"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -113,8 +139,8 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="91dp"
                 android:layout_marginEnd="212dp"
-                android:hint="Correo:"
                 android:fontFamily="sans-serif-condensed"
+                android:hint="Correo:"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -158,8 +184,8 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="155dp"
                 android:layout_marginEnd="212dp"
-                android:hint="Rol:"
                 android:fontFamily="sans-serif-condensed"
+                android:hint="Rol:"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -176,8 +202,8 @@
                 android:layout_marginEnd="67dp"
                 android:background="@color/transparente"
                 android:backgroundTint="@color/transparente"
-                android:hint="Rol"
                 android:fontFamily="sans-serif-condensed"
+                android:hint="Rol"
                 android:textSize="15sp"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="149dp" />
@@ -190,56 +216,30 @@
         android:id="@+id/textusuario"
         android:layout_width="282dp"
         android:layout_height="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
-        android:hint="Usuario"
         android:fontFamily="sans-serif-condensed"
+        android:hint="Usuario"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <!--<TextView
-        android:id="@+id/textNombreP"
-        android:layout_width="293dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="40dp"
-        android:background="@color/transparente"
-        android:backgroundTint="@color/transparente"
-        android:gravity="center"
-        android:hint="Correo"
-        android:textColorHint="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textusuario"
-        tools:ignore="MissingConstraints" />-->
-
-    <!--<TextView
-        android:backgroundTint="@color/transparente"
-        android:background="@color/transparente"
-        android:id="@+id/textCorreoP"
-        android:layout_width="155dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="88dp"
-        android:gravity="center"
-        android:hint="Contraseña"
-        android:textSize="25sp"
-        android:textColorHint="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textNombreP"
-        tools:ignore="MissingConstraints" />-->
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 
