@@ -7,6 +7,12 @@
     android:background="#E2F4FA"
     android:scaleType="centerCrop"
     tools:context=".Formulario">
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteX="56dp" />
 
     <ScrollView
 
@@ -73,18 +79,9 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/activity_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/scrollView2" />
+
+
 
     <LinearLayout
         android:id="@+id/btnReporte"
@@ -144,7 +141,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/scrollView2">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/lnTomarfoto"
@@ -323,5 +320,8 @@
         app:srcCompat="@drawable/fotoincidente"
         android:scaleType="fitXY"/>
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
