@@ -135,13 +135,7 @@ public class Incidente extends AppCompatActivity{
                 }
             }
         });
-        bntincidenn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Incidente.this, Incidente.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 
