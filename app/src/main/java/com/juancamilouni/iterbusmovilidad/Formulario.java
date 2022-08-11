@@ -70,13 +70,15 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     LinearLayout LnTomarFoto, LnSubirFoto, LnUbicacion, LnReportar,LnReportarDespachador;
     ImageView ImgFotoReporte;
     TextView TxtLatitud, TxtLongitud, Txtimagen;
-   public static EditText EtxtObservaciones;
+    static EditText EtxtObservaciones;
     int indice = 0;
     String id, urlObtenida,stringlati,url,Observaciones;
     private Uri imageUri = null;
     LocationManager locationManager;
     Location location;
     Date fechasub;
+
+
 
     int TOMAR_FOTO = 100;
     int SELEC_IMAGEN = 200;
@@ -385,7 +387,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                 while (!uriTask.isSuccessful()) ;
                                 String uploadedImageUri = "" + uriTask.getResult();
                                 //sendList(uploadedImageUri, timestamp);
-                                Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
+                                //Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
                                 //urlimagen.setText(uploadedImageUri);
 
                                 url = uploadedImageUri;
@@ -408,8 +410,9 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                             @Override
                                             public void onSuccess(DocumentReference documentReference) {
                                                 Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+
                                                 // documentReference.update("idauto", FieldValue.increment(1));
-                                                Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                                                //Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
                                             }
                                         })
 
@@ -450,7 +453,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                 while (!uriTask.isSuccessful()) ;
                                 String uploadedImageUri = "" + uriTask.getResult();
                                 //sendList(uploadedImageUri, timestamp);
-                                Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
+                                //Toast.makeText(Formulario.this, "foto enviada correctamente ", Toast.LENGTH_LONG).show();
                                 //urlimagen.setText(uploadedImageUri);
 
                                 url = uploadedImageUri;
@@ -473,7 +476,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                             public void onSuccess(DocumentReference documentReference) {
                                                 Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
                                                 // documentReference.update("idauto", FieldValue.increment(1));
-                                                Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                                                //Toast.makeText(Formulario.this, "Datos guardados", Toast.LENGTH_SHORT).show();
                                             }
                                         })
 
@@ -514,20 +517,30 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Formulario.super.onActivityResult(requestCode, resultCode, data);
+
         if (resultCode==RESULT_OK && requestCode == SELEC_IMAGEN) {
-            //Uri path= data.getData();
-            //img.setImageURI(path);
+
 
             assert data != null;
             imageUri = data.getData();
             ImgFotoReporte.setImageURI(data.getData());
 
-            /*imagenUri1 = data.getData();
-            ImgFotoReporte.setImageURI(imagenUri1);*/
+            if (ImgFotoReporte.getDrawable()==null) {
+                Txtimagen.setVisibility(View.VISIBLE);
+            }else {
+                Txtimagen.setVisibility(View.INVISIBLE);
+            }
 
         }else if(resultCode == RESULT_OK && requestCode==TOMAR_FOTO) {
             Uri uri = Uri.parse(urlObtenida);
             ImgFotoReporte.setImageURI(uri);
+
+            if (ImgFotoReporte.getDrawable()==null) {
+                Txtimagen.setVisibility(View.VISIBLE);
+            }else {
+                Txtimagen.setVisibility(View.INVISIBLE);
+            }
+
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

@@ -1,19 +1,38 @@
 package com.juancamilouni.iterbusmovilidad;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
@@ -23,10 +42,15 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> implem
     List<Datos> listDatos;
     Context context;
     private View.OnClickListener listener;
+    public static int ban=0;
+
+    FirebaseFirestore db;
+    public static String idDoc;
 
     public Adaptador(Context context, List<Datos> listDatos) {
         this.listDatos = listDatos;
         this.context = context;
+        db=FirebaseFirestore.getInstance();
     }
 
     @NonNull
@@ -41,20 +65,26 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> implem
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-
         Datos datos = listDatos.get(position);
-
-        //viewHolder.dateView.setText(DateFormat.format("dd/MM/yyyy", dateColumnIndex));
 
         holder.url.setText(datos.getUrl());
         holder.fecha.setText(DateFormat.format("EEEE dd/LLLL/yyyy HH:mm:ss",datos.getTiempo()));
-        //holder.fecha.setText(datos.getTiempo().toString());
         Glide.with(context).load(datos.getUrl()).into(holder.foto);
         holder.ubicacion.setText(datos.getUbicacion());
         holder.observa.setText(datos.getObservaciones());
 
-
-
+        holder.eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //db.collection("Reportes").document().delete();
+                //Toast.makeText(context, idDoc, Toast.LENGTH_LONG).show();
+                //Log.e("token", "ID doc es:  " + idDoc);
+                Adaptador.this.notifyItemRemoved(holder.getAdapterPosition());
+                Toast.makeText(context, "inicio: "+ban, Toast.LENGTH_LONG).show();
+                ban=1;
+                Toast.makeText(context, "fin: "+ban, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -71,9 +101,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> implem
         if(listener!= null){
             listener.onClick(view);
         }
-
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
@@ -83,31 +111,20 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> implem
         TextView ubicacion;
         TextView observa;
         ImageView foto;
+        ImageButton eliminar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             context1= itemView.getContext();
 
+            eliminar= itemView.findViewById(R.id.Eliminar);
             url= itemView.findViewById(R.id.urlItem);
             fecha = itemView.findViewById(R.id.Fecha);
             ubicacion = itemView.findViewById(R.id.Latitud);
             observa = itemView.findViewById(R.id.Observacion);
             foto = (ImageView) itemView.findViewById(R.id.Imagen1);
-        }
 
-        /*@Override
-        public void onClick(View view) {
-            switch (view.getId()){
-                case R.id.verDetalle:
-                    Intent intent= new Intent(context1,DetallesRecycler.class);
-                    intent.putExtra("ubicacion",ubicacion.getText());
-                    intent.putExtra("fecha",fecha.getText());
-                    intent.putExtra("observacion",observa.getText());
-                    intent.putExtra("foto",url.getText());
-                    context1.startActivity(intent);
-                    break;
-            }
-        }*/
+        }
     }
 }

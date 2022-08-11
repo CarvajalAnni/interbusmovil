@@ -53,52 +53,10 @@ public class DetallesRecycler extends Activity {
         recobs= findViewById(R.id.detObservacion);
         img= findViewById(R.id.detImg);
 
-
-
-
-        /*db= FirebaseFirestore.getInstance();
-        db.collection("Reportes").*//*whereGreaterThanOrEqualTo("idauto",1).*//*orderBy("tiempo", Query.Direction.DESCENDING).limit(10).get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                                //Toast.makeText(RecyclerActivity.this, ""+document.getData(), Toast.LENGTH_SHORT).show();
-                                //String url = document.getData().toString();
-                                Date tiempo= document.getDate("tiempo");
-                                String Cadenaurl = document.getString("url");
-                                String Cadenaobs = document.getString("observaciones");
-                                String Cadenaubi = document.getString("ubicacion");
-
-                                //String sSubCadena1 = Cadenaurl.substring(5);
-                                //Toast.makeText(RecyclerActivity.this, ""+ sSubCadena, Toast.LENGTH_SHORT).show();
-                               *//* Datos datos = new Datos(tiempo,Cadenaurl,Cadenaubi,Cadenaobs);
-                                listDatos.add(datos);*//*
-                                // Toast.makeText(RecyclerActivity.this, ""+listDatos, Toast.LENGTH_SHORT).show();
-                                // listDatos.add(new Datos(url));
-                               *//* adaptador= new Adaptador(RecyclerActivity.this,listDatos);
-                                recyclerView.setAdapter(adaptador);*//*
-                            }
-                        } else {
-                            Log.w(TAG, "Error getting documents.", task.getException());
-                        }
-                    }
-
-                });*/
-
-
         String ubicacion= RecyclerActivity.ubicacion1;
         String fecha=RecyclerActivity.fecha1;
         String observacion=RecyclerActivity.obser1;
         String foto=RecyclerActivity.url1;
-        /*Bundle extras= getIntent().getExtras();
-        if(extras != null){
-            ubicacion= extras.getString("ubicacion");
-            fecha= extras.getString("fecha");
-            observacion= extras.getString("observacion");
-            foto= extras.getString("foto");
-        }*/
 
         if (ubicacion== null) {
             recubi.setText("Ubicacion no obtenida");
