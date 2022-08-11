@@ -39,6 +39,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.json.JSONException;
@@ -108,6 +109,8 @@ public class Inicio extends Activity {
 
                 nombredas = nombretok.getText().toString();
                 correodas = correotok.getText().toString();
+
+
 
                 idDoc = Fcm.id;
                 Toast.makeText(Inicio.this, idDoc, Toast.LENGTH_LONG).show();

@@ -10,12 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -23,6 +27,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -42,32 +47,18 @@ import Model.Datos;
 public class RecyclerActivity extends Activity {
     View include ;
     ImageView bntimagen, bntusuario, bntincidenn;
-
     List<Datos> listDatos;
     Adaptador adaptador;
     FirebaseStorage storageRef;
     FirebaseFirestore db;
     RecyclerView recyclerView;
-     public static String obser1,url1,ubicacion1,fecha1;
-    //SwipeRefreshLayout swipeRefreshLayout;
-
+    public static String obser1,url1,ubicacion1,fecha1,idDoc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
         include = findViewById(R.id.include);
-
-      /*  swipeRefreshLayout = findViewById(R.id.refresh);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        });*/
-
-
 
         db= FirebaseFirestore.getInstance();
         storageRef=FirebaseStorage.getInstance();
@@ -77,6 +68,8 @@ public class RecyclerActivity extends Activity {
         listDatos= new ArrayList<Datos>();
         llenarLista();
         navegacio();
+
+
     }
 
     private void navegacio() { bntimagen = findViewById(R.id.bntimagen);
@@ -160,23 +153,9 @@ public class RecyclerActivity extends Activity {
 
                 });*/
 
-
-
-
-
-        /*Actualizacion de datos sin conexion
-        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-                .setCacheSizeBytes(FirebaseFirestoreSettings.CACHE_SIZE_UNLIMITED)
-                .build();
-        db.setFirestoreSettings(settings);*/
-
-
-
-
-
         ////////detectar actualizaciones
         db.collection("Reportes").orderBy("tiempo", Query.Direction.DESCENDING).limit(10)
-                .addSnapshotListener(/*MetadataChanges.INCLUDE,*/ new EventListener<QuerySnapshot>() {
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot snapshots,
                                         @Nullable FirebaseFirestoreException e) {
@@ -194,10 +173,13 @@ public class RecyclerActivity extends Activity {
                                     String Cadenaurl = dc.getDocument().getString("url");
                                     String Cadenaobs = dc.getDocument().getString("observaciones");
                                     String Cadenaubi = dc.getDocument().getString("ubicacion");
+                                    String iddocumento = dc.getDocument().getId();
 
-                                    Datos datos = new Datos(tiempo,Cadenaurl,Cadenaubi,Cadenaobs);
+
+                                    Datos datos = new Datos(tiempo,Cadenaurl,Cadenaubi,Cadenaobs,iddocumento);
                                     listDatos.add(datos);
-                                    // Toast.makeText(RecyclerActivity.this, ""+listDatos, Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(RecyclerActivity.this,"id documento:  "+ dc.getDocument().getId(), Toast.LENGTH_SHORT).show();
+                                    //Log.e("id", "ID doc es:  " + dc.getDocument().getId());
                                     adaptador= new Adaptador(RecyclerActivity.this,listDatos);
 
                                     //metodo click
@@ -206,31 +188,29 @@ public class RecyclerActivity extends Activity {
                                         public void onClick(View view) {
                                             Intent intent= new Intent(RecyclerActivity.this,DetallesRecycler.class);
 
+                                            //idrecy= dc.getDocument().getId();
                                             fecha1= DateFormat.format("EEEE dd/LLLL/yyyy HH:mm:ss",listDatos.get(recyclerView.getChildAdapterPosition(view)).getTiempo()).toString();
                                             obser1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getObservaciones();
                                             url1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUrl();
                                             ubicacion1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUbicacion();
-
-                                            /*intent.putExtra("ubicacion",ubicacion1.toString());
-                                            intent.putExtra("fecha",fecha1.toString());
-                                            intent.putExtra("observacion",obser1.toString());
-                                            intent.putExtra("foto",url1.toString());*/
+                                            idDoc= iddocumento;
+                                            //Toast.makeText(RecyclerActivity.this, idrecy, Toast.LENGTH_SHORT).show();
                                             startActivity(intent);
                                         }
                                     });
 
+
                                     recyclerView.setAdapter(adaptador);
-
-
-
                                     break;
+
                                 /*case MODIFIED:
                                     Log.d(TAG, "Modified city: " + dc.getDocument().getData());
                                     break;*/
+
                                 case REMOVED:
-                                    //Log.d(TAG, "Removed city: " + dc.getDocument().getData());
-                                    listDatos.remove(dc.getDocument().getData() + "ID" + dc.getDocument().getId());
-                                    recyclerView.setAdapter(adaptador);
+                                        listDatos.remove(dc.getDocument().getData() + "ID" + dc.getDocument().getId());
+                                        //listDatos.remove(datos);
+                                        recyclerView.setAdapter(adaptador);
                                     break;
                             }
                         }

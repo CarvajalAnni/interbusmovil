@@ -50,7 +50,7 @@ public class Despachador extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listDatos= new ArrayList<Datos>();
-        llenarLista();
+        //llenarLista();
 
     }
 
@@ -117,8 +117,8 @@ public class Despachador extends AppCompatActivity {
 
 
         ////////detectar actualizaciones
-        db.collection("Reportes").orderBy("tiempo", Query.Direction.DESCENDING).limit(10)
-                .addSnapshotListener(/*MetadataChanges.INCLUDE,*/ new EventListener<QuerySnapshot>() {
+        /*db.collection("Reportes").orderBy("tiempo", Query.Direction.DESCENDING).limit(10)
+                .addSnapshotListener(*//*MetadataChanges.INCLUDE,*//* new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot snapshots,
                                         @Nullable FirebaseFirestoreException e) {
@@ -153,10 +153,10 @@ public class Despachador extends AppCompatActivity {
                                             url1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUrl();
                                             ubicacion1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUbicacion();
 
-                                            /*intent.putExtra("ubicacion",ubicacion1.toString());
+                                            *//*intent.putExtra("ubicacion",ubicacion1.toString());
                                             intent.putExtra("fecha",fecha1.toString());
                                             intent.putExtra("observacion",obser1.toString());
-                                            intent.putExtra("foto",url1.toString());*/
+                                            intent.putExtra("foto",url1.toString());*//*
                                             startActivity(intent);
                                         }
                                     });
@@ -166,9 +166,9 @@ public class Despachador extends AppCompatActivity {
 
 
                                     break;
-                                /*case MODIFIED:
+                                *//*case MODIFIED:
                                     Log.d(TAG, "Modified city: " + dc.getDocument().getData());
-                                    break;*/
+                                    break;*//*
                                 case REMOVED:
                                     Log.d(TAG, "Removed city: " + dc.getDocument().getData());
                                     break;
@@ -180,7 +180,7 @@ public class Despachador extends AppCompatActivity {
 
 
 
-
+*/
     }
 
 }

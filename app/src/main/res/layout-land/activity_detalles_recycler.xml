@@ -6,55 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".DetallesRecycler">
     <ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
-        <ImageView
-            android:id="@+id/imageView"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:scaleType="centerCrop"
-            android:src="@color/grisinterbus"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="174dp"
-            android:layout_height="93dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/logoninterbus"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="134dp"
+        android:scaleType="centerCrop"
+        android:src="@color/grisinterbus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:gravity="center"
-            android:text="DETALLES REPORTE"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/azuloscuro"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="0.511"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="245dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logoninterbus"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
-        <ImageView
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="DETALLES REPORTE"
+        android:textColor="@color/azuloscuro"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/detImg"
-        android:layout_width="365dp"
-        android:layout_height="270dp"
+        android:layout_width="370dp"
+        android:layout_height="227dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="48dp"
         android:scaleType="centerCrop"
@@ -69,9 +74,9 @@
         android:layout_width="97dp"
         android:layout_height="21dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:hint="Fecha:"
-        android:fontFamily="sans-serif-condensed"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/detImg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,9 +92,8 @@
         android:layout_marginStart="108dp"
         android:layout_marginTop="12dp"
         android:layout_toEndOf="@+id/detImg"
-
-        android:text="fecha"
         android:fontFamily="sans-serif-condensed"
+        android:text="Fecha"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/detImg"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,13 +102,13 @@
 
     <TextView
         android:id="@+id/detLatitud"
-        android:layout_width="266dp"
-        android:layout_height="36dp"
+        android:layout_width="268dp"
+        android:layout_height="59dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="24dp"
         android:layout_toRightOf="@+id/detImg"
-        android:text="Ubicacion"
         android:fontFamily="sans-serif-condensed"
+        android:text="Ubicación"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.896"
@@ -118,60 +122,90 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/detImg"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:hint="Ubicación:"
-        android:fontFamily="sans-serif-condensed"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detImg" />
 
-        <TextView
-            android:id="@+id/detObservacion"
-            android:layout_width="273dp"
-            android:layout_height="103dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="16dp"
-            android:layout_toRightOf="@+id/detImg"
-            android:text="Observacion"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.906"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detLatitud"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/detObservacion"
+        android:layout_width="247dp"
+        android:layout_height="89dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@+id/detImg"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Observacion"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detLatitud"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
+    <TextView
         android:id="@+id/Observacion"
         android:layout_width="120dp"
         android:layout_height="24dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="28dp"
         android:layout_toRightOf="@+id/detImg"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:hint="Observación:"
-            android:fontFamily="sans-serif-condensed"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Ubicacion"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.213" />
 
+    <LinearLayout
+        android:id="@+id/Eliminar"
+        android:layout_width="163dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="88dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
+        <TextView
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/eliminar_reporte"
+            android:textColor="@color/azuloscuro"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="180dp" />
 
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="25dp"
+            android:src="@drawable/borrar" />
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
+
     <include
         android:id="@+id/include"
         layout="@layout/activity_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="56dp" />
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

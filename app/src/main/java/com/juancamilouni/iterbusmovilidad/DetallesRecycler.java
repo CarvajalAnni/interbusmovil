@@ -12,14 +12,18 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -32,7 +36,8 @@ import Model.Datos;
 public class DetallesRecycler extends Activity {
     View include ;
     ImageView bntimagen, bntusuario, bntincidenn;
-
+    LinearLayout eliminar;
+    String idrecibido;
 
     FirebaseFirestore db;
     TextView recfecha,recubi,recobs;
@@ -46,6 +51,9 @@ public class DetallesRecycler extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_recycler);
 
+        //instanciar base de datos
+        db=FirebaseFirestore.getInstance();
+
         include = findViewById(R.id.include);
 
         recfecha= findViewById(R.id.detFecha);
@@ -53,52 +61,35 @@ public class DetallesRecycler extends Activity {
         recobs= findViewById(R.id.detObservacion);
         img= findViewById(R.id.detImg);
 
+        //Eliminar de base de datos
+        idrecibido= RecyclerActivity.idDoc;
+        eliminar= findViewById(R.id.Eliminar);
+
+        if (IniciarSesion.formainicio==2){
+            eliminar.setVisibility(View.VISIBLE);
+        }else {
+            eliminar.setVisibility(View.INVISIBLE);
+        }
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent= new Intent(DetallesRecycler.this,RecyclerActivity.class);
+                 db.collection("Reportes").document(idrecibido).delete();
+                startActivity(intent);
+
+                Toast.makeText(DetallesRecycler.this, idrecibido, Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
 
-        /*db= FirebaseFirestore.getInstance();
-        db.collection("Reportes").*//*whereGreaterThanOrEqualTo("idauto",1).*//*orderBy("tiempo", Query.Direction.DESCENDING).limit(10).get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                                //Toast.makeText(RecyclerActivity.this, ""+document.getData(), Toast.LENGTH_SHORT).show();
-                                //String url = document.getData().toString();
-                                Date tiempo= document.getDate("tiempo");
-                                String Cadenaurl = document.getString("url");
-                                String Cadenaobs = document.getString("observaciones");
-                                String Cadenaubi = document.getString("ubicacion");
-
-                                //String sSubCadena1 = Cadenaurl.substring(5);
-                                //Toast.makeText(RecyclerActivity.this, ""+ sSubCadena, Toast.LENGTH_SHORT).show();
-                               *//* Datos datos = new Datos(tiempo,Cadenaurl,Cadenaubi,Cadenaobs);
-                                listDatos.add(datos);*//*
-                                // Toast.makeText(RecyclerActivity.this, ""+listDatos, Toast.LENGTH_SHORT).show();
-                                // listDatos.add(new Datos(url));
-                               *//* adaptador= new Adaptador(RecyclerActivity.this,listDatos);
-                                recyclerView.setAdapter(adaptador);*//*
-                            }
-                        } else {
-                            Log.w(TAG, "Error getting documents.", task.getException());
-                        }
-                    }
-
-                });*/
-
-
+        //mostrar detalles del recycler
         String ubicacion= RecyclerActivity.ubicacion1;
         String fecha=RecyclerActivity.fecha1;
         String observacion=RecyclerActivity.obser1;
         String foto=RecyclerActivity.url1;
-        /*Bundle extras= getIntent().getExtras();
-        if(extras != null){
-            ubicacion= extras.getString("ubicacion");
-            fecha= extras.getString("fecha");
-            observacion= extras.getString("observacion");
-            foto= extras.getString("foto");
-        }*/
 
         if (ubicacion== null) {
             recubi.setText("Ubicacion no obtenida");
