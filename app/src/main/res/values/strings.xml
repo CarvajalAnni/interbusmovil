@@ -28,6 +28,7 @@
     <string name="despachadores">DESPACHADORES</string>
     <string name="token">token</string>
     <string name="salir">Salir</string>
+    <string name="eliminar_reporte">ELIMINAR</string>
     <string-array name="gravedad">
         <item>Menor</item>
         <item>Moderada</item>

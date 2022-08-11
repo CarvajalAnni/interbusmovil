@@ -12,14 +12,18 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -32,7 +36,8 @@ import Model.Datos;
 public class DetallesRecycler extends Activity {
     View include ;
     ImageView bntimagen, bntusuario, bntincidenn;
-
+    LinearLayout eliminar;
+    String idrecibido;
 
     FirebaseFirestore db;
     TextView recfecha,recubi,recobs;
@@ -46,6 +51,9 @@ public class DetallesRecycler extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_recycler);
 
+        //instanciar base de datos
+        db=FirebaseFirestore.getInstance();
+
         include = findViewById(R.id.include);
 
         recfecha= findViewById(R.id.detFecha);
@@ -53,6 +61,31 @@ public class DetallesRecycler extends Activity {
         recobs= findViewById(R.id.detObservacion);
         img= findViewById(R.id.detImg);
 
+        //Eliminar de base de datos
+        idrecibido= RecyclerActivity.idDoc;
+        eliminar= findViewById(R.id.Eliminar);
+
+        if (IniciarSesion.formainicio==2){
+            eliminar.setVisibility(View.VISIBLE);
+        }else {
+            eliminar.setVisibility(View.INVISIBLE);
+        }
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent= new Intent(DetallesRecycler.this,RecyclerActivity.class);
+                 db.collection("Reportes").document(idrecibido).delete();
+                startActivity(intent);
+
+                Toast.makeText(DetallesRecycler.this, idrecibido, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+        //mostrar detalles del recycler
         String ubicacion= RecyclerActivity.ubicacion1;
         String fecha=RecyclerActivity.fecha1;
         String observacion=RecyclerActivity.obser1;

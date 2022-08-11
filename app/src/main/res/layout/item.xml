@@ -88,18 +88,6 @@
                 android:text="Observación"
                 android:textSize="15sp"
                 android:visibility="invisible" />
-
-            <ImageButton
-                android:id="@+id/Eliminar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="28dp"
-                android:layout_marginBottom="128dp"
-                android:src="@drawable/borrar" />
-
-
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

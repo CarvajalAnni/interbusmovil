@@ -2,8 +2,6 @@ package com.juancamilouni.iterbusmovilidad;
 
 import static android.content.ContentValues.TAG;
 
-import static com.juancamilouni.iterbusmovilidad.Adaptador.idDoc;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,15 +47,12 @@ import Model.Datos;
 public class RecyclerActivity extends Activity {
     View include ;
     ImageView bntimagen, bntusuario, bntincidenn;
-    String idrecy;
-    ImageButton eliminar;
-
     List<Datos> listDatos;
     Adaptador adaptador;
     FirebaseStorage storageRef;
     FirebaseFirestore db;
     RecyclerView recyclerView;
-    public static String obser1,url1,ubicacion1,fecha1;
+    public static String obser1,url1,ubicacion1,fecha1,idDoc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,11 +172,11 @@ public class RecyclerActivity extends Activity {
                                     Date tiempo= dc.getDocument().getDate("tiempo");
                                     String Cadenaurl = dc.getDocument().getString("url");
                                     String Cadenaobs = dc.getDocument().getString("observaciones");
-                                    //String Cadenaubi = dc.getDocument().getString("ubicacion");
-                                    String Cadenaubi = dc.getDocument().getId();
+                                    String Cadenaubi = dc.getDocument().getString("ubicacion");
+                                    String iddocumento = dc.getDocument().getId();
 
 
-                                    Datos datos = new Datos(tiempo,Cadenaurl,Cadenaubi,Cadenaobs);
+                                    Datos datos = new Datos(tiempo,Cadenaurl,Cadenaubi,Cadenaobs,iddocumento);
                                     listDatos.add(datos);
                                     //Toast.makeText(RecyclerActivity.this,"id documento:  "+ dc.getDocument().getId(), Toast.LENGTH_SHORT).show();
                                     //Log.e("id", "ID doc es:  " + dc.getDocument().getId());
@@ -198,6 +193,7 @@ public class RecyclerActivity extends Activity {
                                             obser1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getObservaciones();
                                             url1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUrl();
                                             ubicacion1= listDatos.get(recyclerView.getChildAdapterPosition(view)).getUbicacion();
+                                            idDoc= iddocumento;
                                             //Toast.makeText(RecyclerActivity.this, idrecy, Toast.LENGTH_SHORT).show();
                                             startActivity(intent);
                                         }
@@ -212,27 +208,9 @@ public class RecyclerActivity extends Activity {
                                     break;*/
 
                                 case REMOVED:
-
-                                   /* tiempo= dc.getDocument().getDate("tiempo");
-                                    Cadenaurl = dc.getDocument().getString("url");
-                                    Cadenaobs = dc.getDocument().getString("observaciones");
-                                    //String Cadenaubi = dc.getDocument().getString("ubicacion");
-                                    Cadenaubi = dc.getDocument().getId();
-
-
-                                    datos = new Datos(tiempo,Cadenaurl,Cadenaubi,Cadenaobs);
-                                    //Toast.makeText(RecyclerActivity.this,"id documento:  "+ dc.getDocument().getId(), Toast.LENGTH_SHORT).show();
-                                    //Log.e("id", "ID doc es:  " + dc.getDocument().getId());
-                                    adaptador= new Adaptador(RecyclerActivity.this,listDatos);
-                                    listDatos.remove(datos);*/
-
-
-                                    if (Adaptador.ban==1){
-                                        listDatos.remove(dc.getDocument().getData() /*+ "ID" + dc.getDocument().getId()*/);
+                                        listDatos.remove(dc.getDocument().getData() + "ID" + dc.getDocument().getId());
                                         //listDatos.remove(datos);
                                         recyclerView.setAdapter(adaptador);
-                                    }
-
                                     break;
                             }
                         }

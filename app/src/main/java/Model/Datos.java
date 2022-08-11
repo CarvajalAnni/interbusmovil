@@ -8,15 +8,25 @@ public class Datos {
     String Url;
     String Ubicacion;
     String Observaciones;
+    String IdDocumento;
 
     public Datos() {
     }
 
-    public Datos(Date tiempo, String url, String ubicacion, String observaciones) {
+    public Datos(Date tiempo, String url, String ubicacion, String observaciones, String Iddocumento) {
         this.tiempo = tiempo;
         Url = url;
         Ubicacion = ubicacion;
         Observaciones = observaciones;
+        IdDocumento = Iddocumento;
+    }
+
+    public String getIdDocumento() {
+        return IdDocumento;
+    }
+
+    public void setIdDocumento(String idDocumento) {
+        IdDocumento = idDocumento;
     }
 
     public Date getTiempo() {

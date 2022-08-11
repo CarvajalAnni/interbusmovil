@@ -44,13 +44,11 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> implem
     private View.OnClickListener listener;
     public static int ban=0;
 
-    FirebaseFirestore db;
-    public static String idDoc;
 
     public Adaptador(Context context, List<Datos> listDatos) {
         this.listDatos = listDatos;
         this.context = context;
-        db=FirebaseFirestore.getInstance();
+
     }
 
     @NonNull
@@ -72,19 +70,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> implem
         Glide.with(context).load(datos.getUrl()).into(holder.foto);
         holder.ubicacion.setText(datos.getUbicacion());
         holder.observa.setText(datos.getObservaciones());
-
-        holder.eliminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //db.collection("Reportes").document().delete();
-                //Toast.makeText(context, idDoc, Toast.LENGTH_LONG).show();
-                //Log.e("token", "ID doc es:  " + idDoc);
-                Adaptador.this.notifyItemRemoved(holder.getAdapterPosition());
-                Toast.makeText(context, "inicio: "+ban, Toast.LENGTH_LONG).show();
-                ban=1;
-                Toast.makeText(context, "fin: "+ban, Toast.LENGTH_LONG).show();
-            }
-        });
     }
 
     @Override
@@ -111,14 +96,11 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> implem
         TextView ubicacion;
         TextView observa;
         ImageView foto;
-        ImageButton eliminar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             context1= itemView.getContext();
-
-            eliminar= itemView.findViewById(R.id.Eliminar);
             url= itemView.findViewById(R.id.urlItem);
             fecha = itemView.findViewById(R.id.Fecha);
             ubicacion = itemView.findViewById(R.id.Latitud);

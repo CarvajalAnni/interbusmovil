@@ -244,7 +244,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) Local);
 
         TxtLatitud.setText("Obteniendo Ubicacion...");
-        TxtLongitud.setText("");
+        //TxtLongitud.setText("");
     }
 
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
@@ -399,9 +399,11 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
 
                                 String fecha = dateFormat.format(date);
 
+                                String idd= TxtLongitud.getText().toString();
+
                                 fechasub = date;
 
-                                Datos datos = new Datos(fechasub, url, stringlati, Observaciones);
+                                Datos datos = new Datos(fechasub, url, stringlati, Observaciones,idd);
 
                                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                                 db.collection("Reportes")
@@ -465,8 +467,9 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                                 String fecha = dateFormat.format(date);
 
                                 fechasub = date;
+                                String idd= TxtLongitud.getText().toString();
 
-                                Datos datos = new Datos(fechasub, url, stringlati, Observaciones);
+                                Datos datos = new Datos(fechasub, url, stringlati, Observaciones,idd);
 
                                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                                 db.collection("Reportes")
