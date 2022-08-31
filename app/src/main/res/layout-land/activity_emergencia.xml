@@ -18,7 +18,7 @@
 
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="#FF3905 "
+        android:backgroundTint="#FFFFFFFF"
         android:src="@drawable/al"
         app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,10 +52,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/sos"
         app:layout_constraintEnd_toEndOf="@+id/sos"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="@+id/sos"
         app:layout_constraintTop_toTopOf="@+id/sos"
-        app:layout_constraintVertical_bias="0.476" />
+        app:layout_constraintVertical_bias="0.511" />
 
     <TextView
         android:id="@+id/textView14"
