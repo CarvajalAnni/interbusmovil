@@ -262,8 +262,8 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textObservacionCc"
-                android:layout_width="329dp"
-                android:layout_height="64dp"
+                android:layout_width="366dp"
+                android:layout_height="82dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
                 android:hint="@string/observaciones"
@@ -273,7 +273,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="30"
                 app:layout_constraintEnd_toEndOf="@+id/textlatitudcolision"
-                app:layout_constraintHorizontal_bias="0.58"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/lnUbicacion"
                 app:layout_constraintTop_toBottomOf="@+id/textlatitudcolision">
 
@@ -282,7 +282,7 @@
                     android:id="@+id/textObservacionC"
                     android:layout_width="match_parent"
                     android:layout_height="57dp"
-                    android:maxLength="20"
+                    android:maxLength="30"
                     app:errorEnabled="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -304,15 +304,15 @@
 
             <ImageView
                 android:id="@+id/imgColicion"
-                android:layout_width="250dp"
-                android:layout_height="136dp"
+                android:layout_width="156dp"
+                android:layout_height="118dp"
                 android:layout_marginTop="20dp"
+                android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
                 app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="@+id/linearLayout2"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-                app:srcCompat="@drawable/fotoincidente"
-                android:scaleType="fitXY"/>
+                app:srcCompat="@drawable/fotoincidente" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
