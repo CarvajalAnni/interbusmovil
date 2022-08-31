@@ -27,7 +27,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="180dp"
                 android:layout_height="354dp"
-                android:background="@color/grisinterbus"
+                android:background="#E2F4FA"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -43,7 +43,7 @@
                 app:layout_constraintHorizontal_bias="0.25"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageView"
-                app:srcCompat="@drawable/logoninterbus" />
+                app:srcCompat="@drawable/iconicooo" />
 
             <TextView
                 android:id="@+id/textView"
@@ -177,7 +177,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.312"
+                app:layout_constraintHorizontal_bias="0.342"
                 app:layout_constraintStart_toStartOf="parent">
 
 
@@ -273,7 +273,7 @@
                 android:id="@+id/textObservacionCc"
                 android:layout_width="397dp"
                 android:layout_height="51dp"
-                android:layout_marginBottom="116dp"
+                android:layout_marginBottom="112dp"
                 android:ems="10"
                 android:hint="@string/observaciones"
                 android:inputType="textPersonName"
@@ -283,7 +283,7 @@
                 app:counterMaxLength="30"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintHorizontal_bias="0.607"
                 app:layout_constraintStart_toStartOf="parent">
 
 

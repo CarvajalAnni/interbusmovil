@@ -5,34 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#E2F4FA">
+    android:background="@color/white">
 
 
     <ImageView
-        android:backgroundTint="@color/transparente"
-        android:background="@color/transparente"
         android:id="@+id/imaglogointerbus"
+        android:layout_width="350dp"
+        android:layout_height="352dp"
 
-        android:layout_width="370dp"
-        android:layout_height="419dp"
-        android:src="@drawable/logoninterbus"
+        android:background="@color/transparente"
+        android:backgroundTint="@color/transparente"
+        android:src="@drawable/iconicooo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintVertical_bias="0.284" />
 
     <ImageView
-        android:backgroundTint="@color/transparente"
-        android:background="@color/transparente"
         android:id="@+id/autobusmovimiento"
-        android:layout_width="134dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="116dp"
+        android:layout_width="85dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="148dp"
+        android:background="@color/transparente"
+        android:backgroundTint="@color/transparente"
         android:src="@drawable/autobus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="405dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/letrassss"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.564" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

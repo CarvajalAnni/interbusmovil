@@ -8,18 +8,20 @@
     android:background="@color/blancointerbus"
     >
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/inisecion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:backgroundTint="@color/transparente"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FFFFFFFF"
         android:src="@drawable/al"
         app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.airbnb.lottie.LottieAnimationView

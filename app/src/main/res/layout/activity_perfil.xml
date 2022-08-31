@@ -5,25 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blancointerbus"
-    tools:context=".Perfil">
+    tools:context=".Perfil"><![CDATA[
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fbtnatras"
-        android:layout_width="57dp"
-        android:layout_height="55dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="40dp"
-        android:background="@color/transparente"
-        android:backgroundTint="@color/transparente"
-        android:src="@drawable/atras"
-        app:fabSize="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    -->
+
+   ]]><!-- <ImageView
         android:id="@+id/imageView2"
         android:layout_width="88dp"
         android:layout_height="96dp"
@@ -34,20 +21,35 @@
         app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logoninterbus" />
+        app:srcCompat="@drawable/iconicooo" />-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbtnatras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FFFFFFFF"
+        android:src="@drawable/atras"
+        app:fabSize="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="136dp"
-        android:layout_height="131dp"
+        android:layout_width="293dp"
+        android:layout_height="191dp"
         android:background="@color/transparente"
         android:backgroundTint="@color/transparente"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/listaCard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175"
+        app:layout_constraintVertical_bias="0.769"
         app:srcCompat="@mipmap/conductor" />
 
     <androidx.cardview.widget.CardView

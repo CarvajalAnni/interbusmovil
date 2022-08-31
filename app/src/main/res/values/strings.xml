@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Interbus movilidad</string>
+    <string name="app_name">Interbus</string>
     <string name="carril_cortado">Carril cortado</string>
     <string name="obras">Obras</string>
     <string name="objeto_en_la_via">Objeto en la via</string>

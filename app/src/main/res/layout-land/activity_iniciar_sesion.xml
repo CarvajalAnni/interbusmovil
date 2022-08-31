@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blancointerbus"
+    android:background="@color/white"
     tools:context=".IniciarSesion">
 
     <ScrollView
@@ -82,7 +82,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.011"
-                app:srcCompat="@drawable/logoninterbus" />
+                app:srcCompat="@drawable/iconicooo" />
 
             <LinearLayout
                 android:id="@+id/bntGoogle"

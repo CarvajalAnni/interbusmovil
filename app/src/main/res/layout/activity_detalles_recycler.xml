@@ -28,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@color/grisinterbus" />
+        android:background="@color/azul" />
 
 
     <ImageView
@@ -36,7 +36,7 @@
         android:layout_width="165dp"
         android:layout_height="137dp"
         android:layout_marginTop="4dp"
-        android:src="@drawable/logoninterbus"
+        android:src="@drawable/iconicooo"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
