@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:background="#E2F4FA"
     android:scaleType="centerCrop"
+    android:forceDarkAllowed="false"
     tools:context=".Formulario">
 
     <ScrollView
@@ -249,26 +250,35 @@
 
             <TextView
                 android:id="@+id/textlatitudcolision"
-                android:layout_width="184dp"
-                android:layout_height="93dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="185dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/color_btn5"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center"
-                android:hint="@string/Ubicacion"
+                android:text="@string/Ubicacion"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.479"
+                app:layout_constraintHorizontal_bias="0.414"
                 app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
                 app:layout_constraintTop_toBottomOf="@+id/imgColicion" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textObservacionCc"
-                android:layout_width="366dp"
-                android:layout_height="82dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="354dp"
+                android:layout_height="81dp"
+                android:layout_marginTop="36dp"
                 android:ems="10"
                 android:hint="@string/observaciones"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
+                android:textColorHint="@color/azulbus"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:counterTextColor="@color/azulbus"
+                app:prefixTextColor="@color/white"
                 app:boxBackgroundMode="outline"
                 app:counterEnabled="true"
                 app:counterMaxLength="30"
@@ -283,6 +293,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="57dp"
                     android:maxLength="30"
+                    android:textColor="@color/azulbus"
                     app:errorEnabled="true" />
             </com.google.android.material.textfield.TextInputLayout>
 

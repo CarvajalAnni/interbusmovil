@@ -1,8 +1,10 @@
 package com.juancamilouni.iterbusmovilidad;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.animation.TranslateAnimation;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         };
         Timer timer = new Timer();
         timer.schedule(espera, 1800);
+
 
     }
 

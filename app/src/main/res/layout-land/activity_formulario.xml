@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:background="#E2F4FA"
     android:scaleType="centerCrop"
+    android:forceDarkAllowed="false"
     tools:context=".Formulario">
 
     <ScrollView
@@ -124,7 +125,7 @@
                     android:layout_width="80dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/color_btnchoque"
+                    android:background="@drawable/color_btn4"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -161,9 +162,9 @@
                 android:id="@+id/imgColicion"
                 android:layout_width="359dp"
                 android:layout_height="144dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.87"
+                app:layout_constraintHorizontal_bias="0.879"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/fotoincidente" />
@@ -172,12 +173,12 @@
                 android:id="@+id/lnUbicacion"
                 android:layout_width="139dp"
                 android:layout_height="61dp"
-                android:layout_marginBottom="176dp"
+                android:layout_marginBottom="188dp"
                 android:background="@drawable/color_btn5"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.342"
+                app:layout_constraintHorizontal_bias="0.354"
                 app:layout_constraintStart_toStartOf="parent">
 
 
@@ -234,35 +235,41 @@
 
             <TextView
                 android:id="@+id/textlatitudcolision"
-                android:layout_width="358dp"
-                android:layout_height="52dp"
-                android:layout_marginBottom="180dp"
+                android:layout_width="189dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/color_btn5"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center"
-                android:hint="@string/Ubicacion"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/Ubicacion"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.916"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintHorizontal_bias="0.362"
+                app:layout_constraintStart_toEndOf="@+id/lnUbicacion"
+                app:layout_constraintTop_toBottomOf="@+id/imgColicion" />
 
             <LinearLayout
                 android:id="@+id/btnReporteDespachador"
                 android:layout_width="174dp"
                 android:layout_height="39dp"
+
                 android:layout_marginTop="308dp"
                 android:background="@drawable/color_btnreporte"
                 android:orientation="horizontal"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.877"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnReporte"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/textView14"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:fontFamily="sans-serif-condensed"
+                    android:gravity="center"
                     android:text="Reportar a Despachador"
                     android:textAlignment="center"
                     android:textColor="@color/black"
@@ -271,28 +278,34 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textObservacionCc"
-                android:layout_width="397dp"
-                android:layout_height="51dp"
+                android:layout_width="417dp"
+                android:layout_height="71dp"
                 android:layout_marginBottom="112dp"
                 android:ems="10"
                 android:hint="@string/observaciones"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
+                android:textColorHint="@color/azulbus"
+                app:boxBackgroundColor="@color/white"
                 app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/white"
                 app:counterEnabled="true"
                 app:counterMaxLength="30"
+                app:counterTextColor="@color/azulbus"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.607"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:prefixTextColor="@color/white">
 
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textObservacionC"
-                    android:layout_width="match_parent"
-                    android:layout_height="51dp"
+                    android:layout_width="388dp"
+                    android:layout_height="46dp"
                     android:layout_gravity="center"
                     android:maxLength="20"
+                    android:textColor="@color/azulbus"
                     app:errorEnabled="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -301,8 +314,10 @@
                 layout="@layout/activity_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="412dp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView33"

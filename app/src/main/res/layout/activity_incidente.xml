@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blancointerbus"
+    android:forceDarkAllowed="false"
     tools:context=".Incidente">
     <ScrollView
         android:layout_width="match_parent"
@@ -239,7 +240,7 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
-                    android:background="@drawable/color_btn8"
+                    android:background="@drawable/color_btn4"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView">

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blancointerbus"
+    android:forceDarkAllowed="false"
     tools:context=".Inicio">
 
     <ScrollView
@@ -36,8 +37,7 @@
                 android:id="@+id/sos"
                 android:layout_width="187dp"
                 android:layout_height="170dp"
-                android:background="@color/transparente"
-                android:backgroundTint="@color/transparente"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,8 +51,7 @@
                 android:id="@+id/textView15"
                 android:layout_width="76dp"
                 android:layout_height="47dp"
-                android:background="@color/transparente"
-                android:backgroundTint="@color/transparente"
+
                 android:fontFamily="sans-serif-condensed"
                 android:text="SOS"
                 android:textColor="@color/grisinter"
@@ -94,8 +93,7 @@
                 android:layout_width="338dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="4dp"
-                android:background="@color/transparente"
-                android:backgroundTint="@color/transparente"
+
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center"
                 android:text="Pulsa el botón de emergencia para llamar directamente a la policia"
@@ -111,11 +109,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@color/transparente"
-                android:backgroundTint="@color/transparente"
+
                 android:fontFamily="sans-serif-condensed"
                 android:text="¿Te ocurrió un robo?"
-                android:textColor="@color/azuloscuro"
+                android:textColor="@color/azul"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/sos"
@@ -127,8 +124,7 @@
                 android:id="@+id/imageView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/transparente"
-                android:backgroundTint="@color/transparente"
+
                 android:src="@drawable/ladron"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -154,6 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/salir"
+                    android:textColor="@color/orange"
                     android:textSize="18sp" />
 
                 <ImageView
