@@ -90,8 +90,8 @@ public class Fcm extends FirebaseMessagingService {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-                        Toast.makeText(Fcm.this, "token obtenido", Toast.LENGTH_SHORT).show();
-                        Toast.makeText(Fcm.this, documentReference.getId(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(Fcm.this, "token obtenido", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(Fcm.this, documentReference.getId(), Toast.LENGTH_SHORT).show();
                         id= documentReference.getId();
                     }
                 })

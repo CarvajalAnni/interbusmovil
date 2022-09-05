@@ -113,7 +113,7 @@ public class Inicio extends Activity {
 
 
                 idDoc = Fcm.id;
-                Toast.makeText(Inicio.this, idDoc, Toast.LENGTH_LONG).show();
+               // Toast.makeText(Inicio.this, idDoc, Toast.LENGTH_LONG).show();
                 db.collection("token").document(idDoc).update("nombre", nombredas);
                 db.collection("token").document(idDoc).update("correo", correodas);
                 db.collection("token").document(idDoc).update("rol", "conductor");
