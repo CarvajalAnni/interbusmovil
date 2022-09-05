@@ -2,11 +2,15 @@ package com.juancamilouni.iterbusmovilidad;
 
 import static android.content.ContentValues.TAG;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Build;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -101,6 +105,8 @@ public class Fcm extends FirebaseMessagingService {
                 });
 
     }
+
+
     // recibir todas las notificaciones validar si es mensaje version de cel
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remotemessage) {
@@ -117,8 +123,11 @@ public class Fcm extends FirebaseMessagingService {
             //String nombre = remotemessage.getFrom();
 
             // enviar la notificacion enviar
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S){
+                mayorqueoreo(titulo,detalle);
 
-            mayorqueoreo(titulo,detalle);
+            }
+
 
         }
     }
@@ -136,6 +145,8 @@ public class Fcm extends FirebaseMessagingService {
 
         }
 
+
+
         builder.setAutoCancel(true)
                 .setWhen(System.currentTimeMillis())// a que hora se envio la notificacion
                 .setContentTitle(titulo)
@@ -144,6 +155,8 @@ public class Fcm extends FirebaseMessagingService {
                 //.setContentText(nombre)
                 .setContentIntent(clicknoti())
                 .setContentInfo("nuevo");
+
+
 
         // si queremos varias notificaciones se crean varias id y se remplazan entonces se crea esto
         Random random = new Random();
