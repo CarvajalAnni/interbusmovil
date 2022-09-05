@@ -130,7 +130,7 @@ public class Perfil extends AppCompatActivity {
         etxcorreo=findViewById(R.id.textNombreP);
         etxcontrasenia=findViewById(R.id.textCorreoP);
         etxrol=findViewById(R.id.textRolP);
-        atras=findViewById(R.id.fbtnatras);
+        /*atras=findViewById(R.id.fbtnatras);
 
         atras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,7 +138,7 @@ public class Perfil extends AppCompatActivity {
                 Intent intent = new Intent(Perfil.this, RecyclerToken.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
     }
 }
