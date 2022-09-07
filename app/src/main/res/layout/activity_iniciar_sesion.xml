@@ -32,9 +32,11 @@
                 android:hint="Ingresa tu Correo"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusTopEnd="10dp"
+                app:boxStrokeColor="@color/grayy"
                 app:boxCornerRadiusTopStart="10dp"
                 app:counterEnabled="true"
-             app:counterTextColor="@color/grayy"
+
+                app:counterTextColor="@color/grayy"
                 app:counterMaxLength="30"
                 android:backgroundTint="@color/azul"
                 android:textColorHint="@color/grayy"
@@ -66,6 +68,9 @@
                 app:counterEnabled="true"
                 app:counterTextColor="@color/grayy"
                 app:counterMaxLength="20"
+
+
+                app:boxStrokeColor="@color/grayy"
                 android:textColorHint="@color/grayy"
                 android:backgroundTint="@color/azul"
                 app:endIconMode="password_toggle"
@@ -77,6 +82,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/idTxtContrasenia"
                     android:textColor="@color/azul"
+
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

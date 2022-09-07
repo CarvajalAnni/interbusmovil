@@ -604,11 +604,12 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             Txtimagen.setError(null);
         }*/
 
-        if(TextUtils.isEmpty(EtxtObservaciones.getText().toString()) || TextUtils.isEmpty(TxtLatitud.getText()) || ImgFotoReporte.getDrawable()==null){
+        if(TextUtils.isEmpty(EtxtObservaciones.getText().toString()) || TextUtils.isEmpty(TxtLatitud.getText()) || imageUri ==null){
             EtxtObservaciones.setError("campo requerido");
             TxtLatitud.setError("campo requerido");
             Txtimagen.setVisibility(View.VISIBLE);
             esValido = false;
+
         }else{
             EtxtObservaciones.setError(null);
             TxtLatitud.setError(null);

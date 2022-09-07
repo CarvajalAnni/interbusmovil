@@ -202,6 +202,7 @@
                         android:layout_marginBottom="5dp"
                         android:fontFamily="sans-serif-condensed"
                         android:text="Subir Foto"
+                        android:textSize="14dp"
                         android:textColor="@color/black"
                         tools:layout_editor_absoluteX="123dp"
                         tools:layout_editor_absoluteY="316dp" />
@@ -304,7 +305,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-condensed"
                 android:text="Debe seleccionar una imagen"
-                android:textColor="@color/black"
+                android:textColor="@color/grayy"
                 android:textSize="15sp"
                 android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@+id/imgColicion"
