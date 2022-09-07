@@ -24,8 +24,7 @@
         android:layout_width="136dp"
         android:layout_height="131dp"
         android:layout_marginTop="4dp"
-        android:background="@color/transparente"
-        android:backgroundTint="@color/transparente"
+
         android:src="@drawable/iconicooo"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.498"

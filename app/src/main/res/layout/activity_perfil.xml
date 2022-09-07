@@ -52,8 +52,9 @@
         app:srcCompat="@mipmap/conductor" />
 
     <androidx.cardview.widget.CardView
+
         android:id="@+id/listaCard"
-        android:layout_width="390dp"
+        android:layout_width="389dp"
         android:layout_height="320dp"
         android:layout_marginTop="260dp"
         android:visibility="visible"
@@ -70,6 +71,7 @@
             android:layout_width="384dp"
             android:layout_height="300dp"
             android:layout_marginTop="8dp"
+            android:background="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,8 +87,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="207dp"
-                android:hint="Nombre:"
                 android:fontFamily="sans-serif-condensed"
+                android:hint="Nombre:"
+                android:textColorHint="@color/grayy"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -101,8 +104,9 @@
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="44dp"
                 android:layout_marginEnd="18dp"
-                android:hint="nombre"
                 android:fontFamily="sans-serif-condensed"
+                android:hint="nombre"
+                android:textColor="@color/grayy"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -117,9 +121,11 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="102dp"
                 android:layout_marginEnd="212dp"
-                android:hint="Correo:"
                 android:fontFamily="sans-serif-condensed"
+                android:hint="Correo:"
+                android:textColorHint="@color/grayy"
                 android:textSize="15sp"
+
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
 
@@ -135,8 +141,9 @@
                 android:layout_marginTop="67dp"
                 android:layout_marginEnd="26dp"
                 android:layout_marginBottom="132dp"
-                android:hint="correo"
                 android:fontFamily="sans-serif-condensed"
+                android:hint="correo"
+                android:textColor="@color/grayy"
                 android:textSize="15sp" />
 
             <TextView
@@ -149,8 +156,9 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="184dp"
                 android:layout_marginEnd="212dp"
-                android:hint="Rol:"
                 android:fontFamily="sans-serif-condensed"
+                android:hint="Rol:"
+                android:textColorHint="@color/grayy"
                 android:textSize="15sp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="296dp" />
@@ -167,8 +175,10 @@
                 android:layout_marginEnd="64dp"
                 android:background="@color/transparente"
                 android:backgroundTint="@color/transparente"
-                android:hint="Rol"
                 android:fontFamily=""
+                android:hint="Rol"
+                android:textColor="@color/grayy"
+
                 android:textSize="15sp"
                 tools:ignore="DuplicateIds,MissingConstraints"
                 tools:layout_editor_absoluteX="149dp" />
@@ -182,6 +192,7 @@
         android:layout_width="342dp"
         android:layout_height="51dp"
         android:layout_marginTop="304dp"
+        android:textColor="@color/grayy"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
